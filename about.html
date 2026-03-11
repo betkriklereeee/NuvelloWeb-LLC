@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us — NuvelloWeb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --blue: #138CEC;
+    --navy: #2A2A72;
+    --red: #AC3931;
+    --slate: #565173;
+    --mint: #B8EBE1;
+    --lavender: #E8E6F2;
+    --dark: #232528;
+    --darker: #16181a;
+    --orange: #f47c20;
+    --white: #f5f6fa;
+    --text-muted: #8a8f9e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--darker);
+    color: var(--white);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    height: 76px;
+    background: rgba(22,24,26,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo svg { height: 36px; width: auto; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: .93rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a.active { color: var(--white); }
+  .nav-cta {
+    background: var(--blue) !important;
+    color: #fff !important;
+    padding: .55rem 1.4rem;
+    border-radius: 4px;
+  }
+  .nav-cta:hover { background: #0f7ad6 !important; }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: 160px 5vw 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 70% at 80% 50%, rgba(42,42,114,.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(19,140,236,.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .page-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1.4rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--blue);
+  }
+  .page-hero h1 {
+    font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+    margin-bottom: 1.6rem;
+    line-height: 1.1;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--blue); }
+  .page-hero p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 620px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+    margin: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 5vw; }
+
+  .section-label {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--blue);
+  }
+  .section-heading {
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── OUR STORY ── */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+  .story-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+  }
+  .story-text p:last-child { margin-bottom: 0; }
+  .story-text strong { color: var(--white); font-weight: 600; }
+
+  .story-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .aside-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+  .aside-card:hover { border-color: rgba(19,140,236,.3); }
+  .aside-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+  .aside-card.accent-blue::before { background: linear-gradient(90deg, var(--blue), transparent); }
+  .aside-card.accent-orange::before { background: linear-gradient(90deg, var(--orange), transparent); }
+  .aside-card.accent-navy::before { background: linear-gradient(90deg, var(--navy), transparent); }
+
+  .aside-card h4 {
+    font-size: .78rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: .8rem;
+  }
+  .aside-card p {
+    font-size: .95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+  .aside-card .big-num {
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: .4rem;
+  }
+
+  /* ── MISSION / VALUES ── */
+  .mission { background: rgba(255,255,255,.015); }
+
+  .mission-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  .mission-statement {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--white);
+    border-left: 3px solid var(--blue);
+    padding-left: 2rem;
+  }
+  .mission-statement span { color: var(--blue); }
+
+  .mission-desc {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .value-card {
+    background: var(--darker);
+    padding: 2.5rem;
+    transition: background .25s;
+  }
+  .value-card:hover { background: rgba(19,140,236,.05); }
+
+  .value-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .value-card h3 { font-size: 1.1rem; margin-bottom: .7rem; }
+  .value-card p { font-size: .9rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* ── WHY CHOOSE US ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 3.5rem;
+  }
+
+  .why-list { display: flex; flex-direction: column; gap: 1.8rem; }
+
+  .why-item { display: flex; gap: 1.4rem; align-items: flex-start; }
+
+  .why-check {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: rgba(19,140,236,.15);
+    border: 1px solid rgba(19,140,236,.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .95rem;
+    flex-shrink: 0;
+    margin-top: .1rem;
+  }
+  .why-item h4 { font-size: 1rem; margin-bottom: .35rem; }
+  .why-item p { font-size: .9rem; color: var(--text-muted); line-height: 1.65; }
+
+  .why-visual {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 16px;
+    padding: 3rem;
+    position: relative;
+  }
+  .why-visual::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 15%; right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  }
+
+  .why-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .why-stat { text-align: center; padding: 1.5rem; }
+  .why-stat .num {
+    font-family: 'Lora', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: .4rem;
+  }
+  .why-stat .label {
+    font-size: .78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+  .why-stat-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,.06);
+    margin: .5rem 0;
+  }
+
+  /* ── FOUNDER ── */
+  .founder { background: rgba(255,255,255,.015); }
+
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+
+  .founder-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    overflow: hidden;
+    position: sticky;
+    top: 100px;
+  }
+
+  .founder-photo {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, rgba(42,42,114,.4) 0%, rgba(19,140,236,.2) 50%, rgba(172,57,49,.2) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .founder-photo-label {
+    position: absolute;
+    bottom: 1rem; left: 50%; transform: translateX(-50%);
+    font-size: .72rem;
+    color: rgba(255,255,255,.4);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .founder-info { padding: 2rem; }
+  .founder-info h3 { font-size: 1.4rem; margin-bottom: .3rem; }
+  .founder-info .title {
+    font-size: .82rem;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 1.4rem;
+    font-weight: 700;
+  }
+
+  .founder-contact { display: flex; flex-direction: column; gap: .6rem; margin-top: 1.4rem; }
+  .founder-contact a {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    font-size: .88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .founder-contact a:hover { color: var(--white); }
+  .contact-icon {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    background: rgba(255,255,255,.06);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .8rem;
+  }
+
+  .founder-message { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .letter-opener {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: .5rem;
+  }
+
+  .founder-message p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+  }
+  .founder-message p strong { color: var(--white); font-weight: 600; }
+
+  .founder-message blockquote {
+    border-left: 3px solid var(--orange);
+    padding-left: 1.8rem;
+    margin: .5rem 0;
+  }
+  .founder-message blockquote p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--white);
+  }
+
+  .sign-off {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  .sign-off p {
+    font-size: .92rem;
+    color: var(--text-muted);
+    margin-bottom: .2rem !important;
+  }
+  .sign-off .name {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--white) !important;
+    margin-top: .6rem !important;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a1a5a 50%, var(--dark) 100%);
+    border-radius: 20px;
+    margin: 0 5vw 100px;
+    padding: 80px 8vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(19,140,236,.15), transparent);
+  }
+  .cta-section > * { position: relative; z-index: 1; }
+  .cta-section h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.2rem; }
+  .cta-section p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    padding: .85rem 2rem;
+    border-radius: 4px;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #0f7ad6; transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: .85rem 2rem;
+    border-radius: 4px;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,.25);
+    transition: border-color .2s, transform .15s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,.6); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding: 60px 5vw 40px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  .footer-brand svg { height: 32px; width: auto; margin-bottom: 1.2rem; }
+  .footer-brand p { font-size: .9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; max-width: 280px; }
+  .footer-socials { display: flex; gap: .8rem; }
+  .social-btn {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: .85rem; font-weight: 700;
+    transition: background .2s, color .2s;
+  }
+  .social-btn:hover { background: var(--blue); color: #fff; }
+  .footer-col h4 {
+    font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--white); margin-bottom: 1.4rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  .footer-col ul a { text-decoration: none; color: var(--text-muted); font-size: .9rem; transition: color .2s; }
+  .footer-col ul a:hover { color: var(--white); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,.06);
+    font-size: .82rem; color: var(--text-muted);
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .story-grid, .mission-top, .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .founder-grid { grid-template-columns: 1fr; }
+    .founder-card { position: static; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr; }
+    .why-stat-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    section { padding: 70px 5vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="nuvelloweb.html" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
+      <defs><style>.n1{fill:#f47c20}.n2{fill:#ffffff}</style></defs>
+      <g>
+        <polygon class="n1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/>
+        <polygon class="n1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/>
+        <path class="n2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/>
+      </g>
+      <g>
+        <path class="n2" d="M134.54,49.09v29.68h-6.14v-3.5c-.97,1.22-2.24,2.18-3.8,2.88-1.56.7-3.22,1.05-4.98,1.05-2.33,0-4.43-.48-6.28-1.45-1.85-.97-3.3-2.41-4.36-4.31-1.06-1.9-1.59-4.2-1.59-6.9v-17.45h6.09v16.54c0,2.66.66,4.7,1.99,6.11,1.33,1.42,3.14,2.13,5.44,2.13s4.12-.71,5.47-2.13c1.35-1.42,2.02-3.46,2.02-6.11v-16.54h6.14Z"/>
+        <path class="n2" d="M154.1,73.27l8.4-24.19h6.52l-11.31,29.68h-7.33l-11.26-29.68h6.57l8.4,24.19Z"/>
+        <path class="n2" d="M200.64,66.22h-22.68c.18,2.37,1.06,4.27,2.64,5.71,1.58,1.44,3.52,2.15,5.82,2.15,3.3,0,5.64-1.38,7-4.15h6.63c-.9,2.73-2.52,4.97-4.88,6.71-2.35,1.74-5.27,2.61-8.75,2.61-2.84,0-5.38-.64-7.62-1.91-2.25-1.27-4-3.07-5.28-5.39-1.28-2.32-1.91-5-1.91-8.05s.62-5.74,1.86-8.05,2.98-4.1,5.23-5.36c2.24-1.26,4.82-1.89,7.73-1.89s5.3.61,7.49,1.83c2.19,1.22,3.9,2.94,5.12,5.14,1.22,2.21,1.83,4.75,1.83,7.62,0,1.11-.07,2.12-.22,3.02ZM194.44,61.26c-.04-2.26-.84-4.08-2.42-5.44-1.58-1.36-3.54-2.05-5.87-2.05-2.12,0-3.93.67-5.44,2.02-1.51,1.35-2.41,3.17-2.69,5.47h16.43Z"/>
+        <path class="n2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/>
+        <path class="n2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/>
+        <path class="n2" d="M240.61,77.34c-2.26-1.27-4.04-3.07-5.33-5.39s-1.94-5-1.94-8.05.66-5.69,1.99-8.03c1.33-2.33,3.14-4.13,5.44-5.39,2.3-1.26,4.87-1.89,7.7-1.89s5.41.63,7.7,1.89c2.3,1.26,4.11,3.05,5.44,5.39,1.33,2.33,1.99,5.01,1.99,8.03s-.68,5.69-2.05,8.03c-1.37,2.33-3.22,4.14-5.58,5.41-2.35,1.28-4.95,1.91-7.78,1.91s-5.33-.64-7.6-1.91ZM252.65,72.79c1.38-.75,2.5-1.89,3.37-3.39s1.29-3.34,1.29-5.49-.41-3.98-1.24-5.47c-.83-1.49-1.92-2.61-3.29-3.37s-2.84-1.13-4.42-1.13-3.04.38-4.39,1.13c-1.35.75-2.42,1.88-3.21,3.37-.79,1.49-1.18,3.31-1.18,5.47,0,3.2.82,5.67,2.45,7.41,1.63,1.74,3.69,2.61,6.17,2.61,1.58,0,3.06-.38,4.44-1.13Z"/>
+      </g>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="nuvelloweb.html#services">Services</a></li>
+    <li><a href="nuvelloweb.html#process">Process</a></li>
+    <li><a href="nuvelloweb-about.html" class="active">About</a></li>
+    <li><a href="nuvelloweb.html#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="eyebrow">About NuvelloWeb</div>
+    <h1>The <em>NuWave</em> of<br>Development &<br>Marketing</h1>
+    <p>We believe websites should be more than digital storefronts — they should be living, evolving tools that help businesses grow, attract customers, and establish lasting trust.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OUR STORY -->
+<section id="story">
+  <div class="section-label">Our Story</div>
+  <h2 class="section-heading">A Startup Built<br>for Startups</h2>
+
+  <div class="story-grid">
+    <div class="story-text fade-up">
+      <p>Founded with the idea of being a <strong>"startup for startups,"</strong> Nuvello was built to make high-quality web design and marketing accessible to small businesses and entrepreneurs. We understand the challenges of turning a vision into a reality — limited budgets, competing priorities, and the pressure to stand out in a crowded digital space.</p>
+      <p>That's why we've made it our mission to simplify the process and deliver solutions that work <strong>without unnecessary complexity or inflated costs.</strong></p>
+      <p>From the very beginning, Nuvello has been focused on transparency and trust. Every project is approached with open communication, clear timelines, and solutions tailored to each client's unique goals. We don't believe in one-size-fits-all websites — we build platforms that reflect the individuality of each business.</p>
+      <p>Whether it's helping a local service provider establish their first online presence or supporting a startup scaling into e-commerce, our goal is the same: to create digital tools that drive measurable results and long-term growth.</p>
+    </div>
+
+    <div class="story-aside fade-up">
+      <div class="aside-card accent-blue">
+        <h4>Founded on a gap</h4>
+        <p>Too many small businesses were stuck with generic templates, confusing tech, and overpriced agencies. We changed that.</p>
+      </div>
+      <div class="aside-card accent-orange">
+        <div class="big-num">6+</div>
+        <h4>Years of experience</h4>
+        <p>Web design, marketing, and creative strategy — built into every project we take on.</p>
+      </div>
+      <div class="aside-card accent-navy">
+        <h4>Based in San Clemente, CA</h4>
+        <p>Serving businesses across Southern California and beyond with a hands-on, human approach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MISSION & VALUES -->
+<section class="mission" id="mission">
+  <div class="section-label">Mission & Values</div>
+  <h2 class="section-heading">What Drives<br>Everything We Do</h2>
+
+  <div class="mission-top fade-up">
+    <div class="mission-statement">
+      "Businesses deserve websites that work as <span>growth engines</span> — not just placeholders."
+    </div>
+    <div class="mission-desc">
+      We blend strategy, design, and technology to craft WordPress sites that perform, inspire trust, and drive results. Serving Southern California and beyond, we simplify the digital journey with clarity and real partnership — building websites that grow with your business, not against it.
+    </div>
+  </div>
+
+  <div class="values-grid fade-up">
+    <div class="value-card">
+      <span class="value-icon">🤝</span>
+      <h3>Transparency First</h3>
+      <p>No surprises, no hidden fees. You'll always know where your project stands, what it costs, and what comes next.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🎯</span>
+      <h3>Results Over Aesthetics</h3>
+      <p>Beautiful design matters — but only when it converts. We build for performance, not just portfolio screenshots.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🔄</span>
+      <h3>Built to Evolve</h3>
+      <p>Your business grows. Your website should too. Every site we build is scalable, editable, and ready for what's next.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🧩</span>
+      <h3>Tailored, Not Templated</h3>
+      <p>We don't believe in one-size-fits-all. Every client gets a strategy and a site built specifically for their goals.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🤲</span>
+      <h3>Partnership Mindset</h3>
+      <p>We're not just vendors — we're invested partners. Your success is our success, from discovery call to post-launch.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">⚡</span>
+      <h3>Clarity in Complexity</h3>
+      <p>Digital can be overwhelming. We cut through the noise and give you exactly what you need — nothing more, nothing less.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="section-label">Why Nuvello</div>
+  <h2 class="section-heading">The Difference You'll<br>Actually Feel</h2>
+
+  <div class="why-grid">
+    <div class="why-list fade-up">
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Accessible Pricing, Pro Results</h4>
+          <p>We built Nuvello specifically to close the gap between what small businesses need and what they can afford — without cutting corners on quality.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Real Communication, Every Step</h4>
+          <p>You'll never be left wondering. Clear timelines, regular updates, and a direct line to the people actually building your site.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>WordPress + Elementor Pro</h4>
+          <p>You keep full ownership and control of your site. No proprietary lock-in, no mystery code — just clean, editable builds you can manage yourself.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Strategy-Led from Day One</h4>
+          <p>Every project starts with a discovery call, not a template picker. We learn your business before we touch a design tool.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>We Stay With You Post-Launch</h4>
+          <p>Launch day isn't the end — it's the beginning. We offer ongoing support, maintenance, and growth services to keep your site performing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-visual fade-up">
+      <p style="font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2rem;">By the Numbers</p>
+      <div class="why-stat-grid">
+        <div class="why-stat">
+          <div class="num">120+</div>
+          <hr class="why-stat-divider"/>
+          <div class="label">Projects Launched</div>
+        </div>
+        <div class="why-stat">
+          <div class="num">6+</div>
+          <hr class="why-stat-divider"/>
+          <div class="label">Years Experience</div>
+        </div>
+        <div class="why-stat">
+          <div class="num">98%</div>
+          <hr class="why-stat-divider"/>
+          <div class="label">Client Satisfaction</div>
+        </div>
+        <div class="why-stat">
+          <div class="num">14</div>
+          <hr class="why-stat-divider"/>
+          <div class="label">Avg Days to Launch</div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;">
+        <a href="nuvelloweb.html#contact" class="btn-primary" style="width:100%;display:block;text-align:center;">Book a Discovery Call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="section-label">The Founder</div>
+  <h2 class="section-heading">A Message from<br>Benjamin Krikler</h2>
+
+  <div class="founder-grid">
+    <!-- Founder Card -->
+    <div class="founder-card fade-up">
+      <div class="founder-photo">
+        👤
+        <div class="founder-photo-label">Replace with your photo</div>
+      </div>
+      <div class="founder-info">
+        <h3>Benjamin Krikler</h3>
+        <div class="title">Founder — NuvelloWeb LLC</div>
+        <p style="font-size:.9rem;color:var(--text-muted);line-height:1.65;">Over six years of experience in web design, marketing, and creative strategy — dedicated to building sites that actually work for the businesses behind them.</p>
+        <div class="founder-contact">
+          <a href="tel:+19093127101">
+            <div class="contact-icon">📞</div>
+            +1 (909) 312 – 7101
+          </a>
+          <a href="mailto:benjamin@nuvelloweb.com">
+            <div class="contact-icon">✉</div>
+            benjamin@nuvelloweb.com
+          </a>
+          <a href="#">
+            <div class="contact-icon">📍</div>
+            San Clemente, CA
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Letter -->
+    <div class="founder-message fade-up">
+      <p class="letter-opener">Dear future client,</p>
+
+      <p>I started Nuvello because I saw firsthand how many small businesses struggled to afford websites that actually worked for them. Too often, entrepreneurs were left with <strong>generic templates, confusing tech, or overpriced agencies</strong> that didn't understand their needs.</p>
+
+      <blockquote>
+        <p>"I wanted to build something different — a partner that empowers businesses rather than overwhelms them."</p>
+      </blockquote>
+
+      <p>With over six years of experience in web design, marketing, and creative strategy, Nuvello is my answer to that gap. It's a place where creativity meets practicality — giving every client the chance to compete online with confidence.</p>
+
+      <p>My goal has always been simple: <strong>to listen, to understand, and to build websites that make your vision possible.</strong></p>
+
+      <p>Every project we take on is rooted in collaboration. Whether it's helping a family-owned business in Orange County reach new customers or refining a startup's digital identity, our process stays transparent, hands-on, and human.</p>
+
+      <p>At Nuvello, success isn't just measured by traffic or conversions — it's measured by the <strong>confidence our clients gain</strong> knowing their website truly works for them.</p>
+
+      <div class="sign-off">
+        <p>Sincerely,</p>
+        <p class="name">Benjamin Krikler</p>
+        <p>Founder, NuvelloWeb LLC</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to Work<br><em style="color:var(--mint);">Together?</em></h2>
+  <p>Book a free discovery call and let's talk about what your business needs — no pressure, no pitch deck, just a real conversation.</p>
+  <div class="cta-actions">
+    <a href="nuvelloweb.html#contact" class="btn-primary">Book Your Discovery Call →</a>
+    <a href="tel:+19093127101" class="btn-outline">📞 (909) 312-7101</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
+        <defs><style>.ff1{fill:#f47c20}.ff2{fill:#ffffff}</style></defs>
+        <g>
+          <polygon class="ff1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/>
+          <polygon class="ff1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/>
+          <path class="ff2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/>
+        </g>
+        <g>
+          <path class="ff2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/>
+          <path class="ff2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/>
+        </g>
+      </svg>
+      <p>Bold, modern websites for businesses that want to stand out, rank higher, and convert more customers. Based in San Clemente, CA.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">ig</a>
+        <a href="#" class="social-btn">g</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Web Design</a></li>
+        <li><a href="#">Development</a></li>
+        <li><a href="#">SEO</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+        <li><a href="#">E-Commerce</a></li>
+        <li><a href="#">Maintenance</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="nuvelloweb-about.html">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+19093127101">(909) 312-7101</a></li>
+        <li><a href="mailto:benjamin@nuvelloweb.com">benjamin@nuvelloweb.com</a></li>
+        <li><a href="#">San Clemente, CA</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 NuvelloWeb LLC. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // stagger children if it's a grid
+        e.target.querySelectorAll('.value-card, .why-item').forEach((child, i) => {
+          child.style.transitionDelay = (i * 0.07) + 's';
+          child.classList.add('fade-up');
+          setTimeout(() => child.classList.add('visible'), i * 70);
+        });
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
