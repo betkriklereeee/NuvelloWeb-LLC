@@ -556,6 +556,101 @@
     flex-wrap: wrap; gap: 1rem;
   }
 
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 101;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    position: fixed;
+    top: 0; right: -100%;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: #16181a;
+    border-left: 1px solid rgba(255,255,255,.08);
+    z-index: 200;
+    padding: 100px 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    transition: right .35s cubic-bezier(.4,0,.2,1);
+  }
+  .mobile-menu.open { right: 0; }
+  .mobile-close {
+    position: absolute;
+    top: 24px; right: 24px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    color: var(--white);
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .mobile-close:hover { background: rgba(255,255,255,.14); }
+  .mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,.06); }
+  .mobile-menu ul a {
+    display: block;
+    padding: 1.1rem 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: .02em;
+    transition: color .2s, padding-left .2s;
+  }
+  .mobile-menu ul a:hover { color: var(--white); padding-left: .4rem; }
+  .mobile-menu ul li:last-child a {
+    margin-top: 1.5rem;
+    background: var(--blue);
+    color: #fff;
+    padding: .9rem 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-size: .92rem;
+    border-bottom: none;
+  }
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 199;
+    backdrop-filter: blur(2px);
+  }
+  .mobile-overlay.open { display: block; }
+
   /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
@@ -572,6 +667,7 @@
     .values-grid { grid-template-columns: 1fr 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
+    .hamburger { display: flex; }
   }
   @media (max-width: 600px) {
     .values-grid { grid-template-columns: 1fr; }
@@ -585,7 +681,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="nuvelloweb.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
       <defs><style>.n1{fill:#f47c20}.n2{fill:#ffffff}</style></defs>
       <g>
@@ -604,12 +700,27 @@
     </svg>
   </a>
   <ul class="nav-links">
-    <li><a href="nuvelloweb.html#services">Services</a></li>
-    <li><a href="nuvelloweb.html#process">Process</a></li>
-    <li><a href="nuvelloweb-about.html" class="active">About</a></li>
-    <li><a href="nuvelloweb.html#contact" class="nav-cta">Get a Quote</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get a Quote</a></li>
   </ul>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">✕</button>
+  <ul>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Get a Quote</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -776,7 +887,7 @@
         </div>
       </div>
       <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;">
-        <a href="nuvelloweb.html#contact" class="btn-primary" style="width:100%;display:block;text-align:center;">Book a Discovery Call →</a>
+        <a href="index.html#contact" class="btn-primary" style="width:100%;display:block;text-align:center;">Book a Discovery Call →</a>
       </div>
     </div>
   </div>
@@ -805,9 +916,9 @@
             <div class="contact-icon">📞</div>
             +1 (909) 312 – 7101
           </a>
-          <a href="mailto:benjamin@nuvelloweb.com">
+          <a href="/cdn-cgi/l/email-protection#264443484c474b4f4866485350434a4a495143440845494b">
             <div class="contact-icon">✉</div>
-            benjamin@nuvelloweb.com
+            <span class="__cf_email__" data-cfemail="a0c2c5cecac1cdc9cee0ced5d6c5cccccfd7c5c28ec3cfcd">[email&#160;protected]</span>
           </a>
           <a href="#">
             <div class="contact-icon">📍</div>
@@ -849,7 +960,7 @@
   <h2>Ready to Work<br><em style="color:var(--mint);">Together?</em></h2>
   <p>Book a free discovery call and let's talk about what your business needs — no pressure, no pitch deck, just a real conversation.</p>
   <div class="cta-actions">
-    <a href="nuvelloweb.html#contact" class="btn-primary">Book Your Discovery Call →</a>
+    <a href="index.html#contact" class="btn-primary">Book Your Discovery Call →</a>
     <a href="tel:+19093127101" class="btn-outline">📞 (909) 312-7101</a>
   </div>
 </div>
@@ -892,7 +1003,7 @@
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="nuvelloweb-about.html">About Us</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
@@ -901,7 +1012,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+19093127101">(909) 312-7101</a></li>
-        <li><a href="mailto:benjamin@nuvelloweb.com">benjamin@nuvelloweb.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#573532393d363a3e3917392221323b3b382032357934383a"><span class="__cf_email__" data-cfemail="6e0c0b00040f0307002e001b180b020201190b0c400d0103">[email&#160;protected]</span></a></li>
         <li><a href="#">San Clemente, CA</a></li>
       </ul>
     </div>
@@ -913,21 +1024,50 @@
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ── MOBILE MENU ──
+  var hamburgerBtn   = document.getElementById('hamburgerBtn');
+  var mobileCloseBtn = document.getElementById('mobileCloseBtn');
+  var mobileMenu     = document.getElementById('mobileMenu');
+  var mobileOverlay  = document.getElementById('mobileOverlay');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileOverlay.classList.add('open');
+    hamburgerBtn.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+    hamburgerBtn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburgerBtn)   hamburgerBtn.addEventListener('click', openMenu);
+  if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMenu);
+  if (mobileOverlay)  mobileOverlay.addEventListener('click', closeMenu);
+
+  mobileMenu && mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // ── SCROLL ANIMATIONS ──
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
-        // stagger children if it's a grid
-        e.target.querySelectorAll('.value-card, .why-item').forEach((child, i) => {
-          child.style.transitionDelay = (i * 0.07) + 's';
-          child.classList.add('fade-up');
-          setTimeout(() => child.classList.add('visible'), i * 70);
+        e.target.querySelectorAll('.value-card, .why-item').forEach(function(child, i) {
+          setTimeout(function() { child.classList.add('fade-up', 'visible'); }, i * 70);
         });
       }
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+});
 </script>
 </body>
 </html>
