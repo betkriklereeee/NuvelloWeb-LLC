@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>UI/UX &amp; Graphic Design &#8212; NuvelloWeb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--blue:#138CEC;--red:#AC3931;--darker:#16181a;--dark:#232528;--orange:#f47c20;--white:#f5f6fa;--muted:#8a8f9e;--slate:#565173;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--darker);color:var(--white);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
+  a{color:inherit;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
+  .nav-logo svg{height:36px;width:auto;display:block;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--white);}
+  .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.3rem;border-radius:4px;}
+  .nav-cta:hover{background:#0f7ad6!important;}
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:#16181a;border-left:1px solid rgba(255,255,255,.08);z-index:200;padding:100px 2.5rem 3rem;transition:right .35s cubic-bezier(.4,0,.2,1);}
+  .mobile-menu.open{right:0;}
+  .mobile-close{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:var(--white);width:36px;height:36px;border-radius:8px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .mobile-menu ul{list-style:none;display:flex;flex-direction:column;}
+  .mobile-menu ul li{border-bottom:1px solid rgba(255,255,255,.06);}
+  .mobile-menu ul a{display:block;padding:1.1rem 0;font-size:1.15rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s,padding-left .2s;}
+  .mobile-menu ul a:hover{color:var(--white);padding-left:.4rem;}
+  .mobile-menu ul li:last-child a{margin-top:1.5rem;background:var(--blue);color:#fff;padding:.9rem 1.5rem;border-radius:6px;text-align:center;font-weight:700;font-size:.92rem;}
+  .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;backdrop-filter:blur(2px);}
+  .mobile-overlay.open{display:block;}
+
+  /* UTILS */
+  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:1.2rem;}
+  .eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--slate);}
+  .section-label{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
+  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--slate);}
+  .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);}
+  .btn-primary{background:var(--slate);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
+  .btn-primary:hover{background:#46405e;transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;transition:border-color .2s,transform .15s;display:inline-block;}
+  .btn-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px);}
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+  .fade-up.visible{opacity:1;transform:none;}
+
+  /* HERO */
+  .page-hero{padding:160px 5vw 90px;position:relative;overflow:hidden;}
+  .ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 45%,rgba(86,81,115,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(86,81,115,.08) 0%,transparent 60%);pointer-events:none;}
+  .ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+  .ph-inner{position:relative;z-index:2;max-width:740px;}
+  .breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:var(--white);}
+  .breadcrumb .current{color:var(--white);}
+  .ph-inner h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:1.4rem;}
+  .ph-inner h1 em{font-style:italic;color:var(--slate);}
+  .hero-sub{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:600px;margin-bottom:2.5rem;}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+  .hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.07);}
+  .hero-stat-num{font-family:'Lora',serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:.2rem;}
+  .hero-stat-label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+
+  /* SPECIALTIES */
+  .specialties-section{padding:100px 5vw;}
+  .spec-intro{max-width:580px;margin-bottom:3.5rem;}
+  .spec-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.8rem;}
+  .spec-intro p{font-size:1rem;color:var(--muted);line-height:1.75;}
+  .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .spec-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:2.4rem;display:flex;flex-direction:column;gap:1.1rem;transition:border-color .25s,transform .2s;}
+  .spec-card:hover{border-color:rgba(86,81,115,.55);transform:translateY(-4px);}
+  .spec-icon{width:56px;height:56px;border-radius:12px;background:rgba(86,81,115,.15);border:1px solid rgba(86,81,115,.3);display:flex;align-items:center;justify-content:center;font-size:1.6rem;}
+  .spec-card h3{font-size:1.2rem;}
+  .spec-desc{font-size:.93rem;color:var(--muted);line-height:1.75;}
+  .spec-features{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+  .spec-features li{font-size:.87rem;color:var(--muted);display:flex;align-items:flex-start;gap:.65rem;line-height:1.5;}
+  .spec-features li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--slate);margin-top:.42rem;flex-shrink:0;}
+  .spec-badge{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);background:rgba(86,81,115,.12);border:1px solid rgba(86,81,115,.25);padding:.22rem .65rem;border-radius:4px;display:inline-block;margin-top:.3rem;}
+
+  /* DESIGN MATTERS */
+  .design-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
+  .design-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+  .design-text h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1.2rem;}
+  .design-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem;}
+  .design-text p:last-child{margin-bottom:0;}
+  .design-callouts{display:flex;flex-direction:column;gap:1.2rem;}
+  .design-callout{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.6rem 2rem;display:flex;gap:1.2rem;align-items:flex-start;border-left:3px solid var(--slate);}
+  .callout-icon{font-size:1.5rem;line-height:1;flex-shrink:0;margin-top:.1rem;}
+  .callout-text h4{font-size:.95rem;margin-bottom:.3rem;}
+  .callout-text p{font-size:.85rem;color:var(--muted);line-height:1.65;}
+
+  /* PROCESS */
+  .process-section{padding:100px 5vw;}
+  .proc-intro{max-width:560px;margin-bottom:3.5rem;}
+  .proc-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.8rem;}
+  .proc-intro p{font-size:1rem;color:var(--muted);line-height:1.75;}
+  .proc-list{display:flex;flex-direction:column;max-width:780px;}
+  .proc-step{display:flex;gap:2.2rem;padding:2rem 1rem;border-bottom:1px solid rgba(255,255,255,.06);transition:background .2s;border-radius:8px;}
+  .proc-step:hover{background:rgba(255,255,255,.03);}
+  .proc-step:last-child{border-bottom:none;}
+  .proc-num{font-family:'Lora',serif;font-size:2.6rem;font-weight:700;color:rgba(255,255,255,.06);line-height:1;min-width:3rem;transition:color .2s;}
+  .proc-step:hover .proc-num{color:var(--slate);}
+  .proc-content h3{font-size:1.05rem;margin-bottom:.4rem;}
+  .proc-content p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+
+  /* FAQ */
+  .faq-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
+  .faq-intro{max-width:560px;margin-bottom:3rem;}
+  .faq-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);}
+  .faq-list{max-width:800px;}
+  .faq-item{border-bottom:1px solid rgba(255,255,255,.07);}
+  .faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Lora',serif;font-size:1.05rem;font-weight:600;padding:1.6rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;text-align:left;transition:color .2s;}
+  .faq-q:hover{color:var(--slate);}
+  .faq-arrow{font-size:.9rem;transition:transform .3s;flex-shrink:0;color:var(--muted);}
+  .faq-item.open .faq-arrow{transform:rotate(180deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-item.open .faq-a{max-height:300px;}
+  .faq-a p{font-size:.95rem;color:var(--muted);line-height:1.8;padding-bottom:1.6rem;}
+
+  /* QUOTE */
+  .quote-section{padding:100px 5vw;}
+  .quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+  .quote-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
+  .quote-intro p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
+  .quote-promise{display:flex;flex-direction:column;gap:1rem;}
+  .promise-item{display:flex;align-items:center;gap:.9rem;font-size:.92rem;color:var(--muted);}
+  .promise-icon{width:32px;height:32px;border-radius:7px;background:rgba(86,81,115,.18);border:1px solid rgba(86,81,115,.3);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
+  .quote-form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2.5rem;position:relative;}
+  .quote-form-card::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--slate),transparent);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+  .form-group{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;}
+  .form-group label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.8rem 1rem;color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:.95rem;transition:border-color .2s;outline:none;width:100%;}
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--slate);}
+  .form-group select{cursor:pointer;}
+  .form-group select option{background:#232528;color:var(--white);}
+  .form-group textarea{resize:vertical;min-height:110px;}
+  .form-submit{width:100%;padding:1rem;font-size:1rem;margin-top:.5rem;}
+  .form-success{text-align:center;padding:3rem 1rem;}
+  .success-icon{font-size:3rem;display:block;margin-bottom:1rem;}
+  .form-success h3{font-size:1.6rem;margin-bottom:.6rem;}
+  .form-success p{color:var(--muted);font-size:1rem;}
+
+  /* FOOTER */
+  footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
+  .footer-brand svg{height:32px;width:auto;margin-bottom:1.2rem;display:block;}
+  .footer-brand p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:280px;}
+  .footer-socials{display:flex;gap:.8rem;}
+  .social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:700;transition:background .2s,color .2s;}
+  .social-btn:hover{background:var(--blue);color:#fff;}
+  .footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:1.4rem;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+  .footer-col ul a{text-decoration:none;color:var(--muted);font-size:.9rem;transition:color .2s;}
+  .footer-col ul a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:1rem;}
+
+  @media(max-width:1024px){.spec-grid{grid-template-columns:1fr 1fr;}.design-inner{grid-template-columns:1fr;gap:3rem;}}
+  @media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.spec-grid{grid-template-columns:1fr;}.quote-wrap{grid-template-columns:1fr;gap:3rem;}.footer-top{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.hero-stats{gap:2rem;}.proc-step{flex-direction:column;gap:.6rem;}.form-row{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
+      <defs><style>.nl1{fill:#f47c20}.nl2{fill:#ffffff}</style></defs>
+      <g><polygon class="nl1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/><polygon class="nl1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/><path class="nl2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/></g>
+      <g><path class="nl2" d="M134.54,49.09v29.68h-6.14v-3.5c-.97,1.22-2.24,2.18-3.8,2.88-1.56.7-3.22,1.05-4.98,1.05-2.33,0-4.43-.48-6.28-1.45-1.85-.97-3.3-2.41-4.36-4.31-1.06-1.9-1.59-4.2-1.59-6.9v-17.45h6.09v16.54c0,2.66.66,4.7,1.99,6.11,1.33,1.42,3.14,2.13,5.44,2.13s4.12-.71,5.47-2.13c1.35-1.42,2.02-3.46,2.02-6.11v-16.54h6.14Z"/><path class="nl2" d="M154.1,73.27l8.4-24.19h6.52l-11.31,29.68h-7.33l-11.26-29.68h6.57l8.4,24.19Z"/><path class="nl2" d="M200.64,66.22h-22.68c.18,2.37,1.06,4.27,2.64,5.71,1.58,1.44,3.52,2.15,5.82,2.15,3.3,0,5.64-1.38,7-4.15h6.63c-.9,2.73-2.52,4.97-4.88,6.71-2.35,1.74-5.27,2.61-8.75,2.61-2.84,0-5.38-.64-7.62-1.91-2.25-1.27-4-3.07-5.28-5.39-1.28-2.32-1.91-5-1.91-8.05s.62-5.74,1.86-8.05,2.98-4.1,5.23-5.36c2.24-1.26,4.82-1.89,7.73-1.89s5.3.61,7.49,1.83c2.19,1.22,3.9,2.94,5.12,5.14,1.22,2.21,1.83,4.75,1.83,7.62,0,1.11-.07,2.12-.22,3.02ZM194.44,61.26c-.04-2.26-.84-4.08-2.42-5.44-1.58-1.36-3.54-2.05-5.87-2.05-2.12,0-3.93.67-5.44,2.02-1.51,1.35-2.41,3.17-2.69,5.47h16.43Z"/><path class="nl2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/><path class="nl2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/><path class="nl2" d="M240.61,77.34c-2.26-1.27-4.04-3.07-5.33-5.39s-1.94-5-1.94-8.05.66-5.69,1.99-8.03c1.33-2.33,3.14-4.13,5.44-5.39,2.3-1.26,4.87-1.89,7.7-1.89s5.41.63,7.7,1.89c2.3,1.26,4.11,3.05,5.44,5.39,1.33,2.33,1.99,5.01,1.99,8.03s-.68,5.69-2.05,8.03c-1.37,2.33-3.22,4.14-5.58,5.41-2.35,1.28-4.95,1.91-7.78,1.91s-5.33-.64-7.6-1.91ZM252.65,72.79c1.38-.75,2.5-1.89,3.37-3.39s1.29-3.34,1.29-5.49-.41-3.98-1.24-5.47c-.83-1.49-1.92-2.61-3.29-3.37s-2.84-1.13-4.42-1.13-3.04.38-4.39,1.13c-1.35.75-2.42,1.88-3.21,3.37-.79,1.49-1.18,3.31-1.18,5.47,0,3.2.82,5.67,2.45,7.41,1.63,1.74,3.69,2.61,6.17,2.61,1.58,0,3.06-.38,4.44-1.13Z"/></g>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">&#x2715;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Get a Quote</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-grid"></div>
+  <div class="ph-inner fade-up">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &#8250; <a href="services.html">Services</a> &#8250; <span class="current">UI/UX &amp; Graphic Design</span>
+    </nav>
+    <div class="eyebrow">UI/UX &amp; Graphic Design</div>
+    <h1>Design That Works.<br><em>Looks That Convert.</em></h1>
+    <p class="hero-sub">A beautiful website that confuses visitors is a failure. A functional one that looks generic is forgettable. We do both &#8212; user experience that guides people toward action, and visual design that makes them trust you before they read a word.</p>
+    <div class="hero-actions">
+      <a href="#quote" class="btn-primary">Start a Design Project &#8594;</a>
+      <a href="services.html" class="btn-outline">All Services</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">6+</div><div class="hero-stat-label">Years Designing</div></div>
+      <div><div class="hero-stat-num">120+</div><div class="hero-stat-label">Projects Completed</div></div>
+      <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Custom &#8212; No Templates</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SPECIALTIES -->
+<section class="specialties-section">
+  <div class="section-label">Design Services</div>
+  <div class="spec-intro">
+    <h2>Every Angle of Design,<br>Under One Roof</h2>
+    <p>From the first wireframe to the final brand asset, we handle the full visual layer of your business &#8212; web, brand, and print.</p>
+  </div>
+  <div class="spec-grid">
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128247;</div>
+      <h3>UX Design &amp; Wireframing</h3>
+      <p class="spec-desc">Before a single color is chosen, we map how users move through your site. Wireframes, user flows, and information architecture that make the final design a solved problem, not a guess.</p>
+      <ul class="spec-features">
+        <li>User journey mapping and flow diagrams</li>
+        <li>Low and high-fidelity wireframes</li>
+        <li>Information architecture planning</li>
+        <li>Clickable prototype for stakeholder review</li>
+        <li>Conversion-focused page structure</li>
+        <li>Mobile-first layout decisions at every stage</li>
+      </ul>
+      <span class="spec-badge">UX &#183; Wireframes &#183; Prototypes</span>
+    </div>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#127912;</div>
+      <h3>UI Design &amp; Visual Systems</h3>
+      <p class="spec-desc">The visual layer that turns wireframes into something people want to use. Color, typography, spacing, and component systems that look cohesive, feel premium, and scale as you grow.</p>
+      <ul class="spec-features">
+        <li>Custom UI design in Figma or Adobe XD</li>
+        <li>Design system and component library creation</li>
+        <li>Color palette, typography scale, and spacing rules</li>
+        <li>Dark and light mode variants</li>
+        <li>Interactive states: hover, focus, active, error</li>
+        <li>Handoff-ready files for any developer</li>
+      </ul>
+      <span class="spec-badge">UI &#183; Figma &#183; Design Systems</span>
+    </div>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128161;</div>
+      <h3>Brand Identity Design</h3>
+      <p class="spec-desc">Your logo is not your brand &#8212; but it is where it starts. We create full identity systems that give your business a visual personality that is consistent, distinctive, and built to last.</p>
+      <ul class="spec-features">
+        <li>Logo design (primary, secondary, icon versions)</li>
+        <li>Brand color palette with usage guidelines</li>
+        <li>Typography selection and pairing</li>
+        <li>Brand voice and personality definition</li>
+        <li>Full brand style guide document</li>
+        <li>File delivery in all formats: SVG, PNG, PDF, EPS</li>
+      </ul>
+      <span class="spec-badge">Logo &#183; Brand &#183; Identity</span>
+    </div>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128196;</div>
+      <h3>Print &amp; Marketing Materials</h3>
+      <p class="spec-desc">Your brand does not stop at the screen. We design print collateral that matches your digital identity and holds up in the real world &#8212; business cards to billboards.</p>
+      <ul class="spec-features">
+        <li>Business cards and stationery</li>
+        <li>Brochures, flyers, and sell sheets</li>
+        <li>Banners, signage, and trade show displays</li>
+        <li>Menus, packaging, and product labels</li>
+        <li>Print-ready file preparation and bleed setup</li>
+        <li>Vendor coordination and print management</li>
+      </ul>
+      <span class="spec-badge">Print &#183; Collateral &#183; Signage</span>
+    </div>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128444;</div>
+      <h3>Social Media &amp; Digital Graphics</h3>
+      <p class="spec-desc">Scroll-stopping content for every platform. Templates and one-off designs that keep your brand looking sharp whether it is an Instagram post, a LinkedIn banner, or an email header.</p>
+      <ul class="spec-features">
+        <li>Social media post and story templates</li>
+        <li>Profile and cover photo setup across platforms</li>
+        <li>Ad creative for Meta, Google, and LinkedIn</li>
+        <li>Email header and newsletter design</li>
+        <li>Branded presentation and pitch deck templates</li>
+        <li>Editable Canva template delivery for ongoing use</li>
+      </ul>
+      <span class="spec-badge">Social &#183; Ads &#183; Templates</span>
+    </div>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128260;</div>
+      <h3>Design Audits &amp; Redesigns</h3>
+      <p class="spec-desc">Already have a site or brand but it is not landing? We audit what exists, identify what is hurting you, and redesign with intention &#8212; not just a new coat of paint.</p>
+      <ul class="spec-features">
+        <li>Visual design audit with written findings</li>
+        <li>UX heuristic evaluation and friction analysis</li>
+        <li>Competitor design benchmarking</li>
+        <li>Prioritized redesign recommendations</li>
+        <li>Phased redesign approach to fit your budget</li>
+        <li>Before/after documentation for stakeholders</li>
+      </ul>
+      <span class="spec-badge">Audit &#183; Redesign &#183; Strategy</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DESIGN MATTERS -->
+<section class="design-section">
+  <div class="design-inner">
+    <div class="design-text fade-up">
+      <div class="section-label">Why Design Matters</div>
+      <h2>You Have 50 Milliseconds<br>to Make an Impression.</h2>
+      <p>Research shows visitors form a visual opinion of your site in under a tenth of a second &#8212; and that first impression drives every decision they make after it. Bad design does not just look unprofessional. It costs you business.</p>
+      <p>Good design is not decoration. It is the difference between a visitor who bounces and a lead who converts. We treat every design decision as a business decision.</p>
+    </div>
+    <div class="design-callouts fade-up">
+      <div class="design-callout">
+        <div class="callout-icon">&#128064;</div>
+        <div class="callout-text"><h4>First Impressions Are Visual</h4><p>94% of first impressions are design-related. Your brand credibility is established before a word is read.</p></div>
+      </div>
+      <div class="design-callout">
+        <div class="callout-icon">&#127919;</div>
+        <div class="callout-text"><h4>UX Drives Revenue</h4><p>Every $1 invested in UX returns $100 on average. Removing friction from your user flow directly improves conversions.</p></div>
+      </div>
+      <div class="design-callout">
+        <div class="callout-icon">&#128308;</div>
+        <div class="callout-text"><h4>Consistency Builds Trust</h4><p>Brands with consistent visual identity across all channels are 3 to 4 times more likely to have strong brand visibility.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="section-label">How We Work</div>
+  <div class="proc-intro">
+    <h2>Our Design Process</h2>
+    <p>Strategy before aesthetics. Every design decision traces back to a business goal.</p>
+  </div>
+  <div class="proc-list">
+    <div class="proc-step fade-up"><div class="proc-num">01</div><div class="proc-content"><h3>Discovery &amp; Goals</h3><p>We learn your business, your audience, and what success looks like before any design begins. Your goals drive every decision.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">02</div><div class="proc-content"><h3>Research &amp; Moodboarding</h3><p>Competitive analysis, inspiration references, and visual direction alignment &#8212; so we are building toward something you actually want.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">03</div><div class="proc-content"><h3>Wireframes &amp; Structure</h3><p>Layout and flow before visual polish. We map every page and user journey in greyscale to validate the structure before adding color.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">04</div><div class="proc-content"><h3>Visual Design</h3><p>Color, typography, imagery, and components applied to the approved wireframes. You review and request revisions before anything is finalized.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">05</div><div class="proc-content"><h3>Refinement &amp; Handoff</h3><p>Revisions incorporated, final files prepared, and everything handed off in developer-ready formats or applied directly by our team.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">06</div><div class="proc-content"><h3>Brand Assets &amp; Documentation</h3><p>You receive all source files, organized asset libraries, and a style guide so your brand stays consistent long after we hand things over.</p></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-label">Common Questions</div>
+  <div class="faq-intro"><h2>Things People Usually Ask</h2></div>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q">Do I need UX design if I already have a designer?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Visual designers and UX designers solve different problems. A visual designer makes things look good. A UX designer makes them work. Most projects benefit from both &#8212; and we handle both under one roof so they stay aligned throughout the project.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Can you redesign just part of my site or brand?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Yes. We often work in phases &#8212; starting with the highest-impact pages or the most visible brand touchpoints first. We will audit what you have, tell you where the biggest gains are, and scope a project accordingly.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">What do I receive at the end of a design project?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>You receive all source files (Figma, AI, SVG, PDF, PNG), a style guide, and any print-ready files if applicable. Everything is organized and labeled so you or any future vendor can work with them cleanly.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">How many revisions are included?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Our process is built to minimize surprises &#8212; with structured review points at wireframes and visual design stages. We include two rounds of revisions per phase. Additional revision rounds beyond that are scoped and billed separately.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Will my design work match my existing website?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>If you are bringing us in for standalone graphic design, we will match your existing brand. If we are redesigning, we will create a cohesive system that works across your site and all collateral. Either way, consistency is always the goal.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Do you design for print too, or just digital?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Both. We design business cards, brochures, banners, signage, and packaging alongside digital work &#8212; and we prepare all print files with proper bleeds, crop marks, and color profiles for your vendor.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE -->
+<section class="quote-section" id="quote">
+  <div class="quote-wrap">
+    <div class="quote-intro fade-up">
+      <div class="section-label">Get Started</div>
+      <h2>Tell Us About Your Design Project</h2>
+      <p>Whether you need a logo, a full site redesign, or just a set of social templates &#8212; tell us what you are working on and we will come back with a clear plan and honest pricing.</p>
+      <div class="quote-promise">
+        <div class="promise-item"><div class="promise-icon">&#9889;</div>Response within 24 hours</div>
+        <div class="promise-item"><div class="promise-icon">&#127912;</div>100% custom &#8212; no stock templates</div>
+        <div class="promise-item"><div class="promise-icon">&#128196;</div>All source files included</div>
+        <div class="promise-item"><div class="promise-icon">&#128205;</div>Serving all of Southern California</div>
+      </div>
+    </div>
+    <div class="quote-form-card fade-up">
+      <form id="quoteForm" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label for="fname">First Name</label><input id="fname" type="text" placeholder="First name" required/></div>
+          <div class="form-group"><label for="lname">Last Name</label><input id="lname" type="text" placeholder="Last name" required/></div>
+        </div>
+        <div class="form-group"><label for="femail">Email</label><input id="femail" type="email" placeholder="you@yourbusiness.com" required/></div>
+        <div class="form-group"><label for="fphone">Phone</label><input id="fphone" type="tel" placeholder="(909) 000-0000"/></div>
+        <div class="form-group">
+          <label for="fservice">Design Service Needed</label>
+          <select id="fservice">
+            <option value="">Select a service</option>
+            <option>UX Design and Wireframing</option>
+            <option>UI Design and Visual Systems</option>
+            <option>Brand Identity Design</option>
+            <option>Print and Marketing Materials</option>
+            <option>Social Media and Digital Graphics</option>
+            <option>Design Audit and Redesign</option>
+            <option>Full Design Package</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="fmsg">Tell Us About Your Project</label><textarea id="fmsg" placeholder="What do you need designed? Do you have existing brand assets? Any examples of styles you like or dislike?"></textarea></div>
+        <button type="submit" class="btn-primary form-submit">Send My Request &#8594;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
+        <defs><style>.ff1{fill:#f47c20}.ff2{fill:#ffffff}</style></defs>
+        <g><polygon class="ff1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/><polygon class="ff1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/><path class="ff2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/></g>
+        <g><path class="ff2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/><path class="ff2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/></g>
+      </svg>
+      <p>Bold, modern websites for businesses that want to stand out, rank higher, and convert more customers. Based in San Clemente, CA.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn">f</a><a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">g</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="service-web-design.html">Web Design &amp; Dev</a></li>
+        <li><a href="service-seo.html">SEO Optimization</a></li>
+        <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
+        <li><a href="service-ecommerce.html">E-Commerce</a></li>
+        <li><a href="service-maintenance.html">Maintenance</a></li>
+        <li><a href="service-uiux.html">UI/UX &amp; Design</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+19093127101">(909) 312-7101</a></li>
+        <li><a href="mailto:benjamin@nuvelloweb.com">benjamin@nuvelloweb.com</a></li>
+        <li><a href="#">San Clemente, CA</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 NuvelloWeb LLC. All rights reserved.</span>
+    <span>Privacy Policy &#183; Terms of Service</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var hamburgerBtn   = document.getElementById('hamburgerBtn');
+  var mobileCloseBtn = document.getElementById('mobileCloseBtn');
+  var mobileMenu     = document.getElementById('mobileMenu');
+  var mobileOverlay  = document.getElementById('mobileOverlay');
+  function openMenu() { mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
+  hamburgerBtn.addEventListener('click', openMenu);
+  mobileCloseBtn.addEventListener('click', closeMenu);
+  mobileOverlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeMenu); });
+  var obs = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } }); }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
+  window.addEventListener('scroll', function () { document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)'; });
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
+      if (!isOpen) { item.classList.add('open'); }
+    });
+  });
+  var form = document.getElementById('quoteForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    form.innerHTML = '<div class="form-success"><span class="success-icon">&#10003;</span><h3>Request Received!</h3><p>We will review your project details and be in touch within 24 hours.</p></div>';
+  });
+});
+</script>
+</body>
+</html>
