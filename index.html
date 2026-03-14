@@ -3,1194 +3,393 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NuvelloWeb — Web Design & Marketing</title>
+<title>NuvelloWeb | Web Design &amp; Marketing Agency &#8212; San Clemente, CA</title>
+<meta name="description" content="NuvelloWeb builds bold, conversion-focused websites for businesses in Southern California. Custom web design, SEO, and digital marketing. Based in San Clemente, CA."/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "NuvelloWeb LLC",
+  "description": "NuvelloWeb is a web design and digital marketing agency based in San Clemente, CA serving businesses across Southern California.",
+  "url": "https://nuvelloweb.com",
+  "telephone": "+19093127101",
+  "email": "contact@nuvelloweb.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Clemente",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 33.4269, "longitude": -117.6109},
+    "geoRadius": "80000"
+  },
+  "sameAs": [
+    "https://www.facebook.com/nuvellowebllc",
+    "https://www.linkedin.com/company/nuvello-web/",
+    "https://instagram.com/nuvelloweb"
+  ]
+}
+</script>
 <style>
   :root {
-    --blue: #138CEC;
-    --navy: #2A2A72;
-    --red: #AC3931;
-    --slate: #565173;
-    --mint: #B8EBE1;
-    --lavender: #E8E6F2;
-    --dark: #232528;
-    --darker: #16181a;
-    --orange: #f47c20;
-    --teal-dark: #1c4f61;
-    --white: #f5f6fa;
-    --text-muted: #8a8f9e;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--darker);
-    color: var(--white);
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 400;
-    overflow-x: hidden;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: 'Lora', serif;
-    font-weight: 700;
-    line-height: 1.15;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5vw;
-    height: 76px;
-    background: rgba(22,24,26,0.88);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    transition: background .3s;
-  }
-
-  .nav-logo svg {
-    height: 36px;
-    width: auto;
-  }
-  /* invert logo colors for dark bg: orange stays, navy→white */
-  .nav-logo .cls-2 { fill: #ffffff; }
-  .nav-logo .cls-1 { fill: var(--orange); }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-  .nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: .93rem;
-    font-weight: 600;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    transition: color .2s;
-  }
-  .nav-links a:hover { color: var(--white); }
-
-  .nav-cta {
-    background: var(--blue);
-    color: #fff !important;
-    padding: .55rem 1.4rem;
-    border-radius: 4px;
-    font-size: .88rem !important;
-    letter-spacing: .06em !important;
-    transition: background .2s !important;
-  }
-  .nav-cta:hover { background: #0f7ad6 !important; color: #fff !important; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 120px 5vw 80px;
-    gap: 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 60% at 80% 40%, rgba(19,140,236,.13) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 50% at 20% 80%, rgba(42,42,114,.2) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  /* animated grid lines */
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
-
-  .hero-content { position: relative; z-index: 2; }
-
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: .6rem;
-    font-size: .82rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 1.6rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 2px;
-    background: var(--blue);
-  }
-
-  .hero h1 {
-    font-size: clamp(2.6rem, 5vw, 4.2rem);
-    margin-bottom: 1.6rem;
-    color: var(--white);
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--blue);
-  }
-
-  .hero-sub {
-    font-size: 1.12rem;
-    line-height: 1.75;
-    color: var(--text-muted);
-    max-width: 500px;
-    margin-bottom: 2.8rem;
-  }
-
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .btn-primary {
-    background: var(--blue);
-    color: #fff;
-    padding: .85rem 2rem;
-    border-radius: 4px;
-    font-size: .95rem;
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background .2s, transform .15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: #0f7ad6; transform: translateY(-2px); }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    padding: .85rem 2rem;
-    border-radius: 4px;
-    font-size: .95rem;
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-decoration: none;
-    border: 1.5px solid rgba(255,255,255,.25);
-    cursor: pointer;
-    transition: border-color .2s, transform .15s;
-    display: inline-block;
-  }
-  .btn-outline:hover { border-color: rgba(255,255,255,.6); transform: translateY(-2px); }
-
-  /* hero stats */
-  .hero-stats {
-    display: flex;
-    gap: 2.5rem;
-    margin-top: 3rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid rgba(255,255,255,.08);
-  }
-  .stat-num {
-    font-family: 'Lora', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: .82rem;
-    color: var(--text-muted);
-    margin-top: .3rem;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-  }
-
-  /* hero visual */
-  .hero-visual {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-card {
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 16px;
-    padding: 2.5rem;
-    width: 100%;
-    max-width: 440px;
-    position: relative;
-    backdrop-filter: blur(8px);
-  }
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 10%; right: 10%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--blue), transparent);
-  }
-
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-    margin-bottom: 1.8rem;
-  }
-  .card-dot { width: 12px; height: 12px; border-radius: 50%; }
-
-  .code-block {
-    background: var(--darker);
-    border-radius: 8px;
-    padding: 1.4rem;
-    font-family: 'Courier New', monospace;
-    font-size: .82rem;
-    line-height: 1.7;
-  }
-  .code-kw { color: var(--blue); }
-  .code-fn { color: var(--mint); }
-  .code-str { color: #f6a623; }
-  .code-cm { color: var(--slate); }
-
-  .hero-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background: var(--navy);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 12px;
-    padding: 1rem 1.4rem;
-    font-size: .82rem;
-    text-align: center;
-    line-height: 1.4;
-  }
-  .hero-badge strong { display: block; font-size: 1.4rem; font-family: 'Lora', serif; color: var(--mint); }
-
-  /* ── SECTION COMMON ── */
-  section { padding: 100px 5vw; }
-
-  .section-label {
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-  }
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: var(--blue);
-  }
-
-  .section-heading {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    margin-bottom: 1.2rem;
-  }
-
-  .section-sub {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    line-height: 1.75;
-    max-width: 580px;
-  }
-
-  /* ── LOGOS STRIP ── */
-  .logos-strip {
-    padding: 40px 5vw;
-    border-top: 1px solid rgba(255,255,255,.06);
-    border-bottom: 1px solid rgba(255,255,255,.06);
-    text-align: center;
-  }
-  .logos-label {
-    font-size: .78rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-  }
-  .logos-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3.5rem;
-    flex-wrap: wrap;
-  }
-  .logo-item {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: rgba(255,255,255,.22);
-    letter-spacing: .06em;
-    transition: color .2s;
-  }
-  .logo-item:hover { color: rgba(255,255,255,.5); }
-
-  /* ── SERVICES ── */
-  .services { background: rgba(255,255,255,.015); }
-
-  .services-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 4rem;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.06);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .service-card {
-    background: var(--darker);
-    padding: 2.8rem;
-    transition: background .25s;
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card:hover { background: rgba(19,140,236,.06); }
-
-  .service-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.8rem;
-    font-size: 1.5rem;
-  }
-
-  .service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: .9rem;
-    color: var(--white);
-  }
-  .service-card p {
-    font-size: .93rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 1.6rem;
-  }
-
-  .service-link {
-    font-size: .85rem;
-    font-weight: 700;
-    letter-spacing: .06em;
-    color: var(--blue);
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: .4rem;
-    transition: gap .2s;
-  }
-  .service-link:hover { gap: .8rem; }
-
-  .service-num {
-    position: absolute;
-    top: 2.2rem;
-    right: 2.2rem;
-    font-size: 3rem;
-    font-family: 'Lora', serif;
-    font-weight: 700;
-    color: rgba(255,255,255,.04);
-    line-height: 1;
-  }
-
-  /* ── PROCESS ── */
-  .process-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-    margin-top: 4rem;
-  }
-
-  .steps { display: flex; flex-direction: column; gap: 0; }
-
-  .step {
-    display: flex;
-    gap: 1.8rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid rgba(255,255,255,.06);
-    cursor: default;
-    transition: background .2s;
-    border-radius: 8px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .step:hover { background: rgba(255,255,255,.03); }
-  .step:last-child { border-bottom: none; }
-
-  .step-num {
-    font-family: 'Lora', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: rgba(255,255,255,.08);
-    line-height: 1;
-    min-width: 2.5rem;
-    transition: color .2s;
-  }
-  .step:hover .step-num { color: var(--blue); }
-
-  .step-content h3 { font-size: 1.1rem; margin-bottom: .5rem; }
-  .step-content p { font-size: .92rem; color: var(--text-muted); line-height: 1.65; }
-
-  .process-visual {
-    background: rgba(255,255,255,.03);
-    border: 1px solid rgba(255,255,255,.07);
-    border-radius: 16px;
-    padding: 2.5rem;
-    position: relative;
-  }
-  .process-visual::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 15%; right: 15%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--orange), transparent);
-    border-radius: 100%;
-  }
-
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .tl-item {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-  }
-
-  .tl-bar-wrap { flex: 1; }
-  .tl-label { font-size: .85rem; color: var(--text-muted); min-width: 90px; }
-  .tl-bar {
-    height: 6px;
-    border-radius: 100px;
-    background: rgba(255,255,255,.08);
-    overflow: hidden;
-  }
-  .tl-fill {
-    height: 100%;
-    border-radius: 100px;
-    animation: fillBar 1.5s ease forwards;
-    animation-play-state: paused;
-  }
-  .tl-fill.animate { animation-play-state: running; }
-  @keyframes fillBar { from { width: 0; } }
-
-  /* ── CTA ── */
-  .testimonials { background: rgba(255,255,255,.015); }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 4rem;
-  }
-
-  .testimonial-card {
-    background: var(--darker);
-    border: 1px solid rgba(255,255,255,.07);
-    border-radius: 12px;
-    padding: 2.2rem;
-    transition: border-color .2s;
-  }
-  .testimonial-card:hover { border-color: rgba(19,140,236,.4); }
-
-  .stars { color: #f47c20; font-size: 1rem; margin-bottom: 1.2rem; letter-spacing: .1em; }
-
-  .testimonial-card p {
-    font-size: .95rem;
-    line-height: 1.75;
-    color: var(--text-muted);
-    margin-bottom: 1.8rem;
-    font-style: italic;
-  }
-
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .author-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: .9rem;
-    color: #fff;
-  }
-  .author-name { font-size: .92rem; font-weight: 700; }
-  .author-title { font-size: .78rem; color: var(--text-muted); margin-top: .15rem; }
-
-  /* ── CTA ── */
-  .cta-section {
-    background: linear-gradient(135deg, var(--navy) 0%, #1a1a5a 50%, var(--dark) 100%);
-    border-radius: 20px;
-    margin: 0 5vw 100px;
-    padding: 80px 8vw;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(19,140,236,.15), transparent);
-  }
-  .cta-section > * { position: relative; z-index: 1; }
-  .cta-section h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1.2rem; }
-  .cta-section p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 520px; margin-left: auto; margin-right: auto; }
-  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid rgba(255,255,255,.06);
-    padding: 60px 5vw 40px;
-  }
-  .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
-  }
-
-  .footer-brand svg { height: 32px; width: auto; margin-bottom: 1.2rem; }
-  .footer-brand .cls-2 { fill: #fff; }
-  .footer-brand .cls-1 { fill: var(--orange); }
-
-  .footer-brand p {
-    font-size: .9rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    max-width: 280px;
-  }
-
-  .footer-socials { display: flex; gap: .8rem; }
-  .social-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: .85rem;
-    font-weight: 700;
-    transition: background .2s, color .2s;
-  }
-  .social-btn:hover { background: var(--blue); color: #fff; }
-
-  .footer-col h4 {
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 1.4rem;
-  }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
-  .footer-col ul a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-size: .9rem;
-    transition: color .2s;
-  }
-  .footer-col ul a:hover { color: var(--white); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,.06);
-    font-size: .82rem;
-    color: var(--text-muted);
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-
-  /* ── HAMBURGER ── */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    z-index: 101;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--white);
-    border-radius: 2px;
-    transition: transform .3s, opacity .3s;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  /* ── MOBILE MENU ── */
-  .mobile-menu {
-    position: fixed;
-    top: 0; right: -100%;
-    width: min(320px, 85vw);
-    height: 100vh;
-    background: #16181a;
-    border-left: 1px solid rgba(255,255,255,.08);
-    z-index: 200;
-    padding: 100px 2.5rem 3rem;
-    display: flex;
-    flex-direction: column;
-    transition: right .35s cubic-bezier(.4,0,.2,1);
-  }
-  .mobile-menu.open { right: 0; }
-  .mobile-close {
-    position: absolute;
-    top: 24px; right: 24px;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.1);
-    color: var(--white);
-    width: 36px; height: 36px;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .2s;
-  }
-  .mobile-close:hover { background: rgba(255,255,255,.14); }
-  .mobile-menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,.06); }
-  .mobile-menu ul a {
-    display: block;
-    padding: 1.1rem 0;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-decoration: none;
-    letter-spacing: .02em;
-    transition: color .2s, padding-left .2s;
-  }
-  .mobile-menu ul a:hover { color: var(--white); padding-left: .4rem; }
-  .mobile-menu ul li:last-child a {
-    margin-top: 1.5rem;
-    background: var(--blue);
-    color: #fff;
-    padding: .9rem 1.5rem;
-    border-radius: 6px;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    font-size: .92rem;
-    border-bottom: none;
-  }
-  .mobile-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.6);
-    z-index: 199;
-    backdrop-filter: blur(2px);
-  }
-  .mobile-overlay.open { display: block; }
-
-  /* ── ANIMATIONS ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity .7s ease, transform .7s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: 100px; }
-    .hero-visual { display: none; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .portfolio-grid { grid-template-columns: 1fr 1fr; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .process-grid { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr 1fr; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-  }
-  @media (max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr; }
-    .hero-stats { flex-direction: column; gap: 1.2rem; }
-    section { padding: 70px 5vw; }
+    --blue: #138CEC; --navy: #2A2A72; --red: #AC3931; --slate: #565173;
+    --dark: #232528; --darker: #16181a; --orange: #f47c20;
+    --white: #f5f6fa; --muted: #8a8f9e;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--darker);color:var(--white);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
+  a{color:inherit;}
+
+  /* HEADER BAR */
+  .header-bar{background:#111315;border-bottom:1px solid rgba(255,255,255,.05);padding:.45rem 5vw;display:flex;align-items:center;justify-content:flex-end;gap:2rem;}
+  .header-bar a{color:var(--muted);font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s;font-weight:600;letter-spacing:.02em;}
+  .header-bar a:hover{color:var(--white);}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
+  .nav-logo img{height:40px;width:auto;display:block;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--white);}
+  .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.55rem 1.4rem;border-radius:4px;}
+  .nav-cta:hover{background:#0f7ad6!important;}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown>a{display:flex;align-items:center;gap:.35rem;cursor:pointer;}
+  .nav-dropdown>a::after{content:'';display:block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--muted);transition:transform .25s,border-top-color .2s;margin-top:1px;}
+  .nav-dropdown:hover>a::after{transform:rotate(180deg);border-top-color:var(--white);}
+  .nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#1e2023;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;box-shadow:0 12px 40px rgba(0,0,0,.45);}
+  .nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .ndm-item{display:flex;align-items:center;gap:.8rem;padding:.65rem .85rem;border-radius:7px;text-decoration:none;transition:background .15s;}
+  .ndm-item:hover{background:rgba(255,255,255,.07);}
+  .ndm-item.disabled{opacity:.38;pointer-events:none;cursor:default;}
+  .ndm-icon{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+  .ndm-text{display:flex;flex-direction:column;}
+  .ndm-label{font-size:.82rem;font-weight:700;color:var(--white);letter-spacing:.03em;}
+  .ndm-sub{font-size:.72rem;color:var(--muted);}
+  .ndm-soon{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);padding:.1rem .4rem;border-radius:3px;margin-left:auto;flex-shrink:0;}
+  .ndm-divider{height:1px;background:rgba(255,255,255,.06);margin:.4rem 0;}
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:101;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:#16181a;border-left:1px solid rgba(255,255,255,.08);z-index:200;padding:100px 2.5rem 3rem;transition:right .35s cubic-bezier(.4,0,.2,1);}
+  .mobile-menu.open{right:0;}
+  .mobile-close{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:var(--white);width:36px;height:36px;border-radius:8px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .mobile-menu ul{list-style:none;display:flex;flex-direction:column;}
+  .mobile-menu ul li{border-bottom:1px solid rgba(255,255,255,.06);}
+  .mobile-menu ul a{display:block;padding:1.1rem 0;font-size:1.15rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s,padding-left .2s;}
+  .mobile-menu ul a:hover{color:var(--white);padding-left:.4rem;}
+  .mobile-menu ul li:last-child a{margin-top:1.5rem;background:var(--blue);color:#fff;padding:.9rem 1.5rem;border-radius:6px;text-align:center;font-weight:700;font-size:.92rem;}
+  .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;backdrop-filter:blur(2px);}
+  .mobile-overlay.open{display:block;}
+
+  /* UTILS */
+  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:1.2rem;}
+  .eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--blue);}
+  .section-label{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
+  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--blue);}
+  .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);}
+  .btn-primary{background:var(--blue);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
+  .btn-primary:hover{background:#0f7ad6;transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;transition:border-color .2s,transform .15s;display:inline-block;}
+  .btn-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px);}
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+  .fade-up.visible{opacity:1;transform:none;}
+
+  /* HERO */
+  .hero{padding:170px 5vw 100px;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(19,140,236,.13) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 15% 80%,rgba(42,42,114,.18) 0%,transparent 65%);pointer-events:none;}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+  .hero-inner{position:relative;z-index:2;max-width:800px;}
+  .hero-inner h1{font-size:clamp(3rem,6vw,5rem);margin-bottom:1.4rem;line-height:1.05;}
+  .hero-inner h1 em{font-style:italic;color:var(--blue);}
+  .hero-sub{font-size:1.2rem;line-height:1.8;color:var(--muted);max-width:580px;margin-bottom:2.5rem;}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
+  .hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.07);}
+  .hero-stat-num{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;line-height:1;margin-bottom:.25rem;}
+  .hero-stat-label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+
+  /* SERVICES */
+  .services-section{padding:100px 5vw;}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+  .svc-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:2.2rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:1rem;transition:border-color .25s,transform .25s,background .25s;}
+  .svc-card:hover{border-color:rgba(19,140,236,.4);transform:translateY(-5px);background:rgba(19,140,236,.04);}
+  .svc-card-top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .svc-icon{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+  .svc-arrow{font-size:1.3rem;color:var(--muted);transition:transform .2s,color .2s;}
+  .svc-card:hover .svc-arrow{transform:translateX(4px);color:var(--blue);}
+  .svc-card h3{font-size:1.1rem;}
+  .svc-card p{font-size:.9rem;color:var(--muted);line-height:1.7;flex:1;}
+  .svc-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;}
+  .stag{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:.25rem .6rem;border-radius:4px;}
+
+  /* PROCESS */
+  .process-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
+  .proc-timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+  .proc-item{padding:2rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;transition:border-color .2s;}
+  .proc-item:hover{border-color:rgba(19,140,236,.3);}
+  .proc-item-num{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;color:rgba(255,255,255,.07);line-height:1;margin-bottom:1rem;transition:color .2s;}
+  .proc-item:hover .proc-item-num{color:var(--blue);}
+  .proc-item h3{font-size:1rem;margin-bottom:.5rem;}
+  .proc-item p{font-size:.88rem;color:var(--muted);line-height:1.7;}
+
+  /* CTA STRIP */
+  .cta-section{padding:100px 5vw;text-align:center;}
+  .cta-inner{max-width:640px;margin:0 auto;}
+  .cta-inner h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.2rem;}
+  .cta-inner p{font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:2.5rem;}
+  .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+  /* FOOTER */
+  footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
+  .footer-brand img{height:36px;width:auto;margin-bottom:1.2rem;display:block;}
+  .footer-brand p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:280px;}
+  .footer-socials{display:flex;gap:.8rem;}
+  .social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:700;transition:background .2s,color .2s;}
+  .social-btn:hover{background:var(--blue);color:#fff;}
+  .footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:1.4rem;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+  .footer-col ul a{text-decoration:none;color:var(--muted);font-size:.9rem;transition:color .2s;}
+  .footer-col ul a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:1rem;}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .nav-links{display:none;} .hamburger{display:flex;}
+    .svc-grid{grid-template-columns:1fr 1fr;}
+    .proc-timeline{grid-template-columns:1fr 1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:600px){
+    .svc-grid,.proc-timeline{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
+    .hero-stats{gap:2rem;}
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<div class="header-bar">
+  <a href="mailto:contact@nuvelloweb.com"><span>&#9993;</span> contact@nuvelloweb.com</a>
+  <a href="tel:+19093127101"><span>&#128222;</span> +1 (909) 312-7101</a>
+</div>
+
 <nav>
   <a href="index.html" class="nav-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
-      <defs><style>.cls-1{fill:#f47c20}.cls-2{fill:#ffffff}</style></defs>
-      <g>
-        <g>
-          <polygon class="cls-1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/>
-          <polygon class="cls-1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/>
-        </g>
-        <path class="cls-2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/>
-      </g>
-      <g>
-        <path class="cls-2" d="M134.54,49.09v29.68h-6.14v-3.5c-.97,1.22-2.24,2.18-3.8,2.88-1.56.7-3.22,1.05-4.98,1.05-2.33,0-4.43-.48-6.28-1.45-1.85-.97-3.3-2.41-4.36-4.31-1.06-1.9-1.59-4.2-1.59-6.9v-17.45h6.09v16.54c0,2.66.66,4.7,1.99,6.11,1.33,1.42,3.14,2.13,5.44,2.13s4.12-.71,5.47-2.13c1.35-1.42,2.02-3.46,2.02-6.11v-16.54h6.14Z"/>
-        <path class="cls-2" d="M154.1,73.27l8.4-24.19h6.52l-11.31,29.68h-7.33l-11.26-29.68h6.57l8.4,24.19Z"/>
-        <path class="cls-2" d="M200.64,66.22h-22.68c.18,2.37,1.06,4.27,2.64,5.71,1.58,1.44,3.52,2.15,5.82,2.15,3.3,0,5.64-1.38,7-4.15h6.63c-.9,2.73-2.52,4.97-4.88,6.71-2.35,1.74-5.27,2.61-8.75,2.61-2.84,0-5.38-.64-7.62-1.91-2.25-1.27-4-3.07-5.28-5.39-1.28-2.32-1.91-5-1.91-8.05s.62-5.74,1.86-8.05,2.98-4.1,5.23-5.36c2.24-1.26,4.82-1.89,7.73-1.89s5.3.61,7.49,1.83c2.19,1.22,3.9,2.94,5.12,5.14,1.22,2.21,1.83,4.75,1.83,7.62,0,1.11-.07,2.12-.22,3.02ZM194.44,61.26c-.04-2.26-.84-4.08-2.42-5.44-1.58-1.36-3.54-2.05-5.87-2.05-2.12,0-3.93.67-5.44,2.02-1.51,1.35-2.41,3.17-2.69,5.47h16.43Z"/>
-        <path class="cls-2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/>
-        <path class="cls-2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/>
-        <path class="cls-2" d="M240.61,77.34c-2.26-1.27-4.04-3.07-5.33-5.39s-1.94-5-1.94-8.05.66-5.69,1.99-8.03c1.33-2.33,3.14-4.13,5.44-5.39,2.3-1.26,4.87-1.89,7.7-1.89s5.41.63,7.7,1.89c2.3,1.26,4.11,3.05,5.44,5.39,1.33,2.33,1.99,5.01,1.99,8.03s-.68,5.69-2.05,8.03c-1.37,2.33-3.22,4.14-5.58,5.41-2.35,1.28-4.95,1.91-7.78,1.91s-5.33-.64-7.6-1.91ZM252.65,72.79c1.38-.75,2.5-1.89,3.37-3.39s1.29-3.34,1.29-5.49-.41-3.98-1.24-5.47c-.83-1.49-1.92-2.61-3.29-3.37s-2.84-1.13-4.42-1.13-3.04.38-4.39,1.13c-1.35.75-2.42,1.88-3.21,3.37-.79,1.49-1.18,3.31-1.18,5.47,0,3.2.82,5.67,2.45,7.41,1.63,1.74,3.69,2.61,6.17,2.61,1.58,0,3.06-.38,4.44-1.13Z"/>
-      </g>
-      <g>
-        <path class="cls-1" d="M120.85,85.03l-2.88,9.73h-1.81l-2.04-7.36-2.17,7.36h-1.79s-2.76-9.73-2.76-9.73h1.69l2.02,7.92,2.18-7.92h1.79l2.03,7.88,2.03-7.88h1.71Z"/>
-        <path class="cls-1" d="M129.18,91.5h-5.89c.05.62.28,1.11.69,1.48.41.37.91.56,1.51.56.86,0,1.46-.36,1.82-1.08h1.72c-.23.71-.66,1.29-1.27,1.74-.61.45-1.37.68-2.27.68-.74,0-1.4-.17-1.98-.5-.58-.33-1.04-.8-1.37-1.4-.33-.6-.5-1.3-.5-2.09s.16-1.49.48-2.09c.32-.6.77-1.07,1.36-1.39.58-.33,1.25-.49,2.01-.49s1.38.16,1.95.48c.57.32,1.01.76,1.33,1.34.32.57.48,1.23.48,1.98,0,.29-.02.55-.06.78ZM127.57,90.21c0-.59-.22-1.06-.63-1.41-.41-.35-.92-.53-1.53-.53-.55,0-1.02.17-1.41.53-.39.35-.62.82-.7,1.42h4.27Z"/>
-        <path class="cls-1" d="M240.45,90.91l3.56,3.85h-2.16l-2.86-3.32v3.32h-1.6v-10.36h1.6v6.02l2.8-3.37h2.21l-3.56,3.86Z"/>
-      </g>
-    </svg>
+    <img src="DM-NUV-LOGO-4X_4x.png" alt="NuvelloWeb &#8212; Web Design and Marketing Agency in San Clemente CA"/>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services</a>
+      <div class="nav-dropdown-menu">
+        <a href="service-web-design.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128187;</div><div class="ndm-text"><span class="ndm-label">Web Design &amp; Dev</span><span class="ndm-sub">WordPress, Full-Stack, E-Commerce</span></div></a>
+        <a href="service-seo.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);">&#128205;</div><div class="ndm-text"><span class="ndm-label">SEO Optimization</span><span class="ndm-sub">Local, Technical, On-Page &amp; More</span></div></a>
+        <a href="service-uiux.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#127912;</div><div class="ndm-text"><span class="ndm-label">UI/UX &amp; Graphic Design</span><span class="ndm-sub">Brand, Print, Digital &amp; Web Design</span></div></a>
+        <div class="ndm-divider"></div>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(244,124,32,.1);border:1px solid rgba(244,124,32,.2);">&#128293;</div><div class="ndm-text"><span class="ndm-label">Digital Marketing</span><span class="ndm-sub">PPC, Social, Email &amp; More</span></div><span class="ndm-soon">Soon</span></a>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(42,42,114,.2);border:1px solid rgba(42,42,114,.3);">&#128722;</div><div class="ndm-text"><span class="ndm-label">E-Commerce</span><span class="ndm-sub">Shopify, WooCommerce &amp; More</span></div><span class="ndm-soon">Soon</span></a>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(184,235,225,.08);border:1px solid rgba(184,235,225,.15);">&#128736;</div><div class="ndm-text"><span class="ndm-label">Maintenance &amp; Support</span><span class="ndm-sub">Hosting, Updates &amp; Care Plans</span></div><span class="ndm-soon">Soon</span></a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="about.html">About</a>
+      <div class="nav-dropdown-menu" style="min-width:200px;">
+        <a href="about.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128101;</div><div class="ndm-text"><span class="ndm-label">About Us</span><span class="ndm-sub">Our story and mission</span></div></a>
+        <a href="testimonials.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);">&#11088;</div><div class="ndm-text"><span class="ndm-label">Testimonials</span><span class="ndm-sub">What our clients say</span></div></a>
+        <a href="faq.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#10067;</div><div class="ndm-text"><span class="ndm-label">FAQ</span><span class="ndm-sub">Common questions answered</span></div></a>
+      </div>
+    </li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
   </ul>
-  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">✕</button>
+  <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">&#x2715;</button>
   <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="#contact">Get a Quote</a></li>
+    <li><a href="contact.html">Get a Quote</a></li>
   </ul>
 </div>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
 <!-- HERO -->
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">Web Design & Development</div>
-    <h1>We Build Websites<br>That <em>Convert</em><br>Every Lead</h1>
-    <p class="hero-sub">Bold, fast, and purpose-driven digital experiences — built for businesses across Southern California. From strategy to launch, we handle it all.</p>
+  <div class="hero-inner fade-up">
+    <div class="eyebrow">Web Design &amp; Marketing Agency</div>
+    <h1>The NuWave of<br><em>Web &amp; Marketing</em></h1>
+    <p class="hero-sub">Bold, modern websites that attract the right customers, rank in search, and convert visitors into revenue. Built custom for Southern California businesses that are ready to grow.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Start Your Project →</a>
-      <a href="#work" class="btn-outline">View Our Work</a>
+      <a href="services.html" class="btn-primary">View Our Services &#8594;</a>
+      <a href="mailto:contact@nuvelloweb.com" class="btn-outline">&#9993; contact@nuvelloweb.com</a>
     </div>
     <div class="hero-stats">
-      <div>
-        <div class="stat-num">120+</div>
-        <div class="stat-label">Projects Launched</div>
-      </div>
-      <div>
-        <div class="stat-num">98%</div>
-        <div class="stat-label">Client Satisfaction</div>
-      </div>
-      <div>
-        <div class="stat-num">5★</div>
-        <div class="stat-label">Google Rating</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-visual">
-    <div class="hero-card">
-      <div class="card-header">
-        <div class="card-dot" style="background:#ff5f57"></div>
-        <div class="card-dot" style="background:#ffbd2e"></div>
-        <div class="card-dot" style="background:#27c93f"></div>
-      </div>
-      <div class="code-block">
-        <div><span class="code-cm">// NuvelloWeb build process</span></div>
-        <div><span class="code-kw">const</span> <span class="code-fn">site</span> = <span class="code-kw">await</span> build({</div>
-        <div>&nbsp;&nbsp;design: <span class="code-str">"pixel-perfect"</span>,</div>
-        <div>&nbsp;&nbsp;performance: <span class="code-str">"100/100"</span>,</div>
-        <div>&nbsp;&nbsp;seo: <span class="code-str">"fully-optimized"</span>,</div>
-        <div>&nbsp;&nbsp;cms: <span class="code-str">"WordPress + Elementor"</span>,</div>
-        <div>&nbsp;&nbsp;support: <span class="code-str">"always-on"</span></div>
-        <div>});</div>
-        <br/>
-        <div><span class="code-kw">return</span> site.<span class="code-fn">launch</span>(); <span class="code-cm">// 🚀</span></div>
-      </div>
-      <div class="hero-badge">
-        <strong>14</strong>
-        avg days<br>to launch
-      </div>
+      <div><div class="hero-stat-num">6+</div><div class="hero-stat-label">Years Designing</div></div>
+      <div><div class="hero-stat-num">98%</div><div class="hero-stat-label">Client Satisfaction</div></div>
+      <div><div class="hero-stat-num">14</div><div class="hero-stat-label">Avg Days to Launch</div></div>
     </div>
   </div>
 </section>
 
-<!-- LOGOS -->
-<div class="logos-strip">
-  <div class="logos-label">Trusted by businesses across Southern California</div>
-  <div class="logos-row">
-    <span class="logo-item">SC Dental</span>
-    <span class="logo-item">Pacific Fitness</span>
-    <span class="logo-item">SB Realty Group</span>
-    <span class="logo-item">Inland Medical</span>
-    <span class="logo-item">Newport Legal</span>
-    <span class="logo-item">Peak Auto</span>
-  </div>
-</div>
+<div class="divider"></div>
 
 <!-- SERVICES -->
-<section class="services" id="services">
-  <div class="services-header">
-    <div>
-      <div class="section-label">What We Do</div>
-      <h2 class="section-heading">Services Built<br>to Drive Growth</h2>
-    </div>
-    <p class="section-sub">From a simple landing page to a full digital marketing engine — every service is tailored to your goals and your market.</p>
-  </div>
-
-  <div class="services-grid fade-up">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-icon" style="background:rgba(19,140,236,.15);">🌐</div>
-      <h3>Web Design & Development</h3>
-      <p>Stunning, mobile-first websites built on WordPress with Elementor Pro. Fast, accessible, and designed to convert visitors into customers.</p>
-      <a href="#contact" class="service-link">Learn More →</a>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-icon" style="background:rgba(172,57,49,.15);">📈</div>
+<section class="services-section">
+  <div class="section-label">What We Do</div>
+  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.4rem;">Everything Your Digital<br>Presence Needs</h2>
+  <div class="svc-grid">
+    <a href="service-web-design.html" class="svc-card fade-up">
+      <div class="svc-card-top"><div class="svc-icon" style="background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.25);">&#127760;</div><span class="svc-arrow">&#8594;</span></div>
+      <h3>Web Design &amp; Development</h3>
+      <p>Custom WordPress and full-stack sites built mobile-first, optimized for search, and designed to convert.</p>
+      <div class="svc-tags"><span class="stag">WordPress</span><span class="stag">Full-Stack</span><span class="stag">E-Commerce</span></div>
+    </a>
+    <a href="service-seo.html" class="svc-card fade-up">
+      <div class="svc-card-top"><div class="svc-icon" style="background:rgba(172,57,49,.12);border:1px solid rgba(172,57,49,.25);">&#128200;</div><span class="svc-arrow">&#8594;</span></div>
       <h3>SEO Optimization</h3>
-      <p>Local, technical, on-page, and off-page strategies that drive sustainable rankings and get you found by the customers who matter most.</p>
-      <a href="#contact" class="service-link">Learn More →</a>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-icon" style="background:rgba(42,42,114,.3);">🎯</div>
+      <p>Local, technical, on-page, and off-page SEO strategies that build lasting rankings &#8212; not quick wins.</p>
+      <div class="svc-tags"><span class="stag">Local SEO</span><span class="stag">Technical</span><span class="stag">Link Building</span></div>
+    </a>
+    <a href="service-uiux.html" class="svc-card fade-up">
+      <div class="svc-card-top"><div class="svc-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#127912;</div><span class="svc-arrow">&#8594;</span></div>
+      <h3>UI/UX &amp; Graphic Design</h3>
+      <p>Logos, brand identities, wireframes, and design systems that make your business look like it means business.</p>
+      <div class="svc-tags"><span class="stag">Branding</span><span class="stag">Logo</span><span class="stag">Print</span></div>
+    </a>
+    <a href="services.html" class="svc-card fade-up">
+      <div class="svc-card-top"><div class="svc-icon" style="background:rgba(42,42,114,.2);border:1px solid rgba(42,42,114,.3);">&#128293;</div><span class="svc-arrow">&#8594;</span></div>
       <h3>Digital Marketing</h3>
-      <p>Paid ads, email campaigns, social media strategy, and content marketing — all aligned to fill your pipeline and grow revenue.</p>
-      <a href="#contact" class="service-link">Learn More →</a>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <div class="service-icon" style="background:rgba(184,235,225,.1);">⚡</div>
-      <h3>Performance & Speed</h3>
-      <p>Core Web Vitals optimization, image compression, caching, and CDN setup. We make your site blazing fast — because speed is revenue.</p>
-      <a href="#contact" class="service-link">Learn More →</a>
-    </div>
-    <div class="service-card">
-      <div class="service-num">05</div>
-      <div class="service-icon" style="background:rgba(244,124,32,.15);">🔒</div>
-      <h3>Maintenance & Support</h3>
-      <p>Ongoing updates, security monitoring, backups, and priority support. Your site stays secure, current, and performing — always.</p>
-      <a href="#contact" class="service-link">Learn More →</a>
-    </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <div class="service-icon" style="background:rgba(86,81,115,.25);">🛒</div>
-      <h3>E-Commerce Solutions</h3>
-      <p>WooCommerce stores built for conversion — product pages, checkout flows, payment integrations, and inventory management done right.</p>
-      <a href="#contact" class="service-link">Learn More →</a>
-    </div>
+      <p>Google Ads, social media strategy, email campaigns, and paid advertising that fill your pipeline.</p>
+      <div class="svc-tags"><span class="stag">Google Ads</span><span class="stag">Social</span><span class="stag">Email</span></div>
+    </a>
+    <a href="services.html" class="svc-card fade-up">
+      <div class="svc-card-top"><div class="svc-icon" style="background:rgba(244,124,32,.12);border:1px solid rgba(244,124,32,.25);">&#128722;</div><span class="svc-arrow">&#8594;</span></div>
+      <h3>E-Commerce</h3>
+      <p>WooCommerce stores engineered for conversion &#8212; beautiful product pages, smooth checkout, payment integrations.</p>
+      <div class="svc-tags"><span class="stag">WooCommerce</span><span class="stag">Payments</span><span class="stag">Inventory</span></div>
+    </a>
+    <a href="services.html" class="svc-card fade-up">
+      <div class="svc-card-top"><div class="svc-icon" style="background:rgba(184,235,225,.08);border:1px solid rgba(184,235,225,.15);">&#128736;</div><span class="svc-arrow">&#8594;</span></div>
+      <h3>Maintenance &amp; Support</h3>
+      <p>Ongoing updates, security monitoring, backups, and priority support &#8212; your site stays fast and safe.</p>
+      <div class="svc-tags"><span class="stag">Security</span><span class="stag">Updates</span><span class="stag">Backups</span></div>
+    </a>
   </div>
 </section>
+
+<div class="divider"></div>
 
 <!-- PROCESS -->
-<section id="process">
+<section class="process-section">
   <div class="section-label">How We Work</div>
-  <h2 class="section-heading">Our Process is<br>Transparent by Design</h2>
-
-  <div class="process-grid">
-    <div class="steps fade-up">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <h3>Discovery Call</h3>
-          <p>We learn your business, goals, and audience. No templates — your strategy starts here.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <h3>Strategy & Planning</h3>
-          <p>Sitemap, wireframes, content plan, and technical specs — agreed before a pixel is designed.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <h3>Design & Development</h3>
-          <p>We build your site iteratively with regular check-ins and full revision rounds.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <h3>Testing & QA</h3>
-          <p>Cross-browser, mobile, speed, SEO, and accessibility audits before anything goes live.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">05</div>
-        <div class="step-content">
-          <h3>Launch & Beyond</h3>
-          <p>We stay with you post-launch — monitoring, optimizing, and growing your digital presence.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="process-visual fade-up">
-      <p style="font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.8rem;">Typical Project Timeline</p>
-      <div class="timeline">
-        <div class="tl-item">
-          <span class="tl-label">Discovery</span>
-          <div class="tl-bar-wrap">
-            <div class="tl-bar"><div class="tl-fill animate" style="width:20%;background:var(--blue)"></div></div>
-          </div>
-          <span style="font-size:.78rem;color:var(--text-muted);min-width:40px;text-align:right;">2 days</span>
-        </div>
-        <div class="tl-item">
-          <span class="tl-label">Design</span>
-          <div class="tl-bar-wrap">
-            <div class="tl-bar"><div class="tl-fill animate" style="width:45%;background:var(--orange)"></div></div>
-          </div>
-          <span style="font-size:.78rem;color:var(--text-muted);min-width:40px;text-align:right;">5 days</span>
-        </div>
-        <div class="tl-item">
-          <span class="tl-label">Build</span>
-          <div class="tl-bar-wrap">
-            <div class="tl-bar"><div class="tl-fill animate" style="width:65%;background:var(--navy)"></div></div>
-          </div>
-          <span style="font-size:.78rem;color:var(--text-muted);min-width:40px;text-align:right;">7 days</span>
-        </div>
-        <div class="tl-item">
-          <span class="tl-label">QA & Testing</span>
-          <div class="tl-bar-wrap">
-            <div class="tl-bar"><div class="tl-fill animate" style="width:85%;background:var(--mint)"></div></div>
-          </div>
-          <span style="font-size:.78rem;color:var(--text-muted);min-width:40px;text-align:right;">3 days</span>
-        </div>
-        <div class="tl-item">
-          <span class="tl-label">Launch</span>
-          <div class="tl-bar-wrap">
-            <div class="tl-bar"><div class="tl-fill animate" style="width:100%;background:linear-gradient(90deg,var(--blue),var(--mint))"></div></div>
-          </div>
-          <span style="font-size:.78rem;color:var(--text-muted);min-width:40px;text-align:right;">Day 14</span>
-        </div>
-      </div>
-
-      <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:1rem;">
-        <div style="width:48px;height:48px;border-radius:10px;background:rgba(19,140,236,.15);display:flex;align-items:center;justify-content:center;font-size:1.4rem;">📍</div>
-        <div>
-          <div style="font-size:.9rem;font-weight:700;">San Clemente, California</div>
-          <div style="font-size:.8rem;color:var(--text-muted);margin-top:.2rem;">Serving all of Southern California</div>
-        </div>
-      </div>
-    </div>
+  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.4rem;">From First Call<br>to Live Site</h2>
+  <div class="proc-timeline">
+    <div class="proc-item fade-up"><div class="proc-item-num">01</div><h3>Discovery</h3><p>We learn your business, goals, and audience. This shapes every decision that follows.</p></div>
+    <div class="proc-item fade-up"><div class="proc-item-num">02</div><h3>Design</h3><p>Wireframes and full visual designs reviewed and refined until they look exactly right.</p></div>
+    <div class="proc-item fade-up"><div class="proc-item-num">03</div><h3>Development</h3><p>Built clean, fast, and fully responsive &#8212; with SEO structure baked in from the start.</p></div>
+    <div class="proc-item fade-up"><div class="proc-item-num">04</div><h3>QA &amp; Testing</h3><p>Every page, form, and link tested on mobile and desktop before anything goes live.</p></div>
+    <div class="proc-item fade-up"><div class="proc-item-num">05</div><h3>Launch</h3><p>We go live together. Training, credentials, and 30 days of post-launch support included.</p></div>
+    <div class="proc-item fade-up"><div class="proc-item-num">06</div><h3>Grow</h3><p>SEO, marketing, and maintenance keep your site performing long after launch day.</p></div>
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- CTA -->
-<div class="cta-section" id="contact">
-  <h2>Ready to Build Something<br><em style="color:var(--mint);">That Actually Works?</em></h2>
-  <p>Tell us about your project. We'll come back within 24 hours with a clear plan and honest pricing — no fluff, no pressure.</p>
-  <div class="cta-actions">
-    <a href="tel:+19093127101" class="btn-primary">📞 (909) 312-7101</a>
-    <a href="/cdn-cgi/l/email-protection#f3909c9d87929087b39d8685969f9f9c849691dd909c9e" class="btn-outline">✉ <span class="__cf_email__" data-cfemail="86e5e9e8f2e7e5f2c6e8f3f0e3eaeae9f1e3e4a8e5e9eb">[email&#160;protected]</span></a>
+<section class="cta-section">
+  <div class="cta-inner fade-up">
+    <div class="eyebrow">Ready to Start?</div>
+    <h2>Your Next Website Starts with a Conversation</h2>
+    <p>Tell us what you are building. We will respond within 24 hours with a clear plan and honest pricing &#8212; no fluff, no pressure.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Get a Free Quote &#8594;</a>
+      <a href="tel:+19093127101" class="btn-outline">&#128222; (909) 312-7101</a>
+    </div>
   </div>
-  <p style="margin-top:2rem;font-size:.82rem;color:rgba(255,255,255,.3);">📍 Based in San Clemente, CA · Serving all of Southern California</p>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
-        <defs><style>.fb1{fill:#f47c20}.fb2{fill:#ffffff}</style></defs>
-        <g>
-          <g>
-            <polygon class="fb1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/>
-            <polygon class="fb1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/>
-          </g>
-          <path class="fb2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/>
-        </g>
-        <g>
-          <path class="fb2" d="M134.54,49.09v29.68h-6.14v-3.5c-.97,1.22-2.24,2.18-3.8,2.88-1.56.7-3.22,1.05-4.98,1.05-2.33,0-4.43-.48-6.28-1.45-1.85-.97-3.3-2.41-4.36-4.31-1.06-1.9-1.59-4.2-1.59-6.9v-17.45h6.09v16.54c0,2.66.66,4.7,1.99,6.11,1.33,1.42,3.14,2.13,5.44,2.13s4.12-.71,5.47-2.13c1.35-1.42,2.02-3.46,2.02-6.11v-16.54h6.14Z"/>
-          <path class="fb2" d="M154.1,73.27l8.4-24.19h6.52l-11.31,29.68h-7.33l-11.26-29.68h6.57l8.4,24.19Z"/>
-          <path class="fb2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/>
-          <path class="fb2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/>
-          <path class="fb2" d="M240.61,77.34c-2.26-1.27-4.04-3.07-5.33-5.39s-1.94-5-1.94-8.05.66-5.69,1.99-8.03c1.33-2.33,3.14-4.13,5.44-5.39,2.3-1.26,4.87-1.89,7.7-1.89s5.41.63,7.7,1.89c2.3,1.26,4.11,3.05,5.44,5.39,1.33,2.33,1.99,5.01,1.99,8.03s-.68,5.69-2.05,8.03c-1.37,2.33-3.22,4.14-5.58,5.41-2.35,1.28-4.95,1.91-7.78,1.91s-5.33-.64-7.6-1.91Z"/>
-        </g>
-      </svg>
-      <p>Bold, modern websites for businesses that want to stand out, rank higher, and convert more customers. Proudly based in San Clemente, CA.</p>
+      <img src="DM-NUV-LOGO-4X_4x.png" alt="NuvelloWeb logo"/>
+      <p>Bold, modern websites for businesses that want to stand out, rank higher, and convert more customers. Based in San Clemente, CA.</p>
       <div class="footer-socials">
-        <a href="#" class="social-btn">f</a>
-        <a href="#" class="social-btn">in</a>
-        <a href="#" class="social-btn">ig</a>
-        <a href="#" class="social-btn">g</a>
+        <a href="https://www.facebook.com/nuvellowebllc" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://www.linkedin.com/company/nuvello-web/" target="_blank" rel="noopener" class="social-btn">in</a>
+        <a href="https://instagram.com/nuvelloweb" target="_blank" rel="noopener" class="social-btn">ig</a>
+        <a href="https://share.google/uH62KpGg1u5lX1eQa" target="_blank" rel="noopener" class="social-btn">g</a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="#">Web Design</a></li>
-        <li><a href="#">Development</a></li>
-        <li><a href="#">SEO</a></li>
-        <li><a href="#">Digital Marketing</a></li>
-        <li><a href="#">E-Commerce</a></li>
-        <li><a href="#">Maintenance</a></li>
+        <li><a href="service-web-design.html">Web Design &amp; Dev</a></li>
+        <li><a href="service-seo.html">SEO Optimization</a></li>
+        <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
+        <li><a href="service-ecommerce.html">E-Commerce</a></li>
+        <li><a href="service-maintenance.html">Maintenance</a></li>
+        <li><a href="service-uiux.html">UI/UX &amp; Design</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Work</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+19093127101">(909) 312-7101</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#debdb1b0aabfbdaa9eb0aba8bbb2b2b1a9bbbcf0bdb1b3"><span class="__cf_email__" data-cfemail="c0a3afaeb4a1a3b480aeb5b6a5acacafb7a5a2eea3afad">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:contact@nuvelloweb.com">contact@nuvelloweb.com</a></li>
         <li><a href="#">San Clemente, CA</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 NuvelloWeb. All rights reserved.</span>
-    <span>Privacy Policy · Terms of Service</span>
+    <span>&#169; 2025 NuvelloWeb LLC. All rights reserved.</span>
+    <span>Privacy Policy &#183; Terms of Service</span>
   </div>
 </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-
-  // ── MOBILE MENU ──
-  var hamburgerBtn  = document.getElementById('hamburgerBtn');
+  var hamburgerBtn   = document.getElementById('hamburgerBtn');
   var mobileCloseBtn = document.getElementById('mobileCloseBtn');
-  var mobileMenu    = document.getElementById('mobileMenu');
-  var mobileOverlay = document.getElementById('mobileOverlay');
-
-  function openMenu() {
-    mobileMenu.classList.add('open');
-    mobileOverlay.classList.add('open');
-    hamburgerBtn.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMenu() {
-    mobileMenu.classList.remove('open');
-    mobileOverlay.classList.remove('open');
-    hamburgerBtn.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  if (hamburgerBtn)  hamburgerBtn.addEventListener('click', openMenu);
-  if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMenu);
-  if (mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
-
-  // Close menu when a mobile nav link is clicked
-  mobileMenu && mobileMenu.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', closeMenu);
+  var mobileMenu     = document.getElementById('mobileMenu');
+  var mobileOverlay  = document.getElementById('mobileOverlay');
+  function openMenu()  { mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
+  hamburgerBtn.addEventListener('click', openMenu);
+  mobileCloseBtn.addEventListener('click', closeMenu);
+  mobileOverlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeMenu); });
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
+  window.addEventListener('scroll', function () {
+    document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)';
   });
-
-  // ── SCROLL ANIMATIONS ──
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) e.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
-
-  // Stagger service cards
-  document.querySelectorAll('.service-card').forEach(function(card, i) {
-    card.style.transitionDelay = (i * 0.08) + 's';
-    card.classList.add('fade-up');
-    observer.observe(card);
-  });
-
-  // ── NAV SCROLL EFFECT ──
-  window.addEventListener('scroll', function() {
-    var nav = document.querySelector('nav');
-    nav.style.background = window.scrollY > 40
-      ? 'rgba(22,24,26,0.98)'
-      : 'rgba(22,24,26,0.88)';
-  });
-
-  // ── SMOOTH SCROLL ──
-  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      var target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
 });
 </script>
 </body>
