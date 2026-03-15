@@ -1,6 +1,10 @@
+```apacheconf
 Options -MultiViews
 
 RewriteEngine On
+
+# Redirect /index to root /
+RewriteRule ^index$ / [R=301,L]
 
 # Redirect .html URLs to clean versions (301 for SEO)
 RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?] [NC]
@@ -11,4 +15,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [L]
-
+```
