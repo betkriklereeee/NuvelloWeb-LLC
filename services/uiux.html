@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>UI/UX &amp; Graphic Design &#8212; NuvelloWeb</title>
+<link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+
+<title>UI/UX &amp; Graphic Design &#8212; NuvelloWeb | San Clemente, CA</title>
+<meta name="description" content="Brand identity, UI/UX design, print, and digital graphics for Southern California businesses. 100% custom — no templates."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
@@ -15,14 +18,46 @@
   h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
   a{color:inherit;}
 
+
+  /* HEADER CONTACT BAR */
+  .header-bar{background:#111315;border-bottom:1px solid rgba(255,255,255,.05);padding:.45rem 5vw;display:flex;align-items:center;justify-content:flex-end;gap:2rem;}
+  .header-bar a{color:var(--muted);font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s;font-weight:600;letter-spacing:.02em;}
+  .header-bar a:hover{color:var(--white);}
+  .header-bar .hb-icon{font-size:.9rem;}
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
   .nav-logo svg{height:36px;width:auto;display:block;}
-  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
   .nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
   .nav-links a:hover,.nav-links a.active{color:var(--white);}
-  .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.3rem;border-radius:4px;}
+  .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.1rem;border-radius:4px;white-space:nowrap;}
   .nav-cta:hover{background:#0f7ad6!important;}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown>a{display:flex;align-items:center;gap:.35rem;cursor:pointer;}
+  .nav-dropdown>a::after{content:'';display:block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--muted);transition:transform .25s,border-top-color .2s;margin-top:1px;}
+  .nav-dropdown:hover>a::after,.nav-dropdown.open>a::after{transform:rotate(180deg);border-top-color:var(--white);}
+  .nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#1e2023;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;transform:translateX(-50%) translateY(-6px);z-index:200;box-shadow:0 12px 40px rgba(0,0,0,.45);}
+  .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .nav-dropdown-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+  .ndm-item{display:flex;align-items:center;gap:.8rem;padding:.65rem .85rem;border-radius:7px;text-decoration:none;transition:background .15s;}
+  .ndm-item:hover{background:rgba(255,255,255,.07);}
+  .ndm-item.disabled{opacity:.38;pointer-events:none;cursor:default;}
+  .ndm-icon{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+  .ndm-text{display:flex;flex-direction:column;}
+  .ndm-label{font-size:.82rem;font-weight:700;color:var(--white);letter-spacing:.03em;}
+  .ndm-sub{font-size:.72rem;color:var(--muted);}
+  .ndm-soon{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);padding:.1rem .4rem;border-radius:3px;margin-left:auto;flex-shrink:0;}
+  .ndm-divider{height:1px;background:rgba(255,255,255,.06);margin:.4rem 0;}
+
+  .mobile-menu ul li.has-children>a{display:flex;justify-content:space-between;align-items:center;}
+  .mobile-menu ul li.has-children>a::after{content:'\002B';font-size:1.1rem;color:var(--muted);transition:transform .3s;}
+  .mobile-menu ul li.has-children.open>a::after{content:'\2212';}
+  .mobile-children{display:none;flex-direction:column;padding:.3rem 0 .5rem 1rem;border-bottom:none!important;}
+  .mobile-menu ul li.has-children.open .mobile-children{display:flex;}
+  .mobile-child-link{display:flex;align-items:center;gap:.6rem;padding:.6rem 0;font-size:1rem!important;color:var(--muted);text-decoration:none;transition:color .2s;border-bottom:none!important;}
+  .mobile-child-link:hover{color:var(--white)!important;padding-left:.2rem!important;}
+  .mobile-child-icon{font-size:.85rem;}
+  .mobile-child-soon{font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);padding:.1rem .35rem;border-radius:3px;margin-left:auto;}
   .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
   .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
   .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -53,7 +88,7 @@
   .fade-up.visible{opacity:1;transform:none;}
 
   /* HERO */
-  .page-hero{padding:160px 5vw 90px;position:relative;overflow:hidden;}
+  .page-hero{padding:180px 5vw 90px;position:relative;overflow:hidden;}
   .ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 45%,rgba(86,81,115,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(86,81,115,.08) 0%,transparent 60%);pointer-events:none;}
   .ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
   .ph-inner{position:relative;z-index:2;max-width:740px;}
@@ -166,23 +201,93 @@
   @media(max-width:1024px){.spec-grid{grid-template-columns:1fr 1fr;}.design-inner{grid-template-columns:1fr;gap:3rem;}}
   @media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.spec-grid{grid-template-columns:1fr;}.quote-wrap{grid-template-columns:1fr;gap:3rem;}.footer-top{grid-template-columns:1fr 1fr;}}
   @media(max-width:600px){.hero-stats{gap:2rem;}.proc-step{flex-direction:column;gap:.6rem;}.form-row{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
+
+  /* TOP BAR */
+  .top-bar{background:#111213;border-bottom:1px solid rgba(255,255,255,.06);padding:.45rem 5vw;}
+  .top-bar-inner{display:flex;gap:2rem;align-items:center;justify-content:flex-end;}
+  .top-bar-link{color:var(--muted);font-size:.8rem;text-decoration:none;font-weight:600;letter-spacing:.03em;transition:color .2s;}
+  .top-bar-link:hover{color:var(--white);}
+  @media(max-width:600px){.top-bar-inner{justify-content:center;gap:1.2rem;}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "NuvelloWeb LLC",
+  "description": "NuvelloWeb is a web design and digital marketing agency based in San Clemente, CA serving businesses across Southern California.",
+  "url": "https://nuvelloweb.com",
+  "telephone": "+19093127101",
+  "email": "contact@nuvelloweb.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Clemente",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.4269,
+      "longitude": -117.6109
+    },
+    "geoRadius": "80000"
+  },
+  "sameAs": [
+    "https://www.facebook.com/nuvellowebllc",
+    "https://www.linkedin.com/company/nuvello-web/",
+    "https://instagram.com/nuvelloweb"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Do I need UX design if I already have a designer?","acceptedAnswer":{"@type":"Answer","text":"Visual designers and UX designers solve different problems. A visual designer makes things look good. A UX designer makes them work. We handle both under one roof."}},
+    {"@type":"Question","name":"Can you redesign just part of my site or brand?","acceptedAnswer":{"@type":"Answer","text":"Yes. We often work in phases starting with the highest-impact pages or most visible brand touchpoints first."}},
+    {"@type":"Question","name":"What do I receive at the end of a design project?","acceptedAnswer":{"@type":"Answer","text":"All source files including Figma, AI, SVG, PDF, and PNG, plus a style guide and any print-ready files if applicable."}},
+    {"@type":"Question","name":"How many revisions are included?","acceptedAnswer":{"@type":"Answer","text":"Two rounds of revisions per phase. Additional rounds beyond that are scoped and billed separately."}},
+    {"@type":"Question","name":"Will my design work match my existing website?","acceptedAnswer":{"@type":"Answer","text":"If you are bringing us in for standalone graphic design we will match your existing brand. If redesigning, we create a cohesive system across all touchpoints."}},
+    {"@type":"Question","name":"Do you design for print too, or just digital?","acceptedAnswer":{"@type":"Answer","text":"Both. We design business cards, brochures, banners, signage, and packaging alongside digital work with proper print-ready file preparation."}}
+]}
+</script>
 </head>
 <body>
 
+<div class="header-bar">
+  <a href="/cdn-cgi/l/email-protection#7f1c10110b1e1c0b3f110a091a131310081a1d511c1012"><span class="hb-icon">&#9993;</span> <span class="__cf_email__" data-cfemail="cdaea2a3b9acaeb98da3b8bba8a1a1a2baa8afe3aea2a0">[email&#160;protected]</span></a>
+  <a href="tel:+19093127101"><span class="hb-icon">&#128222;</span> +1 (909) 312-7101</a>
+</div>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <a href="/cdn-cgi/l/email-protection#15767a7b61747661557b60637079797a6270773b767a78" class="top-bar-link">&#128231; <span class="__cf_email__" data-cfemail="f3909c9d87929087b39d8685969f9f9c849691dd909c9e">[email&#160;protected]</span></a>
+    <a href="tel:+19093127101" class="top-bar-link">&#128222; +1 (909) 312-7101</a>
+  </div>
+</div>
 <nav>
-  <a href="index.html" class="nav-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
-      <defs><style>.nl1{fill:#f47c20}.nl2{fill:#ffffff}</style></defs>
-      <g><polygon class="nl1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/><polygon class="nl1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/><path class="nl2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/></g>
-      <g><path class="nl2" d="M134.54,49.09v29.68h-6.14v-3.5c-.97,1.22-2.24,2.18-3.8,2.88-1.56.7-3.22,1.05-4.98,1.05-2.33,0-4.43-.48-6.28-1.45-1.85-.97-3.3-2.41-4.36-4.31-1.06-1.9-1.59-4.2-1.59-6.9v-17.45h6.09v16.54c0,2.66.66,4.7,1.99,6.11,1.33,1.42,3.14,2.13,5.44,2.13s4.12-.71,5.47-2.13c1.35-1.42,2.02-3.46,2.02-6.11v-16.54h6.14Z"/><path class="nl2" d="M154.1,73.27l8.4-24.19h6.52l-11.31,29.68h-7.33l-11.26-29.68h6.57l8.4,24.19Z"/><path class="nl2" d="M200.64,66.22h-22.68c.18,2.37,1.06,4.27,2.64,5.71,1.58,1.44,3.52,2.15,5.82,2.15,3.3,0,5.64-1.38,7-4.15h6.63c-.9,2.73-2.52,4.97-4.88,6.71-2.35,1.74-5.27,2.61-8.75,2.61-2.84,0-5.38-.64-7.62-1.91-2.25-1.27-4-3.07-5.28-5.39-1.28-2.32-1.91-5-1.91-8.05s.62-5.74,1.86-8.05,2.98-4.1,5.23-5.36c2.24-1.26,4.82-1.89,7.73-1.89s5.3.61,7.49,1.83c2.19,1.22,3.9,2.94,5.12,5.14,1.22,2.21,1.83,4.75,1.83,7.62,0,1.11-.07,2.12-.22,3.02ZM194.44,61.26c-.04-2.26-.84-4.08-2.42-5.44-1.58-1.36-3.54-2.05-5.87-2.05-2.12,0-3.93.67-5.44,2.02-1.51,1.35-2.41,3.17-2.69,5.47h16.43Z"/><path class="nl2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/><path class="nl2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/><path class="nl2" d="M240.61,77.34c-2.26-1.27-4.04-3.07-5.33-5.39s-1.94-5-1.94-8.05.66-5.69,1.99-8.03c1.33-2.33,3.14-4.13,5.44-5.39,2.3-1.26,4.87-1.89,7.7-1.89s5.41.63,7.7,1.89c2.3,1.26,4.11,3.05,5.44,5.39,1.33,2.33,1.99,5.01,1.99,8.03s-.68,5.69-2.05,8.03c-1.37,2.33-3.22,4.14-5.58,5.41-2.35,1.28-4.95,1.91-7.78,1.91s-5.33-.64-7.6-1.91ZM252.65,72.79c1.38-.75,2.5-1.89,3.37-3.39s1.29-3.34,1.29-5.49-.41-3.98-1.24-5.47c-.83-1.49-1.92-2.61-3.29-3.37s-2.84-1.13-4.42-1.13-3.04.38-4.39,1.13c-1.35.75-2.42,1.88-3.21,3.37-.79,1.49-1.18,3.31-1.18,5.47,0,3.2.82,5.67,2.45,7.41,1.63,1.74,3.69,2.61,6.17,2.61,1.58,0,3.06-.38,4.44-1.13Z"/></g>
-    </svg>
-  </a>
+  <a href="index" class="nav-logo"><img src="../assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb – Web Design and Marketing Agency in San Clemente CA" style="height:40px;width:auto;display:block;"/></a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html" class="active">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    <li><a href="index">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="services" class="active">Services</a>
+      <div class="nav-dropdown-menu">
+        <a href="service-web-design" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128187;</div><div class="ndm-text"><span class="ndm-label">Web Design &amp; Dev</span><span class="ndm-sub">WordPress, Full-Stack, E-Commerce</span></div></a>
+        <a href="service-seo" class="ndm-item"><div class="ndm-icon" style="background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);">&#128205;</div><div class="ndm-text"><span class="ndm-label">SEO Optimization</span><span class="ndm-sub">Local, Technical, On-Page &amp; More</span></div></a>
+        <a href="service-uiux" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#127912;</div><div class="ndm-text"><span class="ndm-label">UI/UX &amp; Graphic Design</span><span class="ndm-sub">Brand, Print, Digital &amp; Web Design</span></div></a>
+        <div class="ndm-divider"></div>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(244,124,32,.1);border:1px solid rgba(244,124,32,.2);">&#128293;</div><div class="ndm-text"><span class="ndm-label">Digital Marketing</span><span class="ndm-sub">PPC, Social, Email &amp; More</span></div><span class="ndm-soon">Soon</span></a>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(42,42,114,.2);border:1px solid rgba(42,42,114,.3);">&#128722;</div><div class="ndm-text"><span class="ndm-label">E-Commerce</span><span class="ndm-sub">Shopify, WooCommerce &amp; More</span></div><span class="ndm-soon">Soon</span></a>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(184,235,225,.08);border:1px solid rgba(184,235,225,.15);">&#128736;</div><div class="ndm-text"><span class="ndm-label">Maintenance &amp; Support</span><span class="ndm-sub">Hosting, Updates &amp; Care Plans</span></div><span class="ndm-soon">Soon</span></a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="about">About</a>
+      <div class="nav-dropdown-menu" style="min-width:200px;">
+        <a href="about" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128101;</div><div class="ndm-text"><span class="ndm-label">About Us</span><span class="ndm-sub">Our story and mission</span></div></a>
+        <a href="testimonials" class="ndm-item"><div class="ndm-icon" style="background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);">&#11088;</div><div class="ndm-text"><span class="ndm-label">Testimonials</span><span class="ndm-sub">What our clients say</span></div></a>
+        <a href="faq" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#10067;</div><div class="ndm-text"><span class="ndm-label">FAQ</span><span class="ndm-sub">Common questions answered</span></div></a>
+      </div>
+    </li>
+    <li><a href="contact" class="nav-cta">Get&nbsp;a&nbsp;Quote</a></li>
   </ul>
   <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
@@ -190,10 +295,27 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">&#x2715;</button>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Get a Quote</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-children" id="mobileServicesItem">
+      <a href="../services.html">Services</a>
+      <div class="mobile-children">
+        <a href="web-design.html" class="mobile-child-link"><span class="mobile-child-icon">&#128187;</span> Web Design &amp; Dev</a>
+        <a href="seo.html" class="mobile-child-link"><span class="mobile-child-icon">&#128205;</span> SEO Optimization</a>
+        <a href="uiux.html" class="mobile-child-link"><span class="mobile-child-icon">&#127912;</span> UI/UX &amp; Design</a>
+        <a href="digital-marketing.html" class="mobile-child-link"><span class="mobile-child-icon">&#128293;</span> Digital Marketing <span class="mobile-child-soon">Soon</span></a>
+        <a href="ecommerce.html" class="mobile-child-link"><span class="mobile-child-icon">&#128722;</span> E-Commerce <span class="mobile-child-soon">Soon</span></a>
+        <a href="maintenance.html" class="mobile-child-link"><span class="mobile-child-icon">&#128736;</span> Maintenance <span class="mobile-child-soon">Soon</span></a>
+      </div>
+    </li>
+    <li class="has-children" id="mobileAboutItem">
+      <a href="../about.html">About</a>
+      <div class="mobile-children">
+        <a href="../about.html" class="mobile-child-link"><span class="mobile-child-icon">&#128101;</span> About Us</a>
+        <a href="../testimonials.html" class="mobile-child-link"><span class="mobile-child-icon">&#11088;</span> Testimonials</a>
+        <a href="../faq.html" class="mobile-child-link"><span class="mobile-child-icon">&#10067;</span> FAQ</a>
+      </div>
+    </li>
+    <li><a href="../contact.html">Get a Quote</a></li>
   </ul>
 </div>
 <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -202,20 +324,20 @@
 <div class="page-hero">
   <div class="ph-bg"></div>
   <div class="ph-grid"></div>
-  <div class="ph-inner fade-up">
+  <div class="ph-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a> &#8250; <a href="services.html">Services</a> &#8250; <span class="current">UI/UX &amp; Graphic Design</span>
+      <a href="index">Home</a> &#8250; <a href="services">Services</a> &#8250; <span class="current">UI/UX &amp; Graphic Design</span>
     </nav>
     <div class="eyebrow">UI/UX &amp; Graphic Design</div>
     <h1>Design That Works.<br><em>Looks That Convert.</em></h1>
     <p class="hero-sub">A beautiful website that confuses visitors is a failure. A functional one that looks generic is forgettable. We do both &#8212; user experience that guides people toward action, and visual design that makes them trust you before they read a word.</p>
     <div class="hero-actions">
       <a href="#quote" class="btn-primary">Start a Design Project &#8594;</a>
-      <a href="services.html" class="btn-outline">All Services</a>
+      <a href="services" class="btn-outline">All Services</a>
     </div>
     <div class="hero-stats">
       <div><div class="hero-stat-num">6+</div><div class="hero-stat-label">Years Designing</div></div>
-      <div><div class="hero-stat-num">120+</div><div class="hero-stat-label">Projects Completed</div></div>
+      <div><div class="hero-stat-num"></div><div class="hero-stat-label">Projects Completed</div></div>
       <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Custom &#8212; No Templates</div></div>
     </div>
   </div>
@@ -462,40 +584,39 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.17 98.57">
-        <defs><style>.ff1{fill:#f47c20}.ff2{fill:#ffffff}</style></defs>
-        <g><polygon class="ff1" points="89.41 9.16 89.41 0 0 0 0 89.41 7.76 89.41 7.76 9.16 89.41 9.16"/><polygon class="ff1" points="89.41 9.16 89.41 89.41 7.76 89.41 7.76 98.57 97.18 98.57 97.18 9.16 89.41 9.16"/><path class="ff2" d="M71.76,77.53h-9.25l-27.84-42.12v42.12h-9.25V21.04h9.25l27.84,42.04V21.04h9.25v56.49Z"/></g>
-        <g><path class="ff2" d="M213.03,38.91v39.86h-6.14v-39.86h6.14Z"/><path class="ff2" d="M227.25,38.91v39.86h-6.14v-39.86h6.14Z"/></g>
-      </svg>
+      <a href="index"><img src="../assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb logo" style="height:36px;width:auto;display:block;margin-bottom:1.2rem;"/></a>
       <p>Bold, modern websites for businesses that want to stand out, rank higher, and convert more customers. Based in San Clemente, CA.</p>
       <div class="footer-socials">
-        <a href="#" class="social-btn">f</a><a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">g</a>
+        <a href="https://www.facebook.com/nuvellowebllc" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://www.linkedin.com/company/nuvello-web/" target="_blank" rel="noopener" class="social-btn">in</a>
+        <a href="https://instagram.com/nuvelloweb" target="_blank" rel="noopener" class="social-btn">ig</a>
+        <a href="https://share.google/uH62KpGg1u5lX1eQa" target="_blank" rel="noopener" class="social-btn">g</a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="service-web-design.html">Web Design &amp; Dev</a></li>
-        <li><a href="service-seo.html">SEO Optimization</a></li>
-        <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="service-ecommerce.html">E-Commerce</a></li>
-        <li><a href="service-maintenance.html">Maintenance</a></li>
-        <li><a href="service-uiux.html">UI/UX &amp; Design</a></li>
+        <li><a href="service-web-design">Web Design &amp; Dev</a></li>
+        <li><a href="service-seo">SEO Optimization</a></li>
+        <li><a href="service-digital-marketing">Digital Marketing</a></li>
+        <li><a href="service-ecommerce">E-Commerce</a></li>
+        <li><a href="service-maintenance">Maintenance</a></li>
+        <li><a href="service-uiux">UI/UX &amp; Design</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about">About Us</a></li>
+        <li><a href="services">Services</a></li>
+        <li><a href="contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+19093127101">(909) 312-7101</a></li>
-        <li><a href="mailto:benjamin@nuvelloweb.com">benjamin@nuvelloweb.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#5f3d3a31353e3236311f312a293a333330283a3d713c3032"></a></li>
         <li><a href="#">San Clemente, CA</a></li>
       </ul>
     </div>
@@ -517,10 +638,30 @@ document.addEventListener('DOMContentLoaded', function () {
   hamburgerBtn.addEventListener('click', openMenu);
   mobileCloseBtn.addEventListener('click', closeMenu);
   mobileOverlay.addEventListener('click', closeMenu);
-  mobileMenu.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeMenu); });
-  var obs = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } }); }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
-  window.addEventListener('scroll', function () { document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)'; });
+    mobileMenu.querySelectorAll('a:not(.mobile-child-link)').forEach(function (l) { l.addEventListener('click', function(e) {
+    var li = l.parentElement;
+    if (li.classList.contains('has-children')) {
+      e.preventDefault();
+      li.classList.toggle('open');
+    } else {
+      closeMenu();
+    }
+  }); });
+  mobileMenu.querySelectorAll('.mobile-child-link').forEach(function (l) { l.addEventListener('click', closeMenu); });
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      obs.observe(el);
+    }
+  });
+  window.addEventListener('scroll', function () {
+    document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)';
+  });
   document.querySelectorAll('.faq-q').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var item = btn.parentElement;
@@ -528,11 +669,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
       if (!isOpen) { item.classList.add('open'); }
     });
-  });
-  var form = document.getElementById('quoteForm');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    form.innerHTML = '<div class="form-success"><span class="success-icon">&#10003;</span><h3>Request Received!</h3><p>We will review your project details and be in touch within 24 hours.</p></div>';
   });
 });
 </script>
