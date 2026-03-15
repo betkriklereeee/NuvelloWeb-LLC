@@ -78,8 +78,7 @@ nav{position:fixed;top:36px;left:0;right:0;z-index:100;display:flex;align-items:
 .btn-primary:hover{background:#0f7ad6;transform:translateY(-2px);}
 .btn-outline{background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;transition:border-color .2s,transform .15s;display:inline-block;}
 .btn-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px);}
-.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
-.animate.show{opacity:1;transform:none;}
+.animate{opacity:1;}
 /* HERO */
 .hero{padding:210px 5vw 110px;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(19,140,236,.13) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 15% 80%,rgba(42,42,114,.18) 0%,transparent 65%);pointer-events:none;}
@@ -189,7 +188,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
 </head>
 <body>
 <div class="header-bar">
-  <a href="/cdn-cgi/l/email-protection#b3d0dcddc7d2d0c7f3ddc6c5d6dfdfdcc4d6d19dd0dcde">&#9993; <span class="__cf_email__" data-cfemail="7a1915140e1b190e3a140f0c1f1616150d1f1854191517">[email&#160;protected]</span></a>
+  <a href="mailto:contact@nuvelloweb.com">&#9993; contact@nuvelloweb.com</a>
   <a href="tel:+19093127101">&#128222; +1 (909) 312-7101</a>
 </div>
 <nav>
@@ -259,7 +258,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
       <p class="hero-sub">Bold, modern websites that attract the right customers, rank in search, and convert visitors into revenue. Built custom for Southern California businesses that are ready to grow.</p>
       <div class="hero-actions">
         <a href="services.html" class="btn-primary">View Our Services &#8594;</a>
-        <a href="/cdn-cgi/l/email-protection#7a1915140e1b190e3a140f0c1f1616150d1f1854191517" class="btn-outline">&#9993; <span class="__cf_email__" data-cfemail="75161a1b01141601351b00031019191a0210175b161a18">[email&#160;protected]</span></a>
+        <a href="mailto:contact@nuvelloweb.com" class="btn-outline">&#9993; contact@nuvelloweb.com</a>
       </div>
       <div class="hero-stats">
         <div><div class="hero-stat-num">6+</div><div class="hero-stat-label">Years Designing</div></div>
@@ -415,7 +414,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
     </div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="services/web-design.html">Web Design &amp; Dev</a></li><li><a href="services/seo.html">SEO Optimization</a></li><li><a href="services/uiux.html">UI/UX &amp; Design</a></li><li><a href="services.html">Digital Marketing</a></li><li><a href="services.html">E-Commerce</a></li><li><a href="services.html">Maintenance</a></li></ul></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19093127101">(909) 312-7101</a></li><li><a href="/cdn-cgi/l/email-protection#1d7e7273697c7e695d73686b787171726a787f337e7270"><span class="__cf_email__" data-cfemail="aac9c5c4decbc9deeac4dfdccfc6c6c5ddcfc884c9c5c7">[email&#160;protected]</span></a></li><li><a href="#">San Clemente, CA</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19093127101">(909) 312-7101</a></li><li><a href="mailto:contact@nuvelloweb.com">contact@nuvelloweb.com</a></li><li><a href="#">San Clemente, CA</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span>&#169; 2025 NuvelloWeb LLC. All rights reserved.</span>
@@ -423,7 +422,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   var hamburgerBtn = document.getElementById('hamburgerBtn');
   var mobileCloseBtn = document.getElementById('mobileCloseBtn');
@@ -437,4 +436,12 @@ document.addEventListener('DOMContentLoaded', function () {
   mobileMenu.querySelectorAll('li.has-children > a').forEach(function (a) {
     a.addEventListener('click', function (e) { e.preventDefault(); a.parentElement.classList.toggle('open'); });
   });
-  mobileMenu.querySelectorAll('.mobile-child-link').forEach(function (l) { l.addEventLis
+  mobileMenu.querySelectorAll('.mobile-child-link').forEach(function (l) { l.addEventListener('click', closeMenu); });
+
+  window.addEventListener('scroll', function () {
+    document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)';
+  });
+});
+</script>
+</body>
+</html>
