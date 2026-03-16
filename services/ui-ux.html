@@ -5,18 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
 
-<title>SEO Optimization Services &#8212; NuvelloWeb | San Clemente, CA</title>
-<meta name="description" content="Local, technical, on-page, and e-commerce SEO services in Southern California. Rank higher, get found, and grow faster with NuvelloWeb."/>
+<title>UI/UX &amp; Graphic Design &#8212; NuvelloWeb | San Clemente, CA</title>
+<meta name="description" content="Brand identity, UI/UX design, print, and digital graphics for Southern California businesses. 100% custom — no templates."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 <style>
-  :root{--blue:#138CEC;--red:#AC3931;--darker:#16181a;--dark:#232528;--orange:#f47c20;--white:#f5f6fa;--muted:#8a8f9e;}
+  :root{--blue:#138CEC;--red:#AC3931;--darker:#16181a;--dark:#232528;--orange:#f47c20;--white:#f5f6fa;--muted:#8a8f9e;--slate:#565173;}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{background:var(--darker);color:var(--white);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
   h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
   a{color:inherit;}
+
+
+  /* HEADER CONTACT BAR */
+  .header-bar{background:#111315;border-bottom:1px solid rgba(255,255,255,.05);padding:.45rem 5vw;display:flex;align-items:center;justify-content:flex-end;gap:2rem;}
+  .header-bar a{color:var(--muted);font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s;font-weight:600;letter-spacing:.02em;}
+  .header-bar a:hover{color:var(--white);}
+  .header-bar .hb-icon{font-size:.9rem;}
+  /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
   .nav-logo svg{height:36px;width:auto;display:block;}
   .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
@@ -65,19 +73,23 @@
   .mobile-menu ul li:last-child a{margin-top:1.5rem;background:var(--blue);color:#fff;padding:.9rem 1.5rem;border-radius:6px;text-align:center;font-weight:700;font-size:.92rem;}
   .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;backdrop-filter:blur(2px);}
   .mobile-overlay.open{display:block;}
-  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;}
-  .eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--red);}
-  .section-label{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
-  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--red);}
+
+  /* UTILS */
+  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:1.2rem;}
+  .eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--slate);}
+  .section-label{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
+  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--slate);}
   .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);}
-  .btn-primary{background:var(--red);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
-  .btn-primary:hover{background:#962e28;transform:translateY(-2px);}
+  .btn-primary{background:var(--slate);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
+  .btn-primary:hover{background:#46405e;transform:translateY(-2px);}
   .btn-outline{background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;transition:border-color .2s,transform .15s;display:inline-block;}
   .btn-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px);}
   .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
   .fade-up.visible{opacity:1;transform:none;}
+
+  /* HERO */
   .page-hero{padding:180px 5vw 90px;position:relative;overflow:hidden;}
-  .ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 45%,rgba(172,57,49,.14) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(172,57,49,.06) 0%,transparent 60%);pointer-events:none;}
+  .ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 45%,rgba(86,81,115,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(86,81,115,.08) 0%,transparent 60%);pointer-events:none;}
   .ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
   .ph-inner{position:relative;z-index:2;max-width:740px;}
   .breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
@@ -85,35 +97,42 @@
   .breadcrumb a:hover{color:var(--white);}
   .breadcrumb .current{color:var(--white);}
   .ph-inner h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:1.4rem;}
-  .ph-inner h1 em{font-style:italic;color:var(--red);}
+  .ph-inner h1 em{font-style:italic;color:var(--slate);}
   .hero-sub{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:600px;margin-bottom:2.5rem;}
   .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
   .hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.07);}
   .hero-stat-num{font-family:'Lora',serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:.2rem;}
   .hero-stat-label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+
+  /* SPECIALTIES */
   .specialties-section{padding:100px 5vw;}
   .spec-intro{max-width:580px;margin-bottom:3.5rem;}
   .spec-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.8rem;}
   .spec-intro p{font-size:1rem;color:var(--muted);line-height:1.75;}
   .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
   .spec-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:2.4rem;display:flex;flex-direction:column;gap:1.1rem;transition:border-color .25s,transform .2s;}
-  .spec-card:hover{border-color:rgba(172,57,49,.45);transform:translateY(-4px);}
-  .spec-icon{width:56px;height:56px;border-radius:12px;background:rgba(172,57,49,.12);border:1px solid rgba(172,57,49,.25);display:flex;align-items:center;justify-content:center;font-size:1.6rem;}
+  .spec-card:hover{border-color:rgba(86,81,115,.55);transform:translateY(-4px);}
+  .spec-icon{width:56px;height:56px;border-radius:12px;background:rgba(86,81,115,.15);border:1px solid rgba(86,81,115,.3);display:flex;align-items:center;justify-content:center;font-size:1.6rem;}
   .spec-card h3{font-size:1.2rem;}
   .spec-desc{font-size:.93rem;color:var(--muted);line-height:1.75;}
   .spec-features{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
   .spec-features li{font-size:.87rem;color:var(--muted);display:flex;align-items:flex-start;gap:.65rem;line-height:1.5;}
-  .spec-features li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-top:.42rem;flex-shrink:0;}
-  .spec-badge{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);background:rgba(172,57,49,.1);border:1px solid rgba(172,57,49,.2);padding:.22rem .65rem;border-radius:4px;display:inline-block;margin-top:.3rem;}
-  .why-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
-  .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-  .why-text h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1.2rem;}
-  .why-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem;}
-  .why-text p:last-child{margin-bottom:0;}
-  .why-stats{display:flex;flex-direction:column;gap:1.5rem;}
-  .why-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.8rem 2rem;border-left:3px solid var(--red);}
-  .why-stat-num{font-family:'Lora',serif;font-size:2.4rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:.4rem;}
-  .why-stat-label{font-size:.88rem;color:var(--muted);line-height:1.5;}
+  .spec-features li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--slate);margin-top:.42rem;flex-shrink:0;}
+  .spec-badge{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);background:rgba(86,81,115,.12);border:1px solid rgba(86,81,115,.25);padding:.22rem .65rem;border-radius:4px;display:inline-block;margin-top:.3rem;}
+
+  /* DESIGN MATTERS */
+  .design-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
+  .design-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+  .design-text h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1.2rem;}
+  .design-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem;}
+  .design-text p:last-child{margin-bottom:0;}
+  .design-callouts{display:flex;flex-direction:column;gap:1.2rem;}
+  .design-callout{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.6rem 2rem;display:flex;gap:1.2rem;align-items:flex-start;border-left:3px solid var(--slate);}
+  .callout-icon{font-size:1.5rem;line-height:1;flex-shrink:0;margin-top:.1rem;}
+  .callout-text h4{font-size:.95rem;margin-bottom:.3rem;}
+  .callout-text p{font-size:.85rem;color:var(--muted);line-height:1.65;}
+
+  /* PROCESS */
   .process-section{padding:100px 5vw;}
   .proc-intro{max-width:560px;margin-bottom:3.5rem;}
   .proc-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.8rem;}
@@ -123,35 +142,39 @@
   .proc-step:hover{background:rgba(255,255,255,.03);}
   .proc-step:last-child{border-bottom:none;}
   .proc-num{font-family:'Lora',serif;font-size:2.6rem;font-weight:700;color:rgba(255,255,255,.06);line-height:1;min-width:3rem;transition:color .2s;}
-  .proc-step:hover .proc-num{color:var(--red);}
+  .proc-step:hover .proc-num{color:var(--slate);}
   .proc-content h3{font-size:1.05rem;margin-bottom:.4rem;}
   .proc-content p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+
+  /* FAQ */
   .faq-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
   .faq-intro{max-width:560px;margin-bottom:3rem;}
   .faq-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);}
   .faq-list{max-width:800px;}
   .faq-item{border-bottom:1px solid rgba(255,255,255,.07);}
   .faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Lora',serif;font-size:1.05rem;font-weight:600;padding:1.6rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;text-align:left;transition:color .2s;}
-  .faq-q:hover{color:var(--red);}
+  .faq-q:hover{color:var(--slate);}
   .faq-arrow{font-size:.9rem;transition:transform .3s;flex-shrink:0;color:var(--muted);}
   .faq-item.open .faq-arrow{transform:rotate(180deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
   .faq-item.open .faq-a{max-height:300px;}
   .faq-a p{font-size:.95rem;color:var(--muted);line-height:1.8;padding-bottom:1.6rem;}
+
+  /* QUOTE */
   .quote-section{padding:100px 5vw;}
   .quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
   .quote-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
   .quote-intro p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
   .quote-promise{display:flex;flex-direction:column;gap:1rem;}
   .promise-item{display:flex;align-items:center;gap:.9rem;font-size:.92rem;color:var(--muted);}
-  .promise-icon{width:32px;height:32px;border-radius:7px;background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
+  .promise-icon{width:32px;height:32px;border-radius:7px;background:rgba(86,81,115,.18);border:1px solid rgba(86,81,115,.3);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
   .quote-form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2.5rem;position:relative;}
-  .quote-form-card::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);}
+  .quote-form-card::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--slate),transparent);}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
   .form-group{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;}
   .form-group label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
   .form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.8rem 1rem;color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:.95rem;transition:border-color .2s;outline:none;width:100%;}
-  .form-group input:focus,.form-group textarea:focus{border-color:var(--red);}
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--slate);}
   .form-group select{cursor:pointer;}
   .form-group select option{background:#232528;color:var(--white);}
   .form-group textarea{resize:vertical;min-height:110px;}
@@ -160,6 +183,8 @@
   .success-icon{font-size:3rem;display:block;margin-bottom:1rem;}
   .form-success h3{font-size:1.6rem;margin-bottom:.6rem;}
   .form-success p{color:var(--muted);font-size:1rem;}
+
+  /* FOOTER */
   footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
   .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
   .footer-brand svg{height:32px;width:auto;margin-bottom:1.2rem;display:block;}
@@ -172,7 +197,8 @@
   .footer-col ul a{text-decoration:none;color:var(--muted);font-size:.9rem;transition:color .2s;}
   .footer-col ul a:hover{color:var(--white);}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:1rem;}
-  @media(max-width:1024px){.spec-grid{grid-template-columns:1fr 1fr;}.why-inner{grid-template-columns:1fr;gap:3rem;}}
+
+  @media(max-width:1024px){.spec-grid{grid-template-columns:1fr 1fr;}.design-inner{grid-template-columns:1fr;gap:3rem;}}
   @media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.spec-grid{grid-template-columns:1fr;}.quote-wrap{grid-template-columns:1fr;gap:3rem;}.footer-top{grid-template-columns:1fr 1fr;}}
   @media(max-width:600px){.hero-stats{gap:2rem;}.proc-step{flex-direction:column;gap:.6rem;}.form-row{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
 
@@ -216,23 +242,24 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How long before I see SEO results?","acceptedAnswer":{"@type":"Answer","text":"Most clients see measurable keyword movement within 60 to 90 days, with meaningful traffic growth between 4 and 6 months. SEO compounds over time."}},
-    {"@type":"Question","name":"Can you guarantee first-page rankings?","acceptedAnswer":{"@type":"Answer","text":"No ethical SEO agency can guarantee specific rankings. Google controls the algorithm. We guarantee a rigorous strategy, full transparency, and monthly reporting."}},
-    {"@type":"Question","name":"Is local SEO different from regular SEO?","acceptedAnswer":{"@type":"Answer","text":"Yes. Local SEO targets geographic searches like dentist near me or plumber in San Clemente and focuses on Google Business Profile, citations, and map pack visibility."}},
-    {"@type":"Question","name":"Do I need SEO if I am already running paid ads?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paid ads stop the moment you stop paying. SEO builds compounding organic traffic with no per-click cost, and the two channels complement each other."}},
-    {"@type":"Question","name":"Can you work on a site you did not build?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We work with any WordPress site and most other platforms, starting with an audit to establish a baseline."}},
-    {"@type":"Question","name":"How do you measure success?","acceptedAnswer":{"@type":"Answer","text":"We track keyword rankings, organic traffic growth, and real business outcomes like calls, form fills, and sales that originated from organic search."}}
+    {"@type":"Question","name":"Do I need UX design if I already have a designer?","acceptedAnswer":{"@type":"Answer","text":"Visual designers and UX designers solve different problems. A visual designer makes things look good. A UX designer makes them work. We handle both under one roof."}},
+    {"@type":"Question","name":"Can you redesign just part of my site or brand?","acceptedAnswer":{"@type":"Answer","text":"Yes. We often work in phases starting with the highest-impact pages or most visible brand touchpoints first."}},
+    {"@type":"Question","name":"What do I receive at the end of a design project?","acceptedAnswer":{"@type":"Answer","text":"All source files including Figma, AI, SVG, PDF, and PNG, plus a style guide and any print-ready files if applicable."}},
+    {"@type":"Question","name":"How many revisions are included?","acceptedAnswer":{"@type":"Answer","text":"Two rounds of revisions per phase. Additional rounds beyond that are scoped and billed separately."}},
+    {"@type":"Question","name":"Will my design work match my existing website?","acceptedAnswer":{"@type":"Answer","text":"If you are bringing us in for standalone graphic design we will match your existing brand. If redesigning, we create a cohesive system across all touchpoints."}},
+    {"@type":"Question","name":"Do you design for print too, or just digital?","acceptedAnswer":{"@type":"Answer","text":"Both. We design business cards, brochures, banners, signage, and packaging alongside digital work with proper print-ready file preparation."}}
 ]}
 </script>
 </head>
 <body>
+
 <div class="header-bar">
-  <a href="/cdn-cgi/l/email-protection#90f3fffee4f1f3e4d0fee5e6f5fcfcffe7f5f2bef3fffd"><span class="hb-icon">&#9993;</span> <span class="__cf_email__" data-cfemail="2d4e4243594c4e596d43585b484141425a484f034e4240">[email&#160;protected]</span></a>
+  <a href="/cdn-cgi/l/email-protection#7f1c10110b1e1c0b3f110a091a131310081a1d511c1012"><span class="hb-icon">&#9993;</span> <span class="__cf_email__" data-cfemail="cdaea2a3b9acaeb98da3b8bba8a1a1a2baa8afe3aea2a0">[email&#160;protected]</span></a>
   <a href="tel:+19093127101"><span class="hb-icon">&#128222;</span> +1 (909) 312-7101</a>
 </div>
 <div class="top-bar">
   <div class="top-bar-inner">
-    <a href="/cdn-cgi/l/email-protection#e88b87869c898b9ca8869d9e8d8484879f8d8ac68b8785" class="top-bar-link">&#128231; <span class="__cf_email__" data-cfemail="cfaca0a1bbaeacbb8fa1bab9aaa3a3a0b8aaade1aca0a2">[email&#160;protected]</span></a>
+    <a href="/cdn-cgi/l/email-protection#15767a7b61747661557b60637079797a6270773b767a78" class="top-bar-link">&#128231; <span class="__cf_email__" data-cfemail="f3909c9d87929087b39d8685969f9f9c849691dd909c9e">[email&#160;protected]</span></a>
     <a href="tel:+19093127101" class="top-bar-link">&#128222; +1 (909) 312-7101</a>
   </div>
 </div>
@@ -265,6 +292,7 @@
   </ul>
   <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">&#x2715;</button>
   <ul>
@@ -292,156 +320,236 @@
   </ul>
 </div>
 <div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- HERO -->
 <div class="page-hero">
-  <div class="ph-bg"></div><div class="ph-grid"></div>
+  <div class="ph-bg"></div>
+  <div class="ph-grid"></div>
   <div class="ph-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a> &#8250; <a href="../services.html">Services</a> &#8250; <span class="current">SEO Optimization</span>
+      <a href="/">Home</a> &#8250; <a href="../services.html">Services</a> &#8250; <span class="current">UI/UX &amp; Graphic Design</span>
     </nav>
-    <div class="eyebrow">SEO Optimization</div>
-    <h1>Rank Higher. Get Found.<br><em>Grow Faster.</em></h1>
-    <p class="hero-sub">Most businesses are invisible online &#8212; not because their product is bad, but because their SEO is. We fix that with strategy-led SEO covering local, technical, on-page, off-page, e-commerce, and reporting. Rankings that compound over time.</p>
+    <div class="eyebrow">UI/UX &amp; Graphic Design</div>
+    <h1>Design That Works.<br><em>Looks That Convert.</em></h1>
+    <p class="hero-sub">A beautiful website that confuses visitors is a failure. A functional one that looks generic is forgettable. We do both &#8212; user experience that guides people toward action, and visual design that makes them trust you before they read a word.</p>
     <div class="hero-actions">
-      <a href="#quote" class="btn-primary">Get a Free SEO Audit &#8594;</a>
+      <a href="#quote" class="btn-primary">Start a Design Project &#8594;</a>
       <a href="../services.html" class="btn-outline">All Services</a>
     </div>
-    <div class="hero-stats"><div><div class="hero-stat-num">6+</div><div class="hero-stat-label">Years Ranking Sites</div></div><div><div class="hero-stat-num"></div><div class="hero-stat-label">Clients Served</div></div><div><div class="hero-stat-num">&#8593;3x</div><div class="hero-stat-label">Avg Traffic Increase</div></div></div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">6+</div><div class="hero-stat-label">Years Designing</div></div>
+      
+      <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Custom &#8212; No Templates</div></div>
+    </div>
   </div>
 </div>
+
 <div class="divider"></div>
+
+<!-- SPECIALTIES -->
 <section class="specialties-section">
-  <div class="section-label">SEO Services</div>
-  <div class="spec-intro"><h2>Six Pillars of a<br>Ranking Strategy That Sticks</h2><p>SEO is not one thing &#8212; it is six things working together. We cover all of them, or focus on exactly what your site needs most right now.</p></div>
+  <div class="section-label">Design Services</div>
+  <div class="spec-intro">
+    <h2>Every Angle of Design,<br>Under One Roof</h2>
+    <p>From the first wireframe to the final brand asset, we handle the full visual layer of your business &#8212; web, brand, and print.</p>
+  </div>
   <div class="spec-grid">
-        <div class="spec-card fade-up">
-      <div class="spec-icon">&#128205;</div>
-      <h3>Local SEO</h3>
-      <p class="spec-desc">Win in your backyard. Google Business Profile optimization, local citations, and map pack strategies that drive real calls and foot traffic.</p>
-      <ul class="spec-features"><li>Google Business Profile setup and full optimization</li><li>Local citation building across 50+ directories</li><li>Map pack (3-pack) ranking strategy</li><li>Geo-targeted landing pages for service areas</li><li>Review generation strategy and reputation management</li><li>NAP consistency audit across the entire web</li></ul>
-      <span class="spec-badge">Local &#183; Maps &#183; Citations</span>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128247;</div>
+      <h3>UX Design &amp; Wireframing</h3>
+      <p class="spec-desc">Before a single color is chosen, we map how users move through your site. Wireframes, user flows, and information architecture that make the final design a solved problem, not a guess.</p>
+      <ul class="spec-features">
+        <li>User journey mapping and flow diagrams</li>
+        <li>Low and high-fidelity wireframes</li>
+        <li>Information architecture planning</li>
+        <li>Clickable prototype for stakeholder review</li>
+        <li>Conversion-focused page structure</li>
+        <li>Mobile-first layout decisions at every stage</li>
+      </ul>
+      <span class="spec-badge">UX &#183; Wireframes &#183; Prototypes</span>
     </div>
-        <div class="spec-card fade-up">
-      <div class="spec-icon">&#128295;</div>
-      <h3>Technical SEO</h3>
-      <p class="spec-desc">If Google cannot crawl your site cleanly, nothing else matters. We audit and fix everything under the hood: speed, indexation, structure, and Core Web Vitals.</p>
-      <ul class="spec-features"><li>Full technical audit with a prioritized fix roadmap</li><li>Core Web Vitals and page speed optimization</li><li>Crawlability, indexation, and robots.txt review</li><li>Canonical tags, redirects, and duplicate content fixes</li><li>XML sitemap creation and Search Console submission</li><li>Schema markup and structured data implementation</li></ul>
-      <span class="spec-badge">Technical &#183; Speed &#183; Core Web Vitals</span>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#127912;</div>
+      <h3>UI Design &amp; Visual Systems</h3>
+      <p class="spec-desc">The visual layer that turns wireframes into something people want to use. Color, typography, spacing, and component systems that look cohesive, feel premium, and scale as you grow.</p>
+      <ul class="spec-features">
+        <li>Custom UI design in Figma or Adobe XD</li>
+        <li>Design system and component library creation</li>
+        <li>Color palette, typography scale, and spacing rules</li>
+        <li>Dark and light mode variants</li>
+        <li>Interactive states: hover, focus, active, error</li>
+        <li>Handoff-ready files for any developer</li>
+      </ul>
+      <span class="spec-badge">UI &#183; Figma &#183; Design Systems</span>
     </div>
-        <div class="spec-card fade-up">
-      <div class="spec-icon">&#128297;</div>
-      <h3>On-Page SEO</h3>
-      <p class="spec-desc">Content that ranks and converts. We research the exact terms your customers search, then optimize every page to match Google and real human intent.</p>
-      <ul class="spec-features"><li>In-depth keyword research with intent mapping</li><li>Title tags, meta descriptions, and header optimization</li><li>Content gap analysis and page-level recommendations</li><li>Internal linking strategy to distribute page authority</li><li>Image alt text, file names, and media optimization</li><li>Content rewrites for underperforming pages</li></ul>
-      <span class="spec-badge">Keywords &#183; Content &#183; On-Page</span>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128161;</div>
+      <h3>Brand Identity Design</h3>
+      <p class="spec-desc">Your logo is not your brand &#8212; but it is where it starts. We create full identity systems that give your business a visual personality that is consistent, distinctive, and built to last.</p>
+      <ul class="spec-features">
+        <li>Logo design (primary, secondary, icon versions)</li>
+        <li>Brand color palette with usage guidelines</li>
+        <li>Typography selection and pairing</li>
+        <li>Brand voice and personality definition</li>
+        <li>Full brand style guide document</li>
+        <li>File delivery in all formats: SVG, PNG, PDF, EPS</li>
+      </ul>
+      <span class="spec-badge">Logo &#183; Brand &#183; Identity</span>
     </div>
-        <div class="spec-card fade-up">
-      <div class="spec-icon">&#128279;</div>
-      <h3>Off-Page &amp; Link Building</h3>
-      <p class="spec-desc">Authority is earned, not faked. We build backlinks that signal genuine trust to Google through real outreach, digital PR, and placements on relevant sites.</p>
-      <ul class="spec-features"><li>Competitor backlink gap analysis</li><li>White-hat outreach to niche-relevant domains</li><li>Digital PR and resource link acquisition</li><li>Guest post strategy on vetted publications</li><li>Toxic link identification and disavow management</li><li>Domain authority monitoring over time</li></ul>
-      <span class="spec-badge">Backlinks &#183; Authority &#183; Digital PR</span>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128196;</div>
+      <h3>Print &amp; Marketing Materials</h3>
+      <p class="spec-desc">Your brand does not stop at the screen. We design print collateral that matches your digital identity and holds up in the real world &#8212; business cards to billboards.</p>
+      <ul class="spec-features">
+        <li>Business cards and stationery</li>
+        <li>Brochures, flyers, and sell sheets</li>
+        <li>Banners, signage, and trade show displays</li>
+        <li>Menus, packaging, and product labels</li>
+        <li>Print-ready file preparation and bleed setup</li>
+        <li>Vendor coordination and print management</li>
+      </ul>
+      <span class="spec-badge">Print &#183; Collateral &#183; Signage</span>
     </div>
-        <div class="spec-card fade-up">
-      <div class="spec-icon">&#128722;</div>
-      <h3>E-Commerce SEO</h3>
-      <p class="spec-desc">Product pages that rank. Category pages that convert. We apply SEO to the unique structure of online stores &#8212; where the wrong setup can sink thousands of pages.</p>
-      <ul class="spec-features"><li>Product and category page keyword strategy</li><li>Faceted navigation and URL structure optimization</li><li>Product schema markup for rich search results</li><li>Thin content and duplicate product page resolution</li><li>Collection page content and internal linking</li><li>Conversion-focused SEO copywriting for products</li></ul>
-      <span class="spec-badge">E-Commerce &#183; Products &#183; Schema</span>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128444;</div>
+      <h3>Social Media &amp; Digital Graphics</h3>
+      <p class="spec-desc">Scroll-stopping content for every platform. Templates and one-off designs that keep your brand looking sharp whether it is an Instagram post, a LinkedIn banner, or an email header.</p>
+      <ul class="spec-features">
+        <li>Social media post and story templates</li>
+        <li>Profile and cover photo setup across platforms</li>
+        <li>Ad creative for Meta, Google, and LinkedIn</li>
+        <li>Email header and newsletter design</li>
+        <li>Branded presentation and pitch deck templates</li>
+        <li>Editable Canva template delivery for ongoing use</li>
+      </ul>
+      <span class="spec-badge">Social &#183; Ads &#183; Templates</span>
     </div>
-        <div class="spec-card fade-up">
-      <div class="spec-icon">&#128202;</div>
-      <h3>SEO Reporting &amp; Strategy</h3>
-      <p class="spec-desc">No vanity metrics. We track what matters &#8212; rankings, organic traffic, leads, and revenue &#8212; and use that data to make every next move smarter.</p>
-      <ul class="spec-features"><li>Monthly ranking and traffic reports in plain English</li><li>Google Analytics 4 and Search Console monitoring</li><li>Conversion tracking from organic: calls, forms, sales</li><li>Competitor ranking movement tracking</li><li>Quarterly strategy reviews with updated priorities</li><li>Direct access to your strategist &#8212; no account managers</li></ul>
-      <span class="spec-badge">Reporting &#183; Analytics &#183; Strategy</span>
+
+    <div class="spec-card fade-up">
+      <div class="spec-icon">&#128260;</div>
+      <h3>Design Audits &amp; Redesigns</h3>
+      <p class="spec-desc">Already have a site or brand but it is not landing? We audit what exists, identify what is hurting you, and redesign with intention &#8212; not just a new coat of paint.</p>
+      <ul class="spec-features">
+        <li>Visual design audit with written findings</li>
+        <li>UX heuristic evaluation and friction analysis</li>
+        <li>Competitor design benchmarking</li>
+        <li>Prioritized redesign recommendations</li>
+        <li>Phased redesign approach to fit your budget</li>
+        <li>Before/after documentation for stakeholders</li>
+      </ul>
+      <span class="spec-badge">Audit &#183; Redesign &#183; Strategy</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DESIGN MATTERS -->
+<section class="design-section">
+  <div class="design-inner">
+    <div class="design-text fade-up">
+      <div class="section-label">Why Design Matters</div>
+      <h2>You Have 50 Milliseconds<br>to Make an Impression.</h2>
+      <p>Research shows visitors form a visual opinion of your site in under a tenth of a second &#8212; and that first impression drives every decision they make after it. Bad design does not just look unprofessional. It costs you business.</p>
+      <p>Good design is not decoration. It is the difference between a visitor who bounces and a lead who converts. We treat every design decision as a business decision.</p>
+    </div>
+    <div class="design-callouts fade-up">
+      <div class="design-callout">
+        <div class="callout-icon">&#128064;</div>
+        <div class="callout-text"><h4>First Impressions Are Visual</h4><p>94% of first impressions are design-related. Your brand credibility is established before a word is read.</p></div>
+      </div>
+      <div class="design-callout">
+        <div class="callout-icon">&#127919;</div>
+        <div class="callout-text"><h4>UX Drives Revenue</h4><p>Every $1 invested in UX returns $100 on average. Removing friction from your user flow directly improves conversions.</p></div>
+      </div>
+      <div class="design-callout">
+        <div class="callout-icon">&#128308;</div>
+        <div class="callout-text"><h4>Consistency Builds Trust</h4><p>Brands with consistent visual identity across all channels are 3 to 4 times more likely to have strong brand visibility.</p></div>
+      </div>
     </div>
   </div>
 </section>
+
 <div class="divider"></div>
-<section class="why-section">
-  <div class="why-inner">
-    <div class="why-text fade-up">
-      <div class="section-label">Why It Matters</div>
-      <h2>Paid Ads Stop.<br>SEO Compounds.</h2>
-      <p>Every dollar you spend on Google Ads disappears the moment you stop paying. SEO works differently &#8212; rankings you earn today keep driving traffic for months and years without ongoing ad spend.</p><p>For most businesses, organic search is the highest-ROI channel they have. The problem is it takes real expertise to get right, and most agencies either cut corners or bury clients in jargon.</p><p>We do neither. You get a clear strategy, honest timelines, and reporting that shows exactly what is working.</p>
-    </div>
-    <div class="why-stats fade-up"><div class="why-stat"><div class="why-stat-num">68%</div><div class="why-stat-label">of all online experiences begin with a search engine</div></div><div class="why-stat"><div class="why-stat-num">53%</div><div class="why-stat-label">of all website traffic comes from organic search</div></div><div class="why-stat"><div class="why-stat-num">0.63%</div><div class="why-stat-label">of Google searchers ever click a result on page two</div></div></div>
-  </div>
-</section>
-<div class="divider"></div>
+
+<!-- PROCESS -->
 <section class="process-section">
   <div class="section-label">How We Work</div>
-  <div class="proc-intro"><h2>Our SEO Process</h2><p>No black boxes. You know what we are doing and why at every stage.</p></div>
+  <div class="proc-intro">
+    <h2>Our Design Process</h2>
+    <p>Strategy before aesthetics. Every design decision traces back to a business goal.</p>
+  </div>
   <div class="proc-list">
-        <div class="proc-step fade-up">
-      <div class="proc-num">01</div>
-      <div class="proc-content"><h3>Full Site Audit</h3><p>We start with a deep technical and content audit of your current site to find every opportunity, error, and gap before touching anything.</p></div>
-    </div>
-        <div class="proc-step fade-up">
-      <div class="proc-num">02</div>
-      <div class="proc-content"><h3>Keyword Research</h3><p>We map the exact terms your customers search &#8212; filtering for intent, not just volume &#8212; and assign them to pages on your site.</p></div>
-    </div>
-        <div class="proc-step fade-up">
-      <div class="proc-num">03</div>
-      <div class="proc-content"><h3>Technical Fixes</h3><p>Speed issues, crawl errors, canonical problems, schema, and sitemap all resolved and resubmitted before content work begins.</p></div>
-    </div>
-        <div class="proc-step fade-up">
-      <div class="proc-num">04</div>
-      <div class="proc-content"><h3>On-Page Optimization</h3><p>Titles, metas, headers, content, and internal links optimized across every priority page based on the keyword map.</p></div>
-    </div>
-        <div class="proc-step fade-up">
-      <div class="proc-num">05</div>
-      <div class="proc-content"><h3>Off-Page Authority Building</h3><p>Link acquisition and digital PR work begins &#8212; white-hat, sustainable, and fully tracked in your monthly report.</p></div>
-    </div>
-        <div class="proc-step fade-up">
-      <div class="proc-num">06</div>
-      <div class="proc-content"><h3>Monthly Reporting and Refinement</h3><p>Rankings and traffic reviewed every month. Strategy adjusted based on what is gaining traction and what the data says to do next.</p></div>
-    </div>
+    <div class="proc-step fade-up"><div class="proc-num">01</div><div class="proc-content"><h3>Discovery &amp; Goals</h3><p>We learn your business, your audience, and what success looks like before any design begins. Your goals drive every decision.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">02</div><div class="proc-content"><h3>Research &amp; Moodboarding</h3><p>Competitive analysis, inspiration references, and visual direction alignment &#8212; so we are building toward something you actually want.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">03</div><div class="proc-content"><h3>Wireframes &amp; Structure</h3><p>Layout and flow before visual polish. We map every page and user journey in greyscale to validate the structure before adding color.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">04</div><div class="proc-content"><h3>Visual Design</h3><p>Color, typography, imagery, and components applied to the approved wireframes. You review and request revisions before anything is finalized.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">05</div><div class="proc-content"><h3>Refinement &amp; Handoff</h3><p>Revisions incorporated, final files prepared, and everything handed off in developer-ready formats or applied directly by our team.</p></div></div>
+    <div class="proc-step fade-up"><div class="proc-num">06</div><div class="proc-content"><h3>Brand Assets &amp; Documentation</h3><p>You receive all source files, organized asset libraries, and a style guide so your brand stays consistent long after we hand things over.</p></div></div>
   </div>
 </section>
+
 <div class="divider"></div>
+
+<!-- FAQ -->
 <section class="faq-section">
   <div class="section-label">Common Questions</div>
   <div class="faq-intro"><h2>Things People Usually Ask</h2></div>
   <div class="faq-list">
-        <div class="faq-item">
-      <button class="faq-q">How long before I see SEO results?<span class="faq-arrow">&#8595;</span></button>
-      <div class="faq-a"><p>Most clients see measurable keyword movement within 60 to 90 days, with meaningful traffic growth between 4 and 6 months. SEO compounds &#8212; results at 12 months are significantly stronger than at 3. We set honest expectations upfront and report monthly.</p></div>
+
+    <div class="faq-item">
+      <button class="faq-q">Do I need UX design if I already have a designer?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Visual designers and UX designers solve different problems. A visual designer makes things look good. A UX designer makes them work. Most projects benefit from both &#8212; and we handle both under one roof so they stay aligned throughout the project.</p></div>
     </div>
-        <div class="faq-item">
-      <button class="faq-q">Can you guarantee first-page rankings?<span class="faq-arrow">&#8595;</span></button>
-      <div class="faq-a"><p>No ethical SEO agency can guarantee specific rankings. Google controls the algorithm, and anyone making guarantees is misleading you. What we guarantee is a rigorous strategy, full transparency, and monthly reporting that shows exactly what is happening.</p></div>
+
+    <div class="faq-item">
+      <button class="faq-q">Can you redesign just part of my site or brand?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Yes. We often work in phases &#8212; starting with the highest-impact pages or the most visible brand touchpoints first. We will audit what you have, tell you where the biggest gains are, and scope a project accordingly.</p></div>
     </div>
-        <div class="faq-item">
-      <button class="faq-q">Is local SEO different from regular SEO?<span class="faq-arrow">&#8595;</span></button>
-      <div class="faq-a"><p>Yes. Local SEO targets searches with geographic intent &#8212; like dentist near me or plumber in San Clemente &#8212; and focuses heavily on Google Business Profile, citation consistency, and map pack visibility. It requires its own distinct strategy.</p></div>
+
+    <div class="faq-item">
+      <button class="faq-q">What do I receive at the end of a design project?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>You receive all source files (Figma, AI, SVG, PDF, PNG), a style guide, and any print-ready files if applicable. Everything is organized and labeled so you or any future vendor can work with them cleanly.</p></div>
     </div>
-        <div class="faq-item">
-      <button class="faq-q">Do I need SEO if I am already running paid ads?<span class="faq-arrow">&#8595;</span></button>
-      <div class="faq-a"><p>Yes. Paid ads stop the moment you stop paying. SEO builds compounding organic traffic with no per-click cost. The two channels complement each other &#8212; SEO data improves ad targeting, and ads fill the gap while organic rankings build.</p></div>
+
+    <div class="faq-item">
+      <button class="faq-q">How many revisions are included?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Our process is built to minimize surprises &#8212; with structured review points at wireframes and visual design stages. We include two rounds of revisions per phase. Additional revision rounds beyond that are scoped and billed separately.</p></div>
     </div>
-        <div class="faq-item">
-      <button class="faq-q">Can you work on a site you did not build?<span class="faq-arrow">&#8595;</span></button>
-      <div class="faq-a"><p>Absolutely. We work with any WordPress site and most other platforms. We begin every engagement with an audit to understand your current setup and establish a baseline.</p></div>
+
+    <div class="faq-item">
+      <button class="faq-q">Will my design work match my existing website?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>If you are bringing us in for standalone graphic design, we will match your existing brand. If we are redesigning, we will create a cohesive system that works across your site and all collateral. Either way, consistency is always the goal.</p></div>
     </div>
-        <div class="faq-item">
-      <button class="faq-q">How do you measure success?<span class="faq-arrow">&#8595;</span></button>
-      <div class="faq-a"><p>We track keyword rankings, organic traffic growth, and real business outcomes &#8212; calls, form fills, and sales that originated from organic search. Impressions and clicks are context. Leads and revenue are the goal.</p></div>
+
+    <div class="faq-item">
+      <button class="faq-q">Do you design for print too, or just digital?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Both. We design business cards, brochures, banners, signage, and packaging alongside digital work &#8212; and we prepare all print files with proper bleeds, crop marks, and color profiles for your vendor.</p></div>
     </div>
+
   </div>
 </section>
+
 <div class="divider"></div>
+
+<!-- QUOTE -->
 <section class="quote-section" id="quote">
   <div class="quote-wrap">
     <div class="quote-intro fade-up">
       <div class="section-label">Get Started</div>
-      <h2>Get a Free SEO Audit</h2>
-      <p>Tell us about your project. We will come back with a clear plan and honest pricing &#8212; no pressure, no fluff.</p>
+      <h2>Tell Us About Your Design Project</h2>
+      <p>Whether you need a logo, a full site redesign, or just a set of social templates &#8212; tell us what you are working on and we will come back with a clear plan and honest pricing.</p>
       <div class="quote-promise">
         <div class="promise-item"><div class="promise-icon">&#9889;</div>Response within 24 hours</div>
-        <div class="promise-item"><div class="promise-icon">&#128269;</div>Free initial consultation</div>
-        <div class="promise-item"><div class="promise-icon">&#128176;</div>Transparent pricing</div>
-        <div class="promise-item"><div class="promise-icon">&#128205;</div>Serving Southern California</div>
+        <div class="promise-item"><div class="promise-icon">&#127912;</div>100% custom &#8212; no stock templates</div>
+        <div class="promise-item"><div class="promise-icon">&#128196;</div>All source files included</div>
+        <div class="promise-item"><div class="promise-icon">&#128205;</div>Serving all of Southern California</div>
       </div>
     </div>
     <div class="quote-form-card fade-up">
@@ -452,17 +560,28 @@
         </div>
         <div class="form-group"><label for="femail">Email</label><input id="femail" type="email" placeholder="you@yourbusiness.com" required/></div>
         <div class="form-group"><label for="fphone">Phone</label><input id="fphone" type="tel" placeholder="(909) 000-0000"/></div>
-        <div class="form-group"><label for="fsite">Your Website URL</label><input id="fsite" type="url" placeholder="https://yourbusiness.com"/></div>
         <div class="form-group">
-          <label for="fservice">Service Needed</label>
-          <select id="fservice"><option value="">Select a service</option><option>Local SEO</option><option>Technical SEO</option><option>On-Page SEO</option><option>Off-Page and Link Building</option><option>E-Commerce SEO</option><option>Full SEO Package</option><option>Not Sure Yet</option></select>
+          <label for="fservice">Design Service Needed</label>
+          <select id="fservice">
+            <option value="">Select a service</option>
+            <option>UX Design and Wireframing</option>
+            <option>UI Design and Visual Systems</option>
+            <option>Brand Identity Design</option>
+            <option>Print and Marketing Materials</option>
+            <option>Social Media and Digital Graphics</option>
+            <option>Design Audit and Redesign</option>
+            <option>Full Design Package</option>
+            <option>Not Sure Yet</option>
+          </select>
         </div>
-        <div class="form-group"><label for="fmsg">Tell Us About Your Project</label><textarea id="fmsg" placeholder="What are you working on? Any details help."></textarea></div>
+        <div class="form-group"><label for="fmsg">Tell Us About Your Project</label><textarea id="fmsg" placeholder="What do you need designed? Do you have existing brand assets? Any examples of styles you like or dislike?"></textarea></div>
         <button type="submit" class="btn-primary form-submit">Send My Request &#8594;</button>
       </form>
     </div>
   </div>
 </section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -498,7 +617,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+19093127101">(909) 312-7101</a></li>
-        <li><a href="#" class="footer-email"></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#5f3d3a31353e3236311f312a293a333330283a3d713c3032"></a></li>
         <li><a href="#">San Clemente, CA</a></li>
       </ul>
     </div>
@@ -508,14 +627,15 @@
     <span>Privacy Policy &#183; Terms of Service</span>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.addEventListener('DOMContentLoaded', function(){
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
   var hamburgerBtn   = document.getElementById('hamburgerBtn');
   var mobileCloseBtn = document.getElementById('mobileCloseBtn');
   var mobileMenu     = document.getElementById('mobileMenu');
   var mobileOverlay  = document.getElementById('mobileOverlay');
-  function openMenu(){ mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeMenu(){ mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow=''; }
+  function openMenu() { mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
   hamburgerBtn.addEventListener('click', openMenu);
   mobileCloseBtn.addEventListener('click', closeMenu);
   mobileOverlay.addEventListener('click', closeMenu);
