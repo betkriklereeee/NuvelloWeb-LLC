@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Digital Marketing Services &#8212; NuvelloWeb | San Clemente, CA</title>
+<meta name="description" content="Data-driven digital marketing that fills your pipeline. Google Ads, Meta Ads, email marketing, social strategy, and content &#8212; built to generate leads and grow revenue."/>
+<link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"NuvelloWeb LLC","url":"https://nuvelloweb.com","telephone":"+19093127101","email":"contact@nuvelloweb.com","address":{"@type":"PostalAddress","addressLocality":"San Clemente","addressRegion":"CA","addressCountry":"US"}}
+</script>
+<style>
+:root{--blue:#138CEC;--navy:#2A2A72;--dark:#232528;--darker:#16181a;--orange:#f47c20;--white:#f5f6fa;--muted:#8a8f9e;--accent:42,42,114;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--darker);color:var(--white);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
+a{color:inherit;}
+.header-bar{position:fixed;top:0;left:0;right:0;z-index:101;background:#111315;border-bottom:1px solid rgba(255,255,255,.05);padding:.45rem 5vw;display:flex;align-items:center;justify-content:flex-end;gap:2rem;}
+.header-bar a{color:var(--muted);font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s;font-weight:600;}
+.header-bar a:hover{color:var(--white);}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
+.nav-logo img{height:40px;width:auto;display:block;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.1rem;border-radius:4px;white-space:nowrap;}
+.nav-cta:hover{background:#0f7ad6!important;}
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:.35rem;cursor:pointer;}
+.nav-dropdown>a::after{content:'';display:block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--muted);transition:transform .25s,border-top-color .2s;margin-top:1px;}
+.nav-dropdown:hover>a::after{transform:rotate(180deg);border-top-color:var(--white);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#1e2023;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;box-shadow:0 12px 40px rgba(0,0,0,.45);}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.ndm-item{display:flex;align-items:center;gap:.8rem;padding:.65rem .85rem;border-radius:7px;text-decoration:none;transition:background .15s;}
+.ndm-item:hover{background:rgba(255,255,255,.07);}
+.ndm-item.disabled{opacity:.38;pointer-events:none;}
+.ndm-icon{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+.ndm-text{display:flex;flex-direction:column;}
+.ndm-label{font-size:.82rem;font-weight:700;color:var(--white);}
+.ndm-sub{font-size:.72rem;color:var(--muted);}
+.ndm-soon{font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);padding:.1rem .4rem;border-radius:3px;margin-left:auto;flex-shrink:0;}
+.ndm-divider{height:1px;background:rgba(255,255,255,.06);margin:.4rem 0;}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:#16181a;border-left:1px solid rgba(255,255,255,.08);z-index:200;padding:100px 2.5rem 3rem;transition:right .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;}
+.mobile-menu.open{right:0;}
+.mobile-close{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:var(--white);width:36px;height:36px;border-radius:8px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;}
+.mobile-menu ul li{border-bottom:1px solid rgba(255,255,255,.06);}
+.mobile-menu ul a{display:block;padding:1.1rem 0;font-size:1.15rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s;}
+.mobile-menu ul a:hover{color:var(--white);}
+.mobile-menu ul li:last-child a{margin-top:1.5rem;background:var(--blue);color:#fff;padding:.9rem 1.5rem;border-radius:6px;text-align:center;font-weight:700;font-size:.92rem;}
+.mobile-menu ul li.has-children>a{display:flex;justify-content:space-between;align-items:center;}
+.mobile-menu ul li.has-children>a::after{content:'+';font-size:1.1rem;color:var(--muted);}
+.mobile-menu ul li.has-children.open>a::after{content:'-';}
+.mobile-children{display:none;flex-direction:column;padding:.3rem 0 .5rem 1rem;}
+.mobile-menu ul li.has-children.open .mobile-children{display:flex;}
+.mobile-child-link{display:flex;align-items:center;gap:.6rem;padding:.6rem 0;font-size:1rem;color:var(--muted);text-decoration:none;transition:color .2s;}
+.mobile-child-link:hover{color:var(--white);}
+.mobile-child-icon{font-size:.85rem;}
+.mobile-child-soon{font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);padding:.1rem .35rem;border-radius:3px;margin-left:auto;}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;}
+.mobile-overlay.open{display:block;}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:1.2rem;}
+.eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--blue);}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
+.section-label::before{content:'';display:block;width:20px;height:2px;background:var(--blue);}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);}
+.btn-primary{background:var(--blue);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
+.btn-primary:hover{background:#0f7ad6;transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;transition:border-color .2s,transform .15s;display:inline-block;}
+.btn-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px);}
+/* PAGE HERO */
+.page-hero{padding:190px 5vw 90px;position:relative;overflow:hidden;}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 45%,rgba(var(--accent),.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(19,140,236,.1) 0%,transparent 60%);pointer-events:none;}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.ph-inner{position:relative;z-index:2;max-width:740px;}
+.breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--white);}
+.breadcrumb .current{color:var(--white);}
+.ph-inner h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:1.4rem;}
+.ph-inner h1 em{font-style:italic;color:var(--blue);}
+.ph-inner p{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:600px;margin-bottom:2.5rem;}
+.ph-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+/* SERVICES GRID */
+.services-section{padding:100px 5vw;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+.feat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:2.2rem;transition:border-color .25s,transform .2s;}
+.feat-card:hover{border-color:rgba(var(--accent),.5);transform:translateY(-4px);}
+.feat-icon{width:52px;height:52px;border-radius:10px;background:rgba(var(--accent),.15);border:1px solid rgba(var(--accent),.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.4rem;}
+.feat-card h3{font-size:1.05rem;margin-bottom:.6rem;}
+.feat-card p{font-size:.9rem;color:var(--muted);line-height:1.75;}
+/* PLATFORMS */
+.platforms-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
+.platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3.5rem;}
+.platform-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:2.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;transition:border-color .25s;}
+.platform-card:hover{border-color:rgba(var(--accent),.4);}
+.platform-icon{width:60px;height:60px;border-radius:12px;background:rgba(var(--accent),.15);border:1px solid rgba(var(--accent),.3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.platform-card h3{font-size:1.15rem;margin-bottom:.5rem;}
+.platform-card p{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:1rem;}
+.platform-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.ptag{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:.25rem .6rem;border-radius:4px;}
+/* PROCESS */
+.process-section{padding:100px 5vw;}
+.proc-list{display:flex;flex-direction:column;max-width:780px;margin-top:3.5rem;}
+.proc-step{display:flex;gap:2.2rem;padding:2rem 1rem;border-bottom:1px solid rgba(255,255,255,.06);transition:background .2s;border-radius:8px;}
+.proc-step:hover{background:rgba(255,255,255,.03);}
+.proc-step:last-child{border-bottom:none;}
+.proc-num{font-family:'Lora',serif;font-size:2.6rem;font-weight:700;color:rgba(255,255,255,.06);line-height:1;min-width:2.8rem;transition:color .2s;}
+.proc-step:hover .proc-num{color:var(--blue);}
+.proc-content h3{font-size:1.05rem;margin-bottom:.4rem;}
+.proc-content p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+/* FAQ */
+.faq-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
+.faq-list{max-width:800px;margin-top:3rem;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.07);}
+.faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Lora',serif;font-size:1.05rem;font-weight:600;padding:1.6rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;text-align:left;transition:color .2s;}
+.faq-q:hover{color:var(--blue);}
+.faq-arrow{font-size:.9rem;transition:transform .3s;flex-shrink:0;color:var(--muted);}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-item.open .faq-a{max-height:300px;}
+.faq-a p{font-size:.95rem;color:var(--muted);line-height:1.8;padding-bottom:1.6rem;}
+/* QUOTE FORM */
+.quote-section{padding:100px 5vw;}
+.quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.quote-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
+.quote-intro p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
+.quote-promise{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
+.promise-item{display:flex;align-items:center;gap:.9rem;font-size:.92rem;color:var(--muted);}
+.promise-icon{width:32px;height:32px;border-radius:7px;background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.22);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
+.quote-form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2.5rem;position:relative;}
+.quote-form-card::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-group{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;}
+.form-group label{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.8rem 1rem;color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:.95rem;transition:border-color .2s;outline:none;width:100%;}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--blue);}
+.form-group select{cursor:pointer;}
+.form-group select option{background:#232528;color:var(--white);}
+.form-group textarea{resize:vertical;min-height:110px;}
+.form-submit{width:100%;padding:1rem;font-size:1rem;margin-top:.5rem;cursor:pointer;}
+.form-success{text-align:center;padding:3rem 1rem;}
+.form-success .success-icon{font-size:3rem;display:block;margin-bottom:1rem;}
+.form-success h3{font-size:1.6rem;margin-bottom:.6rem;}
+.form-success p{color:var(--muted);}
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
+.footer-brand img{height:36px;width:auto;margin-bottom:1.2rem;display:block;}
+.footer-brand p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:280px;}
+.footer-socials{display:flex;gap:.8rem;}
+.social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:700;transition:background .2s,color .2s;}
+.social-btn:hover{background:var(--blue);color:#fff;}
+.footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:1.4rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.footer-col ul a{text-decoration:none;color:var(--muted);font-size:.9rem;transition:color .2s;}
+.footer-col ul a:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:1rem;}
+@media(max-width:1024px){.platform-grid{grid-template-columns:1fr;}}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.feat-grid{grid-template-columns:1fr 1fr;}.quote-wrap{grid-template-columns:1fr;gap:3rem;}.footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.feat-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}.platform-card{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="header-bar">
+  <a href="mailto:contact@nuvelloweb.com">&#9993; contact@nuvelloweb.com</a>
+  <a href="tel:+19093127101">&#128222; +1 (909) 312-7101</a>
+</div>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb"/></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="../services.html" class="active">Services</a>
+      <div class="nav-dropdown-menu">
+        <a href="web-design.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128187;</div><div class="ndm-text"><span class="ndm-label">Web Design &amp; Dev</span><span class="ndm-sub">WordPress, Full-Stack, E-Commerce</span></div></a>
+        <a href="seo.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);">&#128205;</div><div class="ndm-text"><span class="ndm-label">SEO Optimization</span><span class="ndm-sub">Local, Technical, On-Page &amp; More</span></div></a>
+        <a href="uiux.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#127912;</div><div class="ndm-text"><span class="ndm-label">UI/UX &amp; Graphic Design</span><span class="ndm-sub">Brand, Print, Digital &amp; Web Design</span></div></a>
+        <div class="ndm-divider"></div>
+        <a href="digital-marketing.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(42,42,114,.2);border:1px solid rgba(42,42,114,.35);">&#128293;</div><div class="ndm-text"><span class="ndm-label">Digital Marketing</span><span class="ndm-sub">PPC, Social, Email &amp; More</span></div></a>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(244,124,32,.1);border:1px solid rgba(244,124,32,.2);">&#128722;</div><div class="ndm-text"><span class="ndm-label">E-Commerce</span><span class="ndm-sub">Shopify, WooCommerce &amp; More</span></div><span class="ndm-soon">Soon</span></a>
+        <a href="#" class="ndm-item disabled"><div class="ndm-icon" style="background:rgba(184,235,225,.08);border:1px solid rgba(184,235,225,.15);">&#128736;</div><div class="ndm-text"><span class="ndm-label">Maintenance &amp; Support</span><span class="ndm-sub">Hosting, Updates &amp; Care Plans</span></div><span class="ndm-soon">Soon</span></a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="../about.html">About</a>
+      <div class="nav-dropdown-menu" style="min-width:200px;">
+        <a href="../about.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128101;</div><div class="ndm-text"><span class="ndm-label">About Us</span><span class="ndm-sub">Our story and mission</span></div></a>
+        <a href="../testimonials.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);">&#11088;</div><div class="ndm-text"><span class="ndm-label">Testimonials</span><span class="ndm-sub">What our clients say</span></div></a>
+        <a href="../faq.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#10067;</div><div class="ndm-text"><span class="ndm-label">FAQ</span><span class="ndm-sub">Common questions answered</span></div></a>
+      </div>
+    </li>
+    <li><a href="../contact.html" class="nav-cta">Get&nbsp;a&nbsp;Quote</a></li>
+  </ul>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileCloseBtn" aria-label="Close">&#x2715;</button>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-children">
+      <a href="../services.html">Services</a>
+      <div class="mobile-children">
+        <a href="web-design.html" class="mobile-child-link"><span class="mobile-child-icon">&#128187;</span> Web Design &amp; Dev</a>
+        <a href="seo.html" class="mobile-child-link"><span class="mobile-child-icon">&#128205;</span> SEO Optimization</a>
+        <a href="uiux.html" class="mobile-child-link"><span class="mobile-child-icon">&#127912;</span> UI/UX &amp; Design</a>
+        <a href="digital-marketing.html" class="mobile-child-link"><span class="mobile-child-icon">&#128293;</span> Digital Marketing</a>
+        <a href="#" class="mobile-child-link"><span class="mobile-child-icon">&#128722;</span> E-Commerce <span class="mobile-child-soon">Soon</span></a>
+        <a href="#" class="mobile-child-link"><span class="mobile-child-icon">&#128736;</span> Maintenance <span class="mobile-child-soon">Soon</span></a>
+      </div>
+    </li>
+    <li class="has-children">
+      <a href="../about.html">About</a>
+      <div class="mobile-children">
+        <a href="../about.html" class="mobile-child-link"><span class="mobile-child-icon">&#128101;</span> About Us</a>
+        <a href="../testimonials.html" class="mobile-child-link"><span class="mobile-child-icon">&#11088;</span> Testimonials</a>
+        <a href="../faq.html" class="mobile-child-link"><span class="mobile-child-icon">&#10067;</span> FAQ</a>
+      </div>
+    </li>
+    <li><a href="../contact.html">Get a Quote</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-grid"></div>
+  <div class="ph-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> &#8250;
+      <a href="../services.html">Services</a> &#8250;
+      <span class="current">Digital Marketing</span>
+    </nav>
+    <div class="eyebrow">Digital Marketing</div>
+    <h1>Marketing That Fills<br><em>Your Pipeline</em></h1>
+    <p>From Google Ads to email campaigns to social strategy &#8212; we build integrated digital marketing systems that generate leads, nurture prospects, and grow your revenue. Every dollar tracked, every campaign optimized.</p>
+    <div class="ph-actions">
+      <a href="../contact.html" class="btn-primary">Get a Free Quote &#8594;</a>
+      <a href="../services.html" class="btn-outline">All Services</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHAT WE OFFER -->
+<section class="services-section">
+  <div class="section-label">What&#39;s Included</div>
+  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.5rem;">Everything You Need,<br>Nothing You Don&#39;t</h2>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon">&#128176;</div>
+      <h3>Paid Advertising (PPC)</h3>
+      <p>Data-driven Google Search, Display, and Meta ad campaigns optimized for ROI &#8212; not just clicks. Every ad dollar tracked and working toward leads.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">&#128247;</div>
+      <h3>Social Media Strategy</h3>
+      <p>Platform-specific content strategies for Instagram, Facebook, LinkedIn, and beyond. Built around your audience and your brand voice.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">&#9993;</div>
+      <h3>Email Marketing</h3>
+      <p>Automated sequences, newsletters, and drip campaigns that keep your audience engaged and buying &#8212; long after the first visit.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">&#128203;</div>
+      <h3>Content Marketing</h3>
+      <p>Blog posts, landing pages, and resources that attract organic traffic, build authority, and support your SEO strategy.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">&#128200;</div>
+      <h3>Analytics &amp; Reporting</h3>
+      <p>Clear, honest reporting on what is working, what is not, and what we are doing about it. No vanity metrics &#8212; only business impact.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">&#128260;</div>
+      <h3>Retargeting Campaigns</h3>
+      <p>Re-engage visitors who did not convert the first time with strategic remarketing ads across Google, Meta, and display networks.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PLATFORMS -->
+<section class="platforms-section">
+  <div class="section-label">Platforms We Work With</div>
+  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.5rem;">Where Your Customers Are,<br>We&#39;ll Be There Too</h2>
+  <div class="platform-grid">
+    <div class="platform-card">
+      <div class="platform-icon">&#128269;</div>
+      <div>
+        <h3>Google Ads</h3>
+        <p>Search, Display, Performance Max, and YouTube campaigns built to capture high-intent traffic and convert it into calls and form fills.</p>
+        <div class="platform-tags"><span class="ptag">Search</span><span class="ptag">Display</span><span class="ptag">YouTube</span><span class="ptag">Performance Max</span></div>
+      </div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-icon">&#128241;</div>
+      <div>
+        <h3>Meta Ads (Facebook &amp; Instagram)</h3>
+        <p>Scroll-stopping creative and precise audience targeting to build brand awareness and drive conversions across Facebook and Instagram.</p>
+        <div class="platform-tags"><span class="ptag">Facebook</span><span class="ptag">Instagram</span><span class="ptag">Reels Ads</span><span class="ptag">Retargeting</span></div>
+      </div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-icon">&#128188;</div>
+      <div>
+        <h3>LinkedIn Ads</h3>
+        <p>B2B lead generation through Sponsored Content, InMail, and Lead Gen Forms &#8212; reaching decision-makers where they are already working.</p>
+        <div class="platform-tags"><span class="ptag">Sponsored Content</span><span class="ptag">InMail</span><span class="ptag">Lead Gen Forms</span></div>
+      </div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-icon">&#9993;</div>
+      <div>
+        <h3>Email Platforms</h3>
+        <p>Klaviyo, Mailchimp, and ActiveCampaign setup, automation, and campaign management &#8212; turning your list into a revenue channel.</p>
+        <div class="platform-tags"><span class="ptag">Klaviyo</span><span class="ptag">Mailchimp</span><span class="ptag">ActiveCampaign</span><span class="ptag">Automations</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="section-label">How It Works</div>
+  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.5rem;">Our Process</h2>
+  <div class="proc-list">
+    <div class="proc-step">
+      <div class="proc-num">01</div>
+      <div class="proc-content"><h3>Marketing Audit</h3><p>We review your current channels, audience, competitors, and conversion funnel to identify exactly where opportunities exist.</p></div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">02</div>
+      <div class="proc-content"><h3>Strategy &amp; Goal Setting</h3><p>We define your KPIs and build a channel strategy tailored to your business and budget. Every decision ties back to a revenue goal.</p></div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">03</div>
+      <div class="proc-content"><h3>Campaign Setup</h3><p>Ad accounts, tracking pixels, email platforms, and analytics all configured correctly from day one. No messy setups to fix later.</p></div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">04</div>
+      <div class="proc-content"><h3>Launch &amp; Test</h3><p>Campaigns go live with A/B testing built in from the start. We test copy, creative, and targeting simultaneously.</p></div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">05</div>
+      <div class="proc-content"><h3>Optimize</h3><p>Weekly performance reviews with budget reallocation toward what is working. No set-and-forget approach here.</p></div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">06</div>
+      <div class="proc-content"><h3>Report &amp; Grow</h3><p>Monthly reports with clear insights, plain-English explanations, and recommendations for the next phase of growth.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-label">FAQ</div>
+  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.5rem;">Common Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">How much should I budget for ads?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>It depends on your industry and goals. We can work with ad spend starting around $500 per month and scale from there. We will tell you upfront what is realistic with your budget and what is not.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you manage the ad spend directly?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>You own and fund the ad accounts. We manage the strategy, creative, and optimization. There is no markup on ad spend &#8212; you pay the platforms directly and pay us a management fee.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How long before I see results?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Paid ads can generate leads within days of launch. Email and content marketing build over weeks and months. We set realistic expectations upfront and report on progress every month.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What platforms do you recommend?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>It depends on where your customers actually are. For most local service businesses, Google Search and Meta are the highest-ROI starting point. For B2B, LinkedIn is often the right call. We recommend based on your specific audience, not what is trendy.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do I need a website to run ads?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>Yes &#8212; and it needs to be a good one. Sending paid traffic to a slow or confusing website is burning money. If your site needs work, we will tell you before we launch any campaigns.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How do you measure success?<span class="faq-arrow">&#8595;</span></button>
+      <div class="faq-a"><p>We track leads, calls, form fills, sales, and cost per acquisition &#8212; not impressions or clicks. Every report ties performance back to real business outcomes.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE FORM -->
+<section class="quote-section" id="quote">
+  <div class="quote-wrap">
+    <div class="quote-intro">
+      <div class="section-label">Get Started</div>
+      <h2>Let&#39;s Talk About Your Marketing</h2>
+      <p>Tell us about your business and what you are trying to grow. We will respond within 24 hours with a clear plan and honest pricing.</p>
+      <div class="quote-promise">
+        <div class="promise-item"><div class="promise-icon">&#9889;</div><div>Response within 24 hours</div></div>
+        <div class="promise-item"><div class="promise-icon">&#128172;</div><div>No pushy sales tactics</div></div>
+        <div class="promise-item"><div class="promise-icon">&#128176;</div><div>Transparent, flat-rate pricing</div></div>
+        <div class="promise-item"><div class="promise-icon">&#128205;</div><div>Serving all of Southern California</div></div>
+      </div>
+    </div>
+    <div class="quote-form-card">
+      <form id="quoteForm" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label for="fname">First Name</label><input id="fname" type="text" placeholder="First name" required/></div>
+          <div class="form-group"><label for="lname">Last Name</label><input id="lname" type="text" placeholder="Last name" required/></div>
+        </div>
+        <div class="form-group"><label for="email">Email</label><input id="email" type="email" placeholder="you@yourbusiness.com" required/></div>
+        <div class="form-group"><label for="phone">Phone</label><input id="phone" type="tel" placeholder="(909) 000-0000"/></div>
+        <div class="form-group"><label for="biz">Business Name</label><input id="biz" type="text" placeholder="Your Company LLC"/></div>
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service">
+            <option value="Digital Marketing" selected>Digital Marketing</option>
+            <option>Google Ads / PPC</option>
+            <option>Meta Ads (Facebook / Instagram)</option>
+            <option>Email Marketing</option>
+            <option>Social Media Strategy</option>
+            <option>Content Marketing</option>
+            <option>Full Digital Marketing Package</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="msg">Tell Us About Your Project</label><textarea id="msg" placeholder="What are you trying to grow? Current monthly ad spend? Any platforms you are already on?"></textarea></div>
+        <button type="submit" class="btn-primary form-submit">Send My Request &#8594;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="../assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb logo"/>
+      <p>Bold, modern websites and marketing systems for businesses that want to stand out, rank higher, and convert more customers.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/nuvellowebllc" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://www.linkedin.com/company/nuvello-web/" target="_blank" rel="noopener" class="social-btn">in</a>
+        <a href="https://instagram.com/nuvelloweb" target="_blank" rel="noopener" class="social-btn">ig</a>
+        <a href="https://share.google/uH62KpGg1u5lX1eQa" target="_blank" rel="noopener" class="social-btn">g</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="web-design.html">Web Design &amp; Dev</a></li><li><a href="seo.html">SEO Optimization</a></li><li><a href="uiux.html">UI/UX &amp; Design</a></li><li><a href="digital-marketing.html">Digital Marketing</a></li><li><a href="#">E-Commerce</a></li><li><a href="#">Maintenance</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="../about.html">About Us</a></li><li><a href="../testimonials.html">Testimonials</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19093127101">(909) 312-7101</a></li><li><a href="mailto:contact@nuvelloweb.com">contact@nuvelloweb.com</a></li><li><a href="#">San Clemente, CA</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 NuvelloWeb LLC. All rights reserved.</span>
+    <span>Privacy Policy &#183; Terms of Service</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileCloseBtn = document.getElementById('mobileCloseBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileOverlay = document.getElementById('mobileOverlay');
+  function openMenu() { mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
+  hamburgerBtn.addEventListener('click', openMenu);
+  mobileCloseBtn.addEventListener('click', closeMenu);
+  mobileOverlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('li.has-children > a').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); a.parentElement.classList.toggle('open'); });
+  });
+  mobileMenu.querySelectorAll('.mobile-child-link').forEach(function (l) { l.addEventListener('click', closeMenu); });
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
+      if (!isOpen) { item.classList.add('open'); }
+    });
+  });
+  window.addEventListener('scroll', function () {
+    document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)';
+  });
+  var form = document.getElementById('quoteForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    form.innerHTML = '<div class="form-success"><span class="success-icon">&#10003;</span><h3>Message Received!</h3><p>We will be in touch within 24 hours to talk about your marketing.</p></div>';
+  });
+});
+</script>
+</body>
+</html>
