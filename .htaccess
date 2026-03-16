@@ -3,8 +3,8 @@ RewriteEngine On
 # Redirect /index and /index.html to root /
 RewriteRule ^index(\.html)?$ / [R=301,L]
 
-# Prevent 403 on /services/ directory
-RewriteRule ^services/$ /services [R=301,L]
+# Serve services.html when /services or /services/ is requested
+RewriteRule ^services/?$ /services.html [L]
 
 # Redirect .html URLs to clean versions (301 for SEO)
 RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?] [NC]
