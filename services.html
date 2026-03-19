@@ -3,202 +3,97 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-
 <title>Web Design &amp; Marketing Services &#8212; NuvelloWeb | San Clemente, CA</title>
 <meta name="description" content="Web design, SEO, UI/UX, digital marketing, e-commerce, and maintenance services. NuvelloWeb serves businesses across Southern California."/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"NuvelloWeb LLC","url":"https://nuweb.cloud","telephone":"+19093127101","email":"contact@nuvelloweb.com","address":{"@type":"PostalAddress","addressLocality":"San Clemente","addressRegion":"CA","addressCountry":"US"}}
+</script>
 <style>
-  :root{--blue:#138CEC;--red:#AC3931;--darker:#16181a;--dark:#232528;--orange:#f47c20;--white:#f5f6fa;--muted:#8a8f9e;}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--darker);color:var(--white);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
-  h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
-  a{color:inherit;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
-  .nav-logo svg{height:36px;width:auto;display:block;}
-  .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
-  .nav-links a:hover,.nav-links a.active{color:var(--white);}
-  .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.1rem;border-radius:4px;white-space:nowrap;}
-  .nav-cta:hover{background:#0f7ad6!important;}
-  .nav-dropdown{position:relative;}
-  .nav-dropdown>a{display:flex;align-items:center;gap:.35rem;cursor:pointer;}
-  .nav-dropdown>a::after{content:'';display:block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--muted);transition:transform .25s,border-top-color .2s;margin-top:1px;}
-  .nav-dropdown:hover>a::after,.nav-dropdown.open>a::after{transform:rotate(180deg);border-top-color:var(--white);}
-  .nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#1e2023;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;transform:translateX(-50%) translateY(-6px);z-index:200;box-shadow:0 12px 40px rgba(0,0,0,.45);}
-  .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
-  .nav-dropdown-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
-  .ndm-item{display:flex;align-items:center;gap:.8rem;padding:.65rem .85rem;border-radius:7px;text-decoration:none;transition:background .15s;}
-  .ndm-item:hover{background:rgba(255,255,255,.07);}
-  .ndm-item.disabled{opacity:.38;pointer-events:none;cursor:default;}
-  .ndm-icon{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
-  .ndm-text{display:flex;flex-direction:column;}
-  .ndm-label{font-size:.82rem;font-weight:700;color:var(--white);letter-spacing:.03em;}
-  .ndm-sub{font-size:.72rem;color:var(--muted);}
-  .ndm-soon{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);padding:.1rem .4rem;border-radius:3px;margin-left:auto;flex-shrink:0;}
-  .ndm-divider{height:1px;background:rgba(255,255,255,.06);margin:.4rem 0;}
-
-  .mobile-menu ul li.has-children>a{display:flex;justify-content:space-between;align-items:center;}
-  .mobile-menu ul li.has-children>a::after{content:'\002B';font-size:1.1rem;color:var(--muted);transition:transform .3s;}
-  .mobile-menu ul li.has-children.open>a::after{content:'\2212';}
-  .mobile-children{display:none;flex-direction:column;padding:.3rem 0 .5rem 1rem;border-bottom:none!important;}
-  .mobile-menu ul li.has-children.open .mobile-children{display:flex;}
-  .mobile-child-link{display:flex;align-items:center;gap:.6rem;padding:.6rem 0;font-size:1rem!important;color:var(--muted);text-decoration:none;transition:color .2s;border-bottom:none!important;}
-  .mobile-child-link:hover{color:var(--white)!important;padding-left:.2rem!important;}
-  .mobile-child-icon{font-size:.85rem;}
-  .mobile-child-soon{font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.06);padding:.1rem .35rem;border-radius:3px;margin-left:auto;}
-  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
-  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .hamburger.open span:nth-child(2){opacity:0;}
-  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .mobile-menu{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:#16181a;border-left:1px solid rgba(255,255,255,.08);z-index:200;padding:100px 2.5rem 3rem;transition:right .35s cubic-bezier(.4,0,.2,1);}
-  .mobile-menu.open{right:0;}
-  .mobile-close{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:var(--white);width:36px;height:36px;border-radius:8px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
-  .mobile-menu ul{list-style:none;display:flex;flex-direction:column;}
-  .mobile-menu ul li{border-bottom:1px solid rgba(255,255,255,.06);}
-  .mobile-menu ul a{display:block;padding:1.1rem 0;font-size:1.15rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s,padding-left .2s;}
-  .mobile-menu ul a:hover{color:var(--white);padding-left:.4rem;}
-  .mobile-menu ul li:last-child a{margin-top:1.5rem;background:var(--blue);color:#fff;padding:.9rem 1.5rem;border-radius:6px;text-align:center;font-weight:700;font-size:.92rem;}
-  .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;backdrop-filter:blur(2px);}
-  .mobile-overlay.open{display:block;}
-  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;}
-  .eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--red);}
-  .section-label{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
-  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--red);}
-  .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);}
-  .btn-primary{background:var(--red);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
-  .btn-primary:hover{background:#962e28;transform:translateY(-2px);}
-  .btn-outline{background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;transition:border-color .2s,transform .15s;display:inline-block;}
-  .btn-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px);}
-  
-  .page-hero{padding:180px 5vw 90px;position:relative;overflow:hidden;}
-  .ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 45%,rgba(172,57,49,.14) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(172,57,49,.06) 0%,transparent 60%);pointer-events:none;}
-  .ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
-  .ph-inner{position:relative;z-index:2;max-width:740px;}
-  .breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
-  .breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s;}
-  .breadcrumb a:hover{color:var(--white);}
-  .breadcrumb .current{color:var(--white);}
-  .ph-inner h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:1.4rem;}
-  .ph-inner h1 em{font-style:italic;color:var(--red);}
-  .hero-sub{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:600px;margin-bottom:2.5rem;}
-  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
-  .hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.07);}
-  .hero-stat-num{font-family:'Lora',serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:.2rem;}
-  .hero-stat-label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
-  .specialties-section{padding:100px 5vw;}
-  .spec-intro{max-width:580px;margin-bottom:3.5rem;}
-  .spec-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.8rem;}
-  .spec-intro p{font-size:1rem;color:var(--muted);line-height:1.75;}
-  .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .spec-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:2.4rem;display:flex;flex-direction:column;gap:1.1rem;transition:border-color .25s,transform .2s;}
-  .spec-card:hover{border-color:rgba(172,57,49,.45);transform:translateY(-4px);}
-  .spec-icon{width:56px;height:56px;border-radius:12px;background:rgba(172,57,49,.12);border:1px solid rgba(172,57,49,.25);display:flex;align-items:center;justify-content:center;font-size:1.6rem;}
-  .spec-card h3{font-size:1.2rem;}
-  .spec-desc{font-size:.93rem;color:var(--muted);line-height:1.75;}
-  .spec-features{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
-  .spec-features li{font-size:.87rem;color:var(--muted);display:flex;align-items:flex-start;gap:.65rem;line-height:1.5;}
-  .spec-features li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-top:.42rem;flex-shrink:0;}
-  .spec-badge{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);background:rgba(172,57,49,.1);border:1px solid rgba(172,57,49,.2);padding:.22rem .65rem;border-radius:4px;display:inline-block;margin-top:.3rem;}
-  .why-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
-  .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-  .why-text h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1.2rem;}
-  .why-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem;}
-  .why-text p:last-child{margin-bottom:0;}
-  .why-stats{display:flex;flex-direction:column;gap:1.5rem;}
-  .why-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.8rem 2rem;border-left:3px solid var(--red);}
-  .why-stat-num{font-family:'Lora',serif;font-size:2.4rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:.4rem;}
-  .why-stat-label{font-size:.88rem;color:var(--muted);line-height:1.5;}
-  .process-section{padding:100px 5vw;}
-  .proc-intro{max-width:560px;margin-bottom:3.5rem;}
-  .proc-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.8rem;}
-  .proc-intro p{font-size:1rem;color:var(--muted);line-height:1.75;}
-  .proc-list{display:flex;flex-direction:column;max-width:780px;}
-  .proc-step{display:flex;gap:2.2rem;padding:2rem 1rem;border-bottom:1px solid rgba(255,255,255,.06);transition:background .2s;border-radius:8px;}
-  .proc-step:hover{background:rgba(255,255,255,.03);}
-  .proc-step:last-child{border-bottom:none;}
-  .proc-num{font-family:'Lora',serif;font-size:2.6rem;font-weight:700;color:rgba(255,255,255,.06);line-height:1;min-width:3rem;transition:color .2s;}
-  .proc-step:hover .proc-num{color:var(--red);}
-  .proc-content h3{font-size:1.05rem;margin-bottom:.4rem;}
-  .proc-content p{font-size:.9rem;color:var(--muted);line-height:1.7;}
-  .faq-section{padding:100px 5vw;background:rgba(255,255,255,.015);}
-  .faq-intro{max-width:560px;margin-bottom:3rem;}
-  .faq-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);}
-  .faq-list{max-width:800px;}
-  .faq-item{border-bottom:1px solid rgba(255,255,255,.07);}
-  .faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Lora',serif;font-size:1.05rem;font-weight:600;padding:1.6rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;text-align:left;transition:color .2s;}
-  .faq-q:hover{color:var(--red);}
-  .faq-arrow{font-size:.9rem;transition:transform .3s;flex-shrink:0;color:var(--muted);}
-  .faq-item.open .faq-arrow{transform:rotate(180deg);}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-  .faq-item.open .faq-a{max-height:300px;}
-  .faq-a p{font-size:.95rem;color:var(--muted);line-height:1.8;padding-bottom:1.6rem;}
-  .quote-section{padding:100px 5vw;}
-  .quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-  .quote-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
-  .quote-intro p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
-  .quote-promise{display:flex;flex-direction:column;gap:1rem;}
-  .promise-item{display:flex;align-items:center;gap:.9rem;font-size:.92rem;color:var(--muted);}
-  .promise-icon{width:32px;height:32px;border-radius:7px;background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
-  .quote-form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2.5rem;position:relative;}
-  .quote-form-card::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
-  .form-group{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;}
-  .form-group label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
-  .form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.8rem 1rem;color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:.95rem;transition:border-color .2s;outline:none;width:100%;}
-  .form-group input:focus,.form-group textarea:focus{border-color:var(--red);}
-  .form-group select{cursor:pointer;}
-  .form-group select option{background:#232528;color:var(--white);}
-  .form-group textarea{resize:vertical;min-height:110px;}
-  .form-submit{width:100%;padding:1rem;font-size:1rem;margin-top:.5rem;}
-  .form-success{text-align:center;padding:3rem 1rem;}
-  .success-icon{font-size:3rem;display:block;margin-bottom:1rem;}
-  .form-success h3{font-size:1.6rem;margin-bottom:.6rem;}
-  .form-success p{color:var(--muted);font-size:1rem;}
-  footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
-  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
-  .footer-brand svg{height:32px;width:auto;margin-bottom:1.2rem;display:block;}
-  .footer-brand p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:280px;}
-  .footer-socials{display:flex;gap:.8rem;}
-  .social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:700;transition:background .2s,color .2s;}
-  .social-btn:hover{background:var(--blue);color:#fff;}
-  .footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:1.4rem;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
-  .footer-col ul a{text-decoration:none;color:var(--muted);font-size:.9rem;transition:color .2s;}
-  .footer-col ul a:hover{color:var(--white);}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:1rem;}
-  @media(max-width:1024px){.spec-grid{grid-template-columns:1fr 1fr;}.why-inner{grid-template-columns:1fr;gap:3rem;}}
-  @media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.spec-grid{grid-template-columns:1fr;}.quote-wrap{grid-template-columns:1fr;gap:3rem;}.footer-top{grid-template-columns:1fr 1fr;}}
-  @media(max-width:600px){.hero-stats{gap:2rem;}.proc-step{flex-direction:column;gap:.6rem;}.form-row{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
-
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:5rem;}
-  .svc-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:2.2rem;display:flex;flex-direction:column;gap:.9rem;text-decoration:none;color:var(--white);transition:border-color .25s,transform .2s;}
-  .svc-card:hover{border-color:rgba(19,140,236,.4);transform:translateY(-4px);}
-  .svc-icon{font-size:2rem;margin-bottom:.2rem;}
-  .svc-card h3{font-size:1.15rem;}
-  .svc-card p{font-size:.9rem;color:var(--muted);line-height:1.7;flex:1;}
-  .svc-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
-  .svc-tag{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:4px;border:1px solid;}
-  .svc-link{font-size:.85rem;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:.4rem;}
-  .hub-stats{display:grid;grid-template-columns:repeat(3,auto);gap:3rem;padding:3rem 0;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:5rem;justify-content:center;}
-  .hub-stats{justify-content:center;}.hub-stat{text-align:center;}
-  .hub-stat-num{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;margin-bottom:.3rem;}
-  .hub-stat-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
-  @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}.hub-stats{grid-template-columns:1fr 1fr;}}
-  @media(max-width:600px){.services-grid{grid-template-columns:1fr;}.hub-stats{grid-template-columns:1fr 1fr;}}
-
-  /* TOP BAR */
-  .top-bar{background:#111213;border-bottom:1px solid rgba(255,255,255,.06);padding:.45rem 5vw;}
-  .top-bar-inner{display:flex;gap:2rem;align-items:center;justify-content:flex-end;}
-  .top-bar-link{color:var(--muted);font-size:.8rem;text-decoration:none;font-weight:600;letter-spacing:.03em;transition:color .2s;}
-  .top-bar-link:hover{color:var(--white);}
-  @media(max-width:600px){.top-bar-inner{justify-content:center;gap:1.2rem;}}
-
-/* PIPEDRIVE FORM */
+:root{--blue:#138CEC;--red:#AC3931;--darker:#16181a;--dark:#232528;--orange:#f47c20;--white:#f5f6fa;--muted:#8a8f9e;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--darker);color:var(--white);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
+a{color:inherit;}
+.header-bar{position:fixed;top:0;left:0;right:0;z-index:101;background:#111315;border-bottom:1px solid rgba(255,255,255,.05);padding:.45rem 5vw;display:flex;align-items:center;justify-content:flex-end;gap:2rem;}
+.header-bar a{color:var(--muted);font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s;font-weight:600;}
+.header-bar a:hover{color:var(--white);}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
+.nav-logo img{height:40px;width:auto;display:block;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.1rem;border-radius:4px;white-space:nowrap;}
+.nav-cta:hover{background:#0f7ad6!important;}
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:.35rem;cursor:pointer;}
+.nav-dropdown>a::after{content:'';display:block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--muted);transition:transform .25s,border-top-color .2s;margin-top:1px;}
+.nav-dropdown:hover>a::after{transform:rotate(180deg);border-top-color:var(--white);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#1e2023;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;box-shadow:0 12px 40px rgba(0,0,0,.45);}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.ndm-item{display:flex;align-items:center;gap:.8rem;padding:.65rem .85rem;border-radius:7px;text-decoration:none;transition:background .15s;}
+.ndm-item:hover{background:rgba(255,255,255,.07);}
+.ndm-icon{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+.ndm-text{display:flex;flex-direction:column;}
+.ndm-label{font-size:.82rem;font-weight:700;color:var(--white);}
+.ndm-sub{font-size:.72rem;color:var(--muted);}
+.ndm-divider{height:1px;background:rgba(255,255,255,.06);margin:.4rem 0;}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:#16181a;border-left:1px solid rgba(255,255,255,.08);z-index:200;padding:100px 2.5rem 3rem;transition:right .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;}
+.mobile-menu.open{right:0;}
+.mobile-close{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:var(--white);width:36px;height:36px;border-radius:8px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;}
+.mobile-menu ul li{border-bottom:1px solid rgba(255,255,255,.06);}
+.mobile-menu ul a{display:block;padding:1.1rem 0;font-size:1.15rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s;}
+.mobile-menu ul a:hover{color:var(--white);}
+.mobile-menu ul li:last-child a{margin-top:1.5rem;background:var(--blue);color:#fff;padding:.9rem 1.5rem;border-radius:6px;text-align:center;font-weight:700;font-size:.92rem;}
+.mobile-menu ul li.has-children>a{display:flex;justify-content:space-between;align-items:center;}
+.mobile-menu ul li.has-children>a::after{content:'+';font-size:1.1rem;color:var(--muted);}
+.mobile-menu ul li.has-children.open>a::after{content:'-';}
+.mobile-children{display:none;flex-direction:column;padding:.3rem 0 .5rem 1rem;}
+.mobile-menu ul li.has-children.open .mobile-children{display:flex;}
+.mobile-child-link{display:flex;align-items:center;gap:.6rem;padding:.6rem 0;font-size:1rem;color:var(--muted);text-decoration:none;transition:color .2s;}
+.mobile-child-link:hover{color:var(--white);}
+.mobile-child-icon{font-size:.85rem;}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;}
+.mobile-overlay.open{display:block;}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;}
+.eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--red);}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
+.section-label::before{content:'';display:block;width:20px;height:2px;background:var(--blue);}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);}
+.btn-primary{background:var(--red);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
+.btn-primary:hover{background:#962e28;transform:translateY(-2px);}
+.page-hero{padding:190px 5vw 90px;position:relative;overflow:hidden;}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 45%,rgba(172,57,49,.14) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(172,57,49,.06) 0%,transparent 60%);pointer-events:none;}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.ph-inner{position:relative;z-index:2;max-width:740px;}
+.ph-inner h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:1.4rem;}
+.ph-inner h1 em{font-style:italic;color:var(--red);}
+.hero-sub{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:600px;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:5rem;}
+.svc-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:2.2rem;display:flex;flex-direction:column;gap:.9rem;text-decoration:none;color:var(--white);transition:border-color .25s,transform .2s;}
+.svc-card:hover{border-color:rgba(19,140,236,.4);transform:translateY(-4px);}
+.svc-icon{font-size:2rem;margin-bottom:.2rem;}
+.svc-card h3{font-size:1.15rem;}
+.svc-card p{font-size:.9rem;color:var(--muted);line-height:1.7;flex:1;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.svc-tag{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;border-radius:4px;border:1px solid;}
+.svc-link{font-size:.85rem;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:.4rem;}
+.hub-stats{display:grid;grid-template-columns:repeat(3,auto);gap:3rem;padding:3rem 0;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:5rem;justify-content:center;}
+.hub-stat{text-align:center;}
+.hub-stat-num{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;margin-bottom:.3rem;}
+.hub-stat-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
 .pd-form-section{padding:100px 5vw;}
 .pd-form-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;}
 .pd-form-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
@@ -208,56 +103,32 @@
 .pd-check{color:var(--blue);font-weight:700;}
 .pd-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2.5rem;position:relative;}
 .pd-form-wrap::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);}
-/* Override Pipedrive iframe styles */
-.pd-form-wrap .pipedriveWebForms iframe{border-radius:8px!important;background:transparent!important;}
 .pd-form-wrap .pipedriveWebForms{min-height:420px;}
-@media(max-width:900px){.pd-form-inner{grid-template-columns:1fr;gap:3rem;}}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
+.footer-brand img{height:36px;width:auto;margin-bottom:1.2rem;display:block;}
+.footer-brand p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:280px;}
+.footer-socials{display:flex;gap:.8rem;}
+.social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:700;transition:background .2s,color .2s;}
+.social-btn:hover{background:var(--blue);color:#fff;}
+.footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:1.4rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.footer-col ul a{text-decoration:none;color:var(--muted);font-size:.9rem;transition:color .2s;}
+.footer-col ul a:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:1rem;}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.services-grid{grid-template-columns:1fr 1fr;}.pd-form-inner{grid-template-columns:1fr;gap:3rem;}.footer-top{grid-template-columns:1fr 1fr;}.hub-stats{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.services-grid,.hub-stats{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "NuvelloWeb LLC",
-  "description": "NuvelloWeb is a web design and digital marketing agency based in San Clemente, CA serving businesses across Southern California.",
-  "url": "https://nuweb.cloud",
-  "telephone": "+19093127101",
-  "email": "contact@nuweb.cloud",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "San Clemente",
-    "addressRegion": "CA",
-    "addressCountry": "US"
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 33.4269,
-      "longitude": -117.6109
-    },
-    "geoRadius": "80000"
-  },
-  "sameAs": [
-    "https://www.facebook.com/nuvellowebllc",
-    "https://www.linkedin.com/company/nuvello-web/",
-    "https://instagram.com/nuvelloweb"
-  ]
-}
-</script>
 </head>
 <body>
+
 <div class="header-bar">
-  <a href="/cdn-cgi/l/email-protection#3d5e5253495c5e497d53484b585151524a585f135e5250"><span class="hb-icon">&#9993;</span> <span class="__cf_email__" data-cfemail="3a5955544e5b594e7a544f4c5f5656554d5f5814595557">[email&#160;protected]</span></a>
-  <a href="tel:+19093127101"><span class="hb-icon">&#128222;</span> +1 (909) 312-7101</a>
+  <a href="mailto:contact@nuvelloweb.com">&#9993; contact@nuvelloweb.com</a>
+  <a href="tel:+19093127101">&#128222; +1 (909) 312-7101</a>
 </div>
-<div class="top-bar">
-  <div class="top-bar-inner">
-    <a href="/cdn-cgi/l/email-protection#660509081207051226081310030a0a091103044805090b" class="top-bar-link">&#128231; <span class="__cf_email__" data-cfemail="d9bab6b7adb8baad99b7acafbcb5b5b6aebcbbf7bab6b4">[email&#160;protected]</span></a>
-    <a href="tel:+19093127101" class="top-bar-link">&#128222; +1 (909) 312-7101</a>
-  </div>
-</div>
+
 <nav>
-  <a href="index.html" class="nav-logo"><img src="assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb – Web Design and Marketing Agency in San Clemente CA" style="height:40px;width:auto;display:block;"/></a>
+  <a href="index.html" class="nav-logo"><img src="assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb"/></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li class="nav-dropdown">
@@ -285,6 +156,7 @@
   </ul>
   <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileCloseBtn" aria-label="Close">&#x2715;</button>
   <ul>
@@ -313,112 +185,81 @@
   </ul>
 </div>
 <div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- HERO -->
 <div class="page-hero">
-  <div class="ph-bg"></div><div class="ph-grid"></div>
+  <div class="ph-bg"></div>
+  <div class="ph-grid"></div>
   <div class="ph-inner">
     <div class="eyebrow">Services</div>
     <h1>Everything Your Business Needs<br>to <em>Win Online</em></h1>
     <p class="hero-sub">From first impression to top of search &#8212; we build, optimize, and grow your digital presence end to end. Every service is strategy-led and delivered without fluff.</p>
     <div class="hero-actions">
-      <a href="#quote" class="btn-primary">Get a Free Consultation &#8594;</a>
+      <a href="#quote" class="btn-primary">Get a Free Quote &#8594;</a>
     </div>
   </div>
 </div>
+
 <div class="divider"></div>
+
+<!-- SERVICES GRID + STATS -->
 <section style="padding:80px 5vw;">
   <div class="services-grid">
-      <a href="services/web-design.html" class="svc-card fade-up">
-    <div class="svc-icon">&#128187;</div>
-    <h3>Web Design &amp; Development</h3>
-    <p>Custom-built websites that load fast, look sharp, and convert visitors. WordPress, full-stack, and e-commerce.</p>
-    <div class="svc-tags"><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">WordPress</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">Full-Stack</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">E-Commerce</span></div>
-    <span class="svc-link">Learn more &#8594;</span>
-  </a>
-      <a href="services/seo.html" class="svc-card fade-up">
-    <div class="svc-icon">&#128269;</div>
-    <h3>SEO Optimization</h3>
-    <p>Strategy-led SEO covering local, technical, on-page, off-page, and e-commerce &#8212; rankings that compound over time.</p>
-    <div class="svc-tags"><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Local</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Technical</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">On-Page</span></div>
-    <span class="svc-link">Learn more &#8594;</span>
-  </a>
-      <a href="services/digital-marketing.html" class="svc-card fade-up">
-    <div class="svc-icon">&#128293;</div>
-    <h3>Digital Marketing</h3>
-    <p>Paid ads, social media, email, and content working together to build pipeline and keep customers coming back.</p>
-    <div class="svc-tags"><span class="svc-tag" style="color:#f47c20;border-color:#f47c2033;background:#f47c2011">Google Ads</span><span class="svc-tag" style="color:#f47c20;border-color:#f47c2033;background:#f47c2011">Social</span><span class="svc-tag" style="color:#f47c20;border-color:#f47c2033;background:#f47c2011">Email</span></div>
-    <span class="svc-link">Learn more &#8594;</span>
-  </a>
-      <a href="services/ecommerce.html" class="svc-card fade-up">
-    <div class="svc-icon">&#128722;</div>
-    <h3>E-Commerce Solutions</h3>
-    <p>Full online store setup with optimized product pages, payment processing, and UX built to maximize conversion.</p>
-    <div class="svc-tags"><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">Shopify</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">WooCommerce</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">UX</span></div>
-    <span class="svc-link">Learn more &#8594;</span>
-  </a>
-      <a href="services/maintenance.html" class="svc-card fade-up">
-    <div class="svc-icon">&#128736;</div>
-    <h3>Maintenance &amp; Support</h3>
-    <p>Ongoing updates, security monitoring, backups, and performance checks so your site never becomes a liability.</p>
-    <div class="svc-tags"><span class="svc-tag" style="color:#565173;border-color:#56517333;background:#56517311">Updates</span><span class="svc-tag" style="color:#565173;border-color:#56517333;background:#56517311">Security</span><span class="svc-tag" style="color:#565173;border-color:#56517333;background:#56517311">Speed</span></div>
-    <span class="svc-link">Learn more &#8594;</span>
-  </a>
-      <a href="services/ui-ux.html" class="svc-card fade-up">
-    <div class="svc-icon">&#127912;</div>
-    <h3>UI/UX &amp; Graphic Design</h3>
-    <p>Brand identity, wireframes, and design systems that make your business look as credible as it is.</p>
-    <div class="svc-tags"><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Brand Identity</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">UI/UX</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Print</span></div>
-    <span class="svc-link">Learn more &#8594;</span>
-  </a>
+    <a href="services/web-design.html" class="svc-card">
+      <div class="svc-icon">&#128187;</div>
+      <h3>Web Design &amp; Development</h3>
+      <p>Custom-built websites that load fast, look sharp, and convert visitors. WordPress, full-stack, and e-commerce.</p>
+      <div class="svc-tags"><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">WordPress</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">Full-Stack</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">E-Commerce</span></div>
+      <span class="svc-link">Learn more &#8594;</span>
+    </a>
+    <a href="services/seo.html" class="svc-card">
+      <div class="svc-icon">&#128269;</div>
+      <h3>SEO Optimization</h3>
+      <p>Strategy-led SEO covering local, technical, on-page, off-page, and e-commerce &#8212; rankings that compound over time.</p>
+      <div class="svc-tags"><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Local</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Technical</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">On-Page</span></div>
+      <span class="svc-link">Learn more &#8594;</span>
+    </a>
+    <a href="services/digital-marketing.html" class="svc-card">
+      <div class="svc-icon">&#128293;</div>
+      <h3>Digital Marketing</h3>
+      <p>Paid ads, social media, email, and content working together to build pipeline and keep customers coming back.</p>
+      <div class="svc-tags"><span class="svc-tag" style="color:#f47c20;border-color:#f47c2033;background:#f47c2011">Google Ads</span><span class="svc-tag" style="color:#f47c20;border-color:#f47c2033;background:#f47c2011">Social</span><span class="svc-tag" style="color:#f47c20;border-color:#f47c2033;background:#f47c2011">Email</span></div>
+      <span class="svc-link">Learn more &#8594;</span>
+    </a>
+    <a href="services/ecommerce.html" class="svc-card">
+      <div class="svc-icon">&#128722;</div>
+      <h3>E-Commerce Solutions</h3>
+      <p>Full online store setup with optimized product pages, payment processing, and UX built to maximize conversion.</p>
+      <div class="svc-tags"><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">Shopify</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">WooCommerce</span><span class="svc-tag" style="color:#138CEC;border-color:#138CEC33;background:#138CEC11">UX</span></div>
+      <span class="svc-link">Learn more &#8594;</span>
+    </a>
+    <a href="services/maintenance.html" class="svc-card">
+      <div class="svc-icon">&#128736;</div>
+      <h3>Maintenance &amp; Support</h3>
+      <p>Ongoing updates, security monitoring, backups, and performance checks so your site never becomes a liability.</p>
+      <div class="svc-tags"><span class="svc-tag" style="color:#565173;border-color:#56517333;background:#56517311">Updates</span><span class="svc-tag" style="color:#565173;border-color:#56517333;background:#56517311">Security</span><span class="svc-tag" style="color:#565173;border-color:#56517333;background:#56517311">Speed</span></div>
+      <span class="svc-link">Learn more &#8594;</span>
+    </a>
+    <a href="services/ui-ux.html" class="svc-card">
+      <div class="svc-icon">&#127912;</div>
+      <h3>UI/UX &amp; Graphic Design</h3>
+      <p>Brand identity, wireframes, and design systems that make your business look as credible as it is.</p>
+      <div class="svc-tags"><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Brand Identity</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">UI/UX</span><span class="svc-tag" style="color:#AC3931;border-color:#AC393133;background:#AC393111">Print</span></div>
+      <span class="svc-link">Learn more &#8594;</span>
+    </a>
   </div>
+
   <div class="hub-stats">
-    <div class="hub-stat fade-up"><div class="hub-stat-num">6+</div><div class="hub-stat-label">Years Experience</div></div>
-    <div class="hub-stat fade-up"><div class="hub-stat-num">98%</div><div class="hub-stat-label">Client Satisfaction</div></div>
-    <div class="hub-stat fade-up"><div class="hub-stat-num">14</div><div class="hub-stat-label">Days Avg to Launch</div></div>
+    <div class="hub-stat"><div class="hub-stat-num">6+</div><div class="hub-stat-label">Years Experience</div></div>
+    <div class="hub-stat"><div class="hub-stat-num">98%</div><div class="hub-stat-label">Client Satisfaction</div></div>
+    <div class="hub-stat"><div class="hub-stat-num">14</div><div class="hub-stat-label">Days Avg to Launch</div></div>
   </div>
-  <section class="quote-section" id="quote">
-  <div class="quote-wrap">
-    <div class="quote-intro fade-up">
-      <div class="section-label">Get Started</div>
-      <h2>Get a Free Consultation</h2>
-      <p>Tell us about your project. We will come back with a clear plan and honest pricing &#8212; no pressure, no fluff.</p>
-      <div class="quote-promise">
-        <div class="promise-item"><div class="promise-icon">&#9889;</div>Response within 24 hours</div>
-        <div class="promise-item"><div class="promise-icon">&#128269;</div>Free initial consultation</div>
-        <div class="promise-item"><div class="promise-icon">&#128176;</div>Transparent pricing</div>
-        <div class="promise-item"><div class="promise-icon">&#128205;</div>Serving Southern California</div>
-      </div>
-    </div>
-    <div class="quote-form-card fade-up">
-      <form id="quoteForm" novalidate>
-        <div class="form-row">
-          <div class="form-group"><label for="fname">First Name</label><input id="fname" type="text" placeholder="First name" required/></div>
-          <div class="form-group"><label for="lname">Last Name</label><input id="lname" type="text" placeholder="Last name" required/></div>
-        </div>
-        <div class="form-group"><label for="femail">Email</label><input id="femail" type="email" placeholder="you@yourbusiness.com" required/></div>
-        <div class="form-group"><label for="fphone">Phone</label><input id="fphone" type="tel" placeholder="(909) 000-0000"/></div>
-        
-        <div class="form-group">
-          <label for="fservice">Service Needed</label>
-          <select id="fservice"><option value="">Select a service</option><option>Web Design &amp; Development</option><option>SEO Optimization</option><option>Digital Marketing</option><option>E-Commerce</option><option>Maintenance &amp; Support</option><option>UI/UX &amp; Graphic Design</option><option>Not Sure Yet</option></select>
-        </div>
-        <div class="form-group"><label for="fmsg">Tell Us About Your Project</label><textarea id="fmsg" placeholder="What are you working on? Any details help."></textarea></div>
-        <button type="submit" class="btn-primary form-submit">Send My Request &#8594;</button>
-      </form>
-    </div>
-  </div>
-</section>
-</section>
-<div class="divider"></div>
-
-<section style="padding:80px 5vw;">
-  <div class="section-label">Get a Quote</div>
-  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:2rem;">Start the Conversation</h2>
-  <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/czK2JhlzR7te9HRJkDkzClTmcXuKiWWoTlOVBGbbHNsWTNvv2Kvtxthl6NQI0meNIn"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
 </section>
 
 <div class="divider"></div>
 
-<section class="pd-form-section">
+<!-- PIPEDRIVE FORM — single instance, no dummy form -->
+<section class="pd-form-section" id="quote">
   <div class="pd-form-inner">
     <div class="pd-form-intro">
       <div class="section-label">Get a Quote</div>
@@ -438,21 +279,23 @@
 
 <div class="divider"></div>
 
+<!-- CTA -->
 <section style="padding:100px 5vw;text-align:center;">
   <div style="max-width:640px;margin:0 auto;">
     <div class="eyebrow">Ready to Start?</div>
     <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1.2rem;">Your Next Website Starts<br>with a Conversation</h2>
     <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:2.5rem;">Tell us what you are building. We will respond within 24 hours with a clear plan and honest pricing &#8212; no fluff, no pressure.</p>
-    <a href="#" class="btn-primary" id="cta-main">Get a Free Quote &#8594;</a>
+    <a href="#quote" class="btn-primary" id="cta-main">Get a Free Quote &#8594;</a>
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html"><img src="assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb logo" style="height:36px;width:auto;display:block;margin-bottom:1.2rem;"/></a>
+      <a href="index.html"><img src="assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb logo"/></a>
       <p>Bold, modern websites for businesses that want to stand out, rank higher, and convert more customers. Based in San Clemente, CA.</p>
       <div class="footer-socials">
         <a href="https://www.facebook.com/nuvellowebllc" target="_blank" rel="noopener" class="social-btn">f</a>
@@ -461,40 +304,17 @@
         <a href="https://share.google/uH62KpGg1u5lX1eQa" target="_blank" rel="noopener" class="social-btn">g</a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="services/web-design.html">Web Design &amp; Dev</a></li>
-        <li><a href="services/seo.html">SEO Optimization</a></li>
-        <li><a href="services/digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="services/ecommerce.html">E-Commerce</a></li>
-        <li><a href="services/maintenance.html">Maintenance</a></li>
-        <li><a href="services/ui-ux.html">UI/UX &amp; Design</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:+19093127101">(909) 312-7101</a></li>
-        <li><a href="#" class="footer-email"></a></li>
-        <li><a href="#">San Clemente, CA</a></li>
-      </ul>
-    </div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services/web-design.html">Web Design &amp; Dev</a></li><li><a href="services/seo.html">SEO Optimization</a></li><li><a href="services/digital-marketing.html">Digital Marketing</a></li><li><a href="services/ecommerce.html">E-Commerce</a></li><li><a href="services/maintenance.html">Maintenance</a></li><li><a href="services/ui-ux.html">UI/UX &amp; Design</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19093127101">(909) 312-7101</a></li><li><a href="mailto:contact@nuvelloweb.com">contact@nuvelloweb.com</a></li><li><a href="#">San Clemente, CA</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span>&#169; 2025 NuvelloWeb LLC. All rights reserved.</span>
     <span>Privacy Policy &#183; Terms of Service</span>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<script>
 (function () {
   function init() {
     var hBtn = document.getElementById('hamburgerBtn');
@@ -511,25 +331,10 @@
       a.addEventListener('click', function (e) { e.preventDefault(); a.parentElement.classList.toggle('open'); });
     });
     menu.querySelectorAll('.mobile-child-link').forEach(function (l) { l.addEventListener('click', close); });
-    document.querySelectorAll('.faq-q').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var item = btn.parentElement;
-        var isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
-        if (!isOpen) item.classList.add('open');
-      });
-    });
     window.addEventListener('scroll', function () {
       var nav = document.querySelector('nav');
       if (nav) nav.style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)';
     });
-    var form = document.getElementById('contactForm') || document.getElementById('quoteForm');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        form.innerHTML = '<div class="form-success"><span class="success-icon">&#10003;</span><h3>Message Received!</h3><p>We will be in touch within 24 hours.</p></div>';
-      });
-    }
   }
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
