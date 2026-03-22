@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FAQ &#8212; NuvelloWeb | Web Design &amp; Marketing Agency</title>
+<meta name="description" content="Answers to the most common questions about NuvelloWeb's web design, SEO, digital marketing, and e-commerce services."/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--blue:#138CEC;--navy:#2A2A72;--dark:#232528;--darker:#16181a;--orange:#f47c20;--white:#f5f6fa;--muted:#8a8f9e;--red:#AC3931;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--darker);color:var(--white);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Lora',serif;font-weight:700;line-height:1.15;}
+a{color:inherit;}
+.header-bar{position:fixed;top:0;left:0;right:0;z-index:101;background:#111315;border-bottom:1px solid rgba(255,255,255,.05);padding:.45rem 5vw;display:flex;align-items:center;justify-content:flex-end;gap:2rem;}
+.header-bar a{color:var(--muted);font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s;font-weight:600;}
+.header-bar a:hover{color:var(--white);}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;background:rgba(22,24,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
+.nav-logo img{height:40px;width:auto;display:block;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.1rem;border-radius:4px;white-space:nowrap;}
+.nav-cta:hover{background:#0f7ad6!important;}
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:.35rem;cursor:pointer;}
+.nav-dropdown>a::after{content:'';display:block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--muted);transition:transform .25s,border-top-color .2s;margin-top:1px;}
+.nav-dropdown:hover>a::after{transform:rotate(180deg);border-top-color:var(--white);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#1e2023;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;box-shadow:0 12px 40px rgba(0,0,0,.45);}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.ndm-item{display:flex;align-items:center;gap:.8rem;padding:.65rem .85rem;border-radius:7px;text-decoration:none;transition:background .15s;}
+.ndm-item:hover{background:rgba(255,255,255,.07);}
+.ndm-icon{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+.ndm-text{display:flex;flex-direction:column;}
+.ndm-label{font-size:.82rem;font-weight:700;color:var(--white);}
+.ndm-sub{font-size:.72rem;color:var(--muted);}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100vh;background:#16181a;border-left:1px solid rgba(255,255,255,.08);z-index:200;padding:100px 2.5rem 3rem;transition:right .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;}
+.mobile-menu.open{right:0;}
+.mobile-close{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:var(--white);width:36px;height:36px;border-radius:8px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;}
+.mobile-menu ul li{border-bottom:1px solid rgba(255,255,255,.06);}
+.mobile-menu ul a{display:block;padding:1.1rem 0;font-size:1.15rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s;}
+.mobile-menu ul a:hover{color:var(--white);}
+.mobile-menu ul li:last-child a{margin-top:1.5rem;background:var(--blue);color:#fff;padding:.9rem 1.5rem;border-radius:6px;text-align:center;font-weight:700;font-size:.92rem;}
+.mobile-menu ul li.has-children>a{display:flex;justify-content:space-between;align-items:center;}
+.mobile-menu ul li.has-children>a::after{content:'+';font-size:1.1rem;color:var(--muted);}
+.mobile-menu ul li.has-children.open>a::after{content:'-';}
+.mobile-children{display:none;flex-direction:column;padding:.3rem 0 .5rem 1rem;}
+.mobile-menu ul li.has-children.open .mobile-children{display:flex;}
+.mobile-child-link{display:flex;align-items:center;gap:.6rem;padding:.6rem 0;font-size:1rem;color:var(--muted);text-decoration:none;transition:color .2s;}
+.mobile-child-link:hover{color:var(--white);}
+.mobile-child-icon{font-size:.85rem;}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;}
+.mobile-overlay.open{display:block;}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:1.2rem;}
+.eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--blue);}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);}
+.btn-primary{background:var(--blue);color:#fff;padding:.85rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block;}
+.btn-primary:hover{background:#0f7ad6;transform:translateY(-2px);}
+/* HERO */
+.page-hero{padding:190px 5vw 80px;position:relative;overflow:hidden;}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 40%,rgba(19,140,236,.12) 0%,transparent 70%);pointer-events:none;}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.ph-inner{position:relative;z-index:2;max-width:740px;}
+.breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:.5rem;}
+.breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--white);}
+.breadcrumb .current{color:var(--white);}
+.ph-inner h1{font-size:clamp(2.6rem,5vw,4rem);margin-bottom:1rem;}
+.ph-inner h1 em{font-style:italic;color:var(--blue);}
+.ph-inner p{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:580px;}
+/* FAQ LAYOUT */
+.faq-page{padding:80px 5vw 100px;display:grid;grid-template-columns:260px 1fr;gap:5rem;align-items:start;max-width:1300px;margin:0 auto;}
+/* SIDEBAR NAV */
+.faq-sidebar{position:sticky;top:130px;}
+.faq-sidebar-title{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.faq-nav{display:flex;flex-direction:column;gap:.3rem;}
+.faq-nav-item{display:flex;align-items:center;gap:.7rem;padding:.6rem .8rem;border-radius:7px;text-decoration:none;font-size:.88rem;font-weight:600;color:var(--muted);transition:background .15s,color .15s;cursor:pointer;background:none;border:none;text-align:left;width:100%;}
+.faq-nav-item:hover,.faq-nav-item.active{background:rgba(19,140,236,.1);color:var(--white);}
+.faq-nav-item.active{color:var(--blue);}
+.faq-nav-dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex-shrink:0;transition:background .15s;}
+.faq-nav-item.active .faq-nav-dot{background:var(--blue);}
+/* FAQ CONTENT */
+.faq-content{display:flex;flex-direction:column;gap:4rem;}
+.faq-category{scroll-margin-top:130px;}
+.faq-category-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.faq-cat-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.faq-category-header h2{font-size:1.4rem;}
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:600;padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;text-align:left;transition:color .2s;}
+.faq-q:hover{color:var(--blue);}
+.faq-arrow{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:transform .3s,background .2s;flex-shrink:0;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:rgba(19,140,236,.15);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-item.open .faq-a{max-height:500px;}
+.faq-a-inner{padding-bottom:1.3rem;}
+.faq-a-inner p{font-size:.95rem;color:var(--muted);line-height:1.85;margin-bottom:.8rem;}
+.faq-a-inner p:last-child{margin-bottom:0;}
+.faq-a-inner a{color:var(--blue);text-decoration:none;}
+.faq-a-inner a:hover{text-decoration:underline;}
+/* CTA */
+.faq-cta{margin-top:2rem;padding:2.5rem;background:rgba(19,140,236,.07);border:1px solid rgba(19,140,236,.2);border-radius:14px;text-align:center;}
+.faq-cta h3{font-size:1.4rem;margin-bottom:.6rem;}
+.faq-cta p{font-size:.95rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;}
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem;}
+.footer-brand img{height:36px;width:auto;margin-bottom:1.2rem;display:block;}
+.footer-brand p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:280px;}
+.footer-socials{display:flex;gap:.8rem;}
+.social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:700;transition:background .2s,color .2s;}
+.social-btn:hover{background:var(--blue);color:#fff;}
+.footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:1.4rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.footer-col ul a{text-decoration:none;color:var(--muted);font-size:.9rem;transition:color .2s;}
+.footer-col ul a:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);flex-wrap:wrap;gap:1rem;}
+@media(max-width:1024px){.faq-page{grid-template-columns:1fr;gap:3rem;}.faq-sidebar{display:none;}}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="header-bar">
+  <a href="mailto:contact@nuvelloweb.com">&#9993; contact@nuvelloweb.com</a>
+  <a href="tel:+19093127101">&#128222; +1 (909) 312-7101</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services</a>
+      <div class="nav-dropdown-menu">
+        <a href="services/web-design.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128187;</div><div class="ndm-text"><span class="ndm-label">Web Design &amp; Dev</span><span class="ndm-sub">WordPress, Full-Stack, E-Commerce</span></div></a>
+        <a href="services/seo.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(172,57,49,.15);border:1px solid rgba(172,57,49,.25);">&#128205;</div><div class="ndm-text"><span class="ndm-label">SEO Optimization</span><span class="ndm-sub">Local, Technical, On-Page &amp; More</span></div></a>
+        <a href="services/ui-ux.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#127912;</div><div class="ndm-text"><span class="ndm-label">UI/UX &amp; Graphic Design</span><span class="ndm-sub">Brand, Print, Digital &amp; Web Design</span></div></a>
+        <a href="services/digital-marketing.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(42,42,114,.2);border:1px solid rgba(42,42,114,.35);">&#128293;</div><div class="ndm-text"><span class="ndm-label">Digital Marketing</span><span class="ndm-sub">PPC, Social, Email &amp; More</span></div></a>
+        <a href="services/ecommerce.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.22);">&#128722;</div><div class="ndm-text"><span class="ndm-label">E-Commerce</span><span class="ndm-sub">Shopify &amp; WooCommerce</span></div></a>
+      </div>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get&nbsp;a&nbsp;Quote</a></li>
+  </ul>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileCloseBtn" aria-label="Close">&#x2715;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="has-children">
+      <a href="services.html">Services</a>
+      <div class="mobile-children">
+        <a href="services/web-design.html" class="mobile-child-link"><span class="mobile-child-icon">&#128187;</span> Web Design &amp; Dev</a>
+        <a href="services/seo.html" class="mobile-child-link"><span class="mobile-child-icon">&#128205;</span> SEO Optimization</a>
+        <a href="services/ui-ux.html" class="mobile-child-link"><span class="mobile-child-icon">&#127912;</span> UI/UX &amp; Design</a>
+        <a href="services/digital-marketing.html" class="mobile-child-link"><span class="mobile-child-icon">&#128293;</span> Digital Marketing</a>
+        <a href="services/ecommerce.html" class="mobile-child-link"><span class="mobile-child-icon">&#128722;</span> E-Commerce</a>
+      </div>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html">Get a Quote</a></li>
+  </ul>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-grid"></div>
+  <div class="ph-inner">
+    <nav class="breadcrumb"><a href="index.html">Home</a> &#8250; <span class="current">FAQ</span></nav>
+    <div class="eyebrow">Frequently Asked Questions</div>
+    <h1>Answers to the Questions<br><em>We Hear Most</em></h1>
+    <p>Can&#39;t find what you are looking for? <a href="contact.html" style="color:var(--blue);text-decoration:none;font-weight:700;">Reach out directly</a> &#8212; we respond within 24 hours.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="faq-page">
+
+  <!-- SIDEBAR -->
+  <aside class="faq-sidebar">
+    <div class="faq-sidebar-title">Jump to Section</div>
+    <nav class="faq-nav">
+      <button class="faq-nav-item active" onclick="scrollTo('general')"><span class="faq-nav-dot"></span> General</button>
+      <button class="faq-nav-item" onclick="scrollTo('process')"><span class="faq-nav-dot"></span> Our Process</button>
+      <button class="faq-nav-item" onclick="scrollTo('web-design')"><span class="faq-nav-dot"></span> Web Design</button>
+      <button class="faq-nav-item" onclick="scrollTo('seo')"><span class="faq-nav-dot"></span> SEO</button>
+      <button class="faq-nav-item" onclick="scrollTo('digital-marketing')"><span class="faq-nav-dot"></span> Digital Marketing</button>
+      <button class="faq-nav-item" onclick="scrollTo('ecommerce')"><span class="faq-nav-dot"></span> E-Commerce</button>
+      <button class="faq-nav-item" onclick="scrollTo('pricing')"><span class="faq-nav-dot"></span> Pricing</button>
+      <button class="faq-nav-item" onclick="scrollTo('technical')"><span class="faq-nav-dot"></span> Technical</button>
+      <button class="faq-nav-item" onclick="scrollTo('working-with-us')"><span class="faq-nav-dot"></span> Working With Us</button>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="faq-content">
+
+    <!-- GENERAL -->
+    <div class="faq-category" id="general">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.25);">&#128101;</div>
+        <h2>General</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">What makes NuvelloWeb different from other agencies?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>A few things. First, everything we build is 100% custom &#8212; no templates, no page builders, no shortcuts. Second, you always talk to the person actually building your site &#8212; not an account manager or a ticket system. Third, we are transparent about pricing from the start. A clear, flat-rate quote before we touch a single file.</p><p>Most agencies sell you on big promises and deliver average work. We would rather under-promise and over-deliver every single time.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Where are you located and who do you work with?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We are based in San Clemente, CA and primarily serve businesses across Southern California. That said, we work with clients remotely across the country &#8212; location has never been a barrier. If you are serious about growing your business online, we want to talk.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What industries do you work with?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>All of them. We work with local service businesses, e-commerce brands, professional services, healthcare, real estate, restaurants, fitness, non-profits, and more. If you have customers and a need to reach them online, we can help. We do not specialize in one niche because great strategy and clean code work for every business.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you work with startups or only established businesses?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Both. We love working with startups that need to make a strong first impression, and we love helping established businesses that have outgrown their current website. The approach is different but the commitment to quality is the same.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I see examples of your work?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Absolutely. <a href="contact.html">Reach out to us</a> and we will share relevant examples based on your industry and the type of project you have in mind. We tailor what we show you so it is actually useful, not just a generic portfolio dump.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="faq-category" id="process">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(42,42,114,.15);border:1px solid rgba(42,42,114,.3);">&#9881;</div>
+        <h2>Our Process</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How does the process work from start to finish?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We start with a discovery call to understand your business, goals, and audience. From there we lock in the sitemap and feature list, move into design (reviewed and approved by you before we write a line of code), then development, QA, and launch. Post-launch we provide 30 days of included support so you are never left hanging.</p><p>Most projects follow a clean 6-step flow: Discovery &#8594; Design &#8594; Development &#8594; QA &#8594; Launch &#8594; Grow.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What do you need from me to get started?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Not much upfront. To get started we need a clear understanding of your business, your goals, and any brand assets you already have (logo, colors, fonts). We will ask you the right questions during discovery. The more context you give us, the better the outcome &#8212; but we are used to working with clients who are starting from scratch too.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does a typical project take?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Most websites launch within 14 days of kickoff. Larger or more complex projects can take 3 to 6 weeks. E-commerce builds with large catalogs or platform migrations take longer. We give you a realistic timeline in your quote and we stick to it.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How involved do I need to be during the project?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>You need to be available for feedback at two key stages: design review and pre-launch review. Outside of that, we handle everything. We do not need you hovering &#8212; we need you to give us clear feedback when we ask for it so we can keep moving.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What happens after my site launches?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Every project includes 30 days of post-launch support. After that, we offer monthly maintenance and support plans if you want ongoing peace of mind. We also do training so you can manage your own site &#8212; adding products, updating content, and running the day-to-day without needing us for every little thing.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEB DESIGN -->
+    <div class="faq-category" id="web-design">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.25);">&#128187;</div>
+        <h2>Web Design &amp; Development</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Do you build on WordPress or custom code?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Both. We recommend WordPress for most businesses because it gives you a powerful, flexible platform you can manage yourself. For businesses with very specific requirements, we build fully custom full-stack sites. We will recommend the right approach during discovery based on your needs and budget &#8212; not based on what is easiest for us.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you use templates or page builders like Elementor?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Never. Every site we build is custom-designed and custom-coded from scratch. No templates, no Elementor, no Divi, no drag-and-drop shortcuts. This is not just aesthetics &#8212; template-built sites are slower, harder to maintain, and look like every other business in your industry. You deserve better than that.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you redesign my existing website?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. Redesigns are one of the most common projects we take on. We start by auditing your existing site &#8212; what is working, what is not, what content to keep, and what to build fresh. We preserve your SEO equity during the migration so you do not lose rankings in the transition.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will my website be mobile-friendly?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Always. Every site we build is mobile-first by default &#8212; not an afterthought. With more than 60% of web traffic coming from mobile devices, building anything less would be malpractice. We test on real devices before launch, not just browser simulators.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you handle hosting and domain setup?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We can help you set up hosting and point your domain, but you own the accounts. We never hold your hosting or domain hostage &#8212; everything is in your name, under your control. We will guide you through the setup and make sure everything is configured correctly.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will I be able to update the site myself?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes &#8212; and that is a requirement for us. Every project includes training so you can add pages, update content, swap images, and manage your site without calling us. If you want us to handle updates on your behalf, our maintenance plans cover that too.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is SEO included in the website build?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Technical SEO is built into every site we build &#8212; clean URL structure, schema markup, meta tags, image optimization, site speed, and Google Search Console setup. This is the foundation. Ongoing SEO strategy, content, and link-building are separate services if you want to actively grow your rankings.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO -->
+    <div class="faq-category" id="seo">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(172,57,49,.12);border:1px solid rgba(172,57,49,.25);">&#128200;</div>
+        <h2>SEO</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How long does it take to see SEO results?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>SEO is a long game. Most businesses start seeing measurable movement in rankings and traffic within 3 to 6 months. Competitive markets or brand-new domains can take longer. Anyone who promises you page-one rankings in 30 days is either lying or using tactics that will get your site penalized.</p><p>We are honest about timelines and we track everything so you can see exactly what is happening month over month.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you guarantee rankings?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>No &#8212; and you should be very suspicious of anyone who does. Google controls rankings, not us. What we guarantee is that we will follow best practices, build your authority the right way, and give your site the best possible chance to rank. We track performance transparently and adjust strategy when needed.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the difference between local SEO and regular SEO?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Local SEO focuses on getting your business to appear in searches tied to a specific geographic area &#8212; things like &#8220;web designer near me&#8221; or &#8220;plumber in San Clemente.&#8221; It involves Google Business Profile optimization, local citations, and location-specific content. Regular (organic) SEO focuses on ranking for broader, non-location-specific terms. Most local businesses need both.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do I need SEO if I am already running ads?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. Ads stop the moment you stop paying. SEO builds compounding, long-term visibility that keeps working even when you are not running campaigns. The two work best together &#8212; ads give you immediate traffic while SEO builds the foundation that reduces your cost-per-lead over time.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What does your SEO service actually include?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Depending on the engagement it can include keyword research, technical site audit and fixes, on-page optimization, content strategy, local SEO, Google Business Profile management, link building, and monthly reporting. We build a custom strategy based on your goals &#8212; not a one-size-fits-all package.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIGITAL MARKETING -->
+    <div class="faq-category" id="digital-marketing">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(244,124,32,.1);border:1px solid rgba(244,124,32,.2);">&#128293;</div>
+        <h2>Digital Marketing</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">What platforms do you run ads on?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Google Search, Google Display, YouTube, Meta (Facebook and Instagram), LinkedIn, and email platforms like Klaviyo, Mailchimp, and ActiveCampaign. We recommend platforms based on where your customers actually are &#8212; not what is trendy.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you mark up ad spend?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>No. You own and fund the ad accounts directly. You pay the platforms, and you pay us a management fee. There is no markup on your spend, no hidden fees, and no incentive for us to blow your budget on poorly-performing campaigns.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How much should I budget for ads?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We can work with ad budgets starting around $500 per month, though more competitive industries benefit from higher spend. We will give you an honest assessment of what is realistic with your budget before we start anything. If the numbers do not make sense for your business, we will tell you.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What does success look like in digital marketing?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We measure success by business outcomes &#8212; leads, calls, form fills, sales, and cost per acquisition. Not impressions, not clicks, not vanity metrics. Every report we deliver ties performance back to something that actually matters to your business.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- E-COMMERCE -->
+    <div class="faq-category" id="ecommerce">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.22);">&#128722;</div>
+        <h2>E-Commerce</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Shopify or WooCommerce &#8212; which is better?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Neither is universally better &#8212; it depends on your business. Shopify is easier to manage and faster to launch, but has monthly platform fees and less flexibility. WooCommerce gives you full ownership with no platform fees, but requires WordPress hosting and a bit more maintenance. We will ask you the right questions and give you an honest recommendation.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you migrate my existing store to a new platform?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. We handle full platform migrations including products, variants, customer data, order history, and SEO redirects. We do a thorough pre-migration audit to make sure nothing gets lost in the move.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What payment gateways do you support?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Stripe, PayPal, Shop Pay, Apple Pay, Google Pay, Affirm, Klarna, Afterpay &#8212; and more. We configure whatever makes sense for your customers and your margins, and we test every gateway before launch.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you work with any product type or industry?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes &#8212; we do not discriminate. Apparel, home goods, supplements, electronics, handmade goods, digital downloads, B2B wholesale, food and beverage &#8212; if it is legal to sell online, we can build a store for it.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="faq-category" id="pricing">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(40,167,69,.1);border:1px solid rgba(40,167,69,.2);">&#128176;</div>
+        <h2>Pricing &amp; Contracts</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How much does a website cost?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Every project is quoted individually based on scope, platform, and complexity. Most small business websites fall between $1,500 and $5,000. E-commerce stores typically range from $1,500 to $6,000+. We provide a flat-rate quote before we start &#8212; no hourly billing surprises, no scope-creep invoices.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you offer payment plans?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. For most projects we work on a 50% deposit to start and 50% on completion. For larger projects we can structure milestone-based payments. Reach out and we will find something that works for your situation.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Are there any recurring fees after launch?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>The only recurring costs are your hosting, your domain, and any third-party tools or plugins you choose to use. Our maintenance plans are optional &#8212; not required. We do not lock you into any ongoing fees to keep your site running.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you require long-term contracts?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>No contracts for project work &#8212; just a clear statement of work and a deposit to get started. For ongoing services like SEO, marketing, and maintenance, we work month-to-month. You can cancel anytime with reasonable notice. We earn your business every month.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is your refund policy?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Deposits are non-refundable once work has begun, as they cover the time spent on discovery and design. If a project is cancelled mid-way, you are billed for work completed to that point. We have never had a client ask for a refund because we communicate proactively and fix issues before they become problems.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL -->
+    <div class="faq-category" id="technical">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.3);">&#128736;</div>
+        <h2>Technical</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Who owns the website code after it is built?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>You do. 100%. Once the project is paid in full, the code, assets, and design are yours. No licensing fees, no proprietary platforms that hold you hostage, no ransom if you decide to move on. Everything is delivered to you and lives on your hosting account under your credentials.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How fast will my website load?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We target sub-2-second load times on all builds. We achieve this through clean code, optimized images, proper caching, a fast hosting environment, and no bloated plugins or page builders weighing things down. Site speed is not an afterthought &#8212; it is a core requirement.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will my site be secure?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. Every site we build includes SSL, secure coding practices, limited plugin footprint, and proper file permissions. For WordPress sites we implement security hardening as a standard part of the build. Our maintenance plans include ongoing security monitoring and malware scanning for continued protection.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you set up analytics?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes &#8212; Google Analytics 4 and Google Search Console are set up on every project. We make sure tracking is working correctly before launch so you have data from day one. If you need more advanced tracking like conversion events or heatmaps, we can configure that too.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you integrate third-party tools into my site?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. CRMs, email platforms, booking tools, payment processors, live chat, analytics, marketing automation &#8212; if it has an API or embed code, we can integrate it. We will flag anything that might impact site performance or security before we install it.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORKING WITH US -->
+    <div class="faq-category" id="working-with-us">
+      <div class="faq-category-header">
+        <div class="faq-cat-icon" style="background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.25);">&#129309;</div>
+        <h2>Working With Us</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How do I get started?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Fill out the form on our <a href="contact.html">Contact page</a> or give us a call at <a href="tel:+19093127101">(909) 312-7101</a>. We respond within 24 hours with a clear plan. No pressure, no obligation &#8212; just a real conversation about what you need.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you take on rush projects?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Sometimes. If we have capacity and the scope is reasonable, we can accommodate tighter timelines. Rush projects may carry a premium depending on what is required. Reach out and tell us your deadline &#8212; we will be upfront about whether we can make it work.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What if I already have a designer and just need development?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We can work from your designs. Send us your Figma files, mockups, or design specs and we will build it out. We will review the designs before starting to flag anything that might cause issues in development or on mobile.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you work with my existing developer or marketing team?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. We collaborate well with other teams. Whether you have an in-house developer, a marketing manager, or another agency handling part of the work, we can plug in where we are needed without friction.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What communication can I expect during a project?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We are proactively communicative. You will know where things stand at every stage without having to chase us. We use email for formal updates and documentation, and we are available by phone for anything urgent. No black holes, no radio silence.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What if I am not happy with the design?<span class="faq-arrow">&#8595;</span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We build in a design review phase specifically so this does not happen at launch. You review and approve the design before we write any code. If you want revisions during the design phase, we accommodate them. If you want major changes after development is complete, we discuss scope and cost transparently. We have never launched a site a client was unhappy with.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA BLOCK -->
+    <div class="faq-cta">
+      <h3>Still Have Questions?</h3>
+      <p>We respond within 24 hours &#8212; no fluff, no pressure, just honest answers.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch &#8594;</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/logos/DM-NUV-LOGO-4X@4x.png" alt="NuvelloWeb logo"/>
+      <p>Bold, modern websites for businesses that want to stand out, rank higher, and convert more customers. Based in San Clemente, CA.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/nuvellowebllc" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://www.linkedin.com/company/nuvello-web/" target="_blank" rel="noopener" class="social-btn">in</a>
+        <a href="https://instagram.com/nuvelloweb" target="_blank" rel="noopener" class="social-btn">ig</a>
+        <a href="https://share.google/uH62KpGg1u5lX1eQa" target="_blank" rel="noopener" class="social-btn">g</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services/web-design.html">Web Design &amp; Dev</a></li><li><a href="services/seo.html">SEO Optimization</a></li><li><a href="services/ui-ux.html">UI/UX &amp; Design</a></li><li><a href="services/digital-marketing.html">Digital Marketing</a></li><li><a href="services/ecommerce.html">E-Commerce</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+19093127101">(909) 312-7101</a></li><li><a href="mailto:contact@nuvelloweb.com">contact@nuvelloweb.com</a></li><li><a href="#">San Clemente, CA</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 NuvelloWeb LLC. All rights reserved.</span>
+    <span>Privacy Policy &#183; Terms of Service</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  function init() {
+    var hBtn = document.getElementById('hamburgerBtn');
+    var cBtn = document.getElementById('mobileCloseBtn');
+    var menu = document.getElementById('mobileMenu');
+    var overlay = document.getElementById('mobileOverlay');
+    if (!hBtn) return;
+    function open() { menu.classList.add('open'); overlay.classList.add('open'); hBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close() { menu.classList.remove('open'); overlay.classList.remove('open'); hBtn.classList.remove('open'); document.body.style.overflow = ''; }
+    hBtn.addEventListener('click', open);
+    cBtn.addEventListener('click', close);
+    overlay.addEventListener('click', close);
+    menu.querySelectorAll('li.has-children > a').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); a.parentElement.classList.toggle('open'); });
+    });
+    menu.querySelectorAll('.mobile-child-link').forEach(function (l) { l.addEventListener('click', close); });
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+    // Sidebar nav active state on scroll
+    var categories = document.querySelectorAll('.faq-category');
+    var navItems = document.querySelectorAll('.faq-nav-item');
+    window.addEventListener('scroll', function () {
+      var nav = document.querySelector('nav');
+      if (nav) nav.style.background = window.scrollY > 40 ? 'rgba(22,24,26,0.98)' : 'rgba(22,24,26,0.92)';
+      var scrollY = window.scrollY + 160;
+      categories.forEach(function (cat, i) {
+        if (cat.offsetTop <= scrollY) {
+          navItems.forEach(function (n) { n.classList.remove('active'); });
+          if (navItems[i]) navItems[i].classList.add('active');
+        }
+      });
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
+
+function scrollTo(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
