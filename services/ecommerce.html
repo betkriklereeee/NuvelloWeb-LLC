@@ -167,7 +167,7 @@ nav{position:fixed;top:36px;left:0;right:0;z-index:100;display:flex;align-items:
 .faq-a p{font-size:.95rem;color:var(--muted);line-height:1.8;padding-bottom:1.6rem;}
 /* QUOTE */
 .quote-section{padding:100px 5vw;}
-.quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.quote-wrap{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:start;}
 .quote-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
 .quote-intro p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
 .quote-promise{display:flex;flex-direction:column;gap:1rem;}
@@ -204,7 +204,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
 @media(max-width:1024px){.platform-tabs{grid-template-columns:1fr;}.roi-inner{grid-template-columns:1fr;gap:3rem;}.pricing-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.svc-grid{grid-template-columns:1fr 1fr;}.quote-wrap{grid-template-columns:1fr;gap:3rem;}.footer-top{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.svc-grid,.pricing-grid,.roi-stats{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
-.pd-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.5rem 1.8rem;position:relative;}
+.pd-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.2rem 1.4rem;position:relative;width:fit-content;max-width:100%;justify-self:start;}
 .pd-form-wrap::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);}
 .pd-form-wrap .pipedriveWebForms{min-height:420px;}
 </style>
@@ -223,7 +223,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
         <li class="nav-dropdown">
       <a href="../about.html">About</a>
       <div class="nav-dropdown-menu" style="min-width:200px;">
-        <a href="../about.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128101;</div><div class="ndm-text"><span class="ndm-label">About Us</span><span class="ndm-sub">Our story and mission</span></div></a>
         <a href="../faq.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#10067;</div><div class="ndm-text"><span class="ndm-label">FAQ</span><span class="ndm-sub">Common questions answered</span></div></a>
       </div>
     </li>
@@ -250,7 +249,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
         <li class="has-children">
       <a href="../about.html">About</a>
       <div class="mobile-children">
-        <a href="../about.html" class="mobile-child-link"><span class="mobile-child-icon">&#128101;</span> About Us</a>
         <a href="../faq.html" class="mobile-child-link"><span class="mobile-child-icon">&#10067;</span> FAQ</a>
       </div>
     </li>

@@ -146,7 +146,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
     <li class="nav-dropdown">
       <a href="about.html">About</a>
       <div class="nav-dropdown-menu" style="min-width:200px;">
-        <a href="about.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(19,140,236,.15);border:1px solid rgba(19,140,236,.25);">&#128101;</div><div class="ndm-text"><span class="ndm-label">About Us</span><span class="ndm-sub">Our story and mission</span></div></a>
         <a href="faq.html" class="ndm-item"><div class="ndm-icon" style="background:rgba(86,81,115,.2);border:1px solid rgba(86,81,115,.35);">&#10067;</div><div class="ndm-text"><span class="ndm-label">FAQ</span><span class="ndm-sub">Common questions answered</span></div></a>
       </div>
     </li>
@@ -173,7 +172,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
     <li class="has-children">
       <a href="about.html">About</a>
       <div class="mobile-children">
-        <a href="about.html" class="mobile-child-link"><span class="mobile-child-icon">&#128101;</span> About Us</a>
         <a href="faq.html" class="mobile-child-link"><span class="mobile-child-icon">&#10067;</span> FAQ</a>
       </div>
     </li>
@@ -213,15 +211,15 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
   <aside class="faq-sidebar">
     <div class="faq-sidebar-title">Jump to Section</div>
     <div class="faq-nav">
-      <button class="faq-nav-item active" onclick="scrollTo('general')"><span class="faq-nav-dot"></span> General</button>
-      <button class="faq-nav-item" onclick="scrollTo('process')"><span class="faq-nav-dot"></span> Our Process</button>
-      <button class="faq-nav-item" onclick="scrollTo('web-design')"><span class="faq-nav-dot"></span> Web Design</button>
-      <button class="faq-nav-item" onclick="scrollTo('seo')"><span class="faq-nav-dot"></span> SEO</button>
-      <button class="faq-nav-item" onclick="scrollTo('digital-marketing')"><span class="faq-nav-dot"></span> Digital Marketing</button>
-      <button class="faq-nav-item" onclick="scrollTo('ecommerce')"><span class="faq-nav-dot"></span> E-Commerce</button>
-      <button class="faq-nav-item" onclick="scrollTo('pricing')"><span class="faq-nav-dot"></span> Pricing</button>
-      <button class="faq-nav-item" onclick="scrollTo('technical')"><span class="faq-nav-dot"></span> Technical</button>
-      <button class="faq-nav-item" onclick="scrollTo('working-with-us')"><span class="faq-nav-dot"></span> Working With Us</button>
+      <button class="faq-nav-item active" onclick="faqJump(this,'general')"><span class="faq-nav-dot"></span> General</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'process')"><span class="faq-nav-dot"></span> Our Process</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'web-design')"><span class="faq-nav-dot"></span> Web Design</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'seo')"><span class="faq-nav-dot"></span> SEO</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'digital-marketing')"><span class="faq-nav-dot"></span> Digital Marketing</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'ecommerce')"><span class="faq-nav-dot"></span> E-Commerce</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'pricing')"><span class="faq-nav-dot"></span> Pricing</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'technical')"><span class="faq-nav-dot"></span> Technical</button>
+      <button class="faq-nav-item" onclick="faqJump(this,'working-with-us')"><span class="faq-nav-dot"></span> Working With Us</button>
     </div>
   </aside>
 
@@ -536,6 +534,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
 </footer>
 
 <script>
+function faqJump(btn, id) {
+  document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+  document.querySelectorAll('.faq-nav-item').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
 (function () {
   function init() {
     var hBtn = document.getElementById('hamburgerBtn');
