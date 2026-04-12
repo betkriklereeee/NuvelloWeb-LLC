@@ -161,7 +161,7 @@
 
   /* QUOTE */
   .quote-section{padding:100px 5vw;}
-  .quote-wrap{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:start;}
+  .quote-wrap{display:grid;grid-template-columns:1fr auto auto;gap:3rem;align-items:start;}
   .quote-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
   .quote-intro p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
   .quote-promise{display:flex;flex-direction:column;gap:1rem;}
@@ -207,18 +207,20 @@
   .top-bar-link{color:var(--muted);font-size:.8rem;text-decoration:none;font-weight:600;letter-spacing:.03em;transition:color .2s;}
   .top-bar-link:hover{color:var(--white);}
   @media(max-width:600px){.top-bar-inner{justify-content:center;gap:1.2rem;}}
-.pd-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.4rem 2.4rem;position:relative;width:fit-content;max-width:100%;justify-self:start;}
+.pd-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.4rem 2.4rem;position:relative;min-width:380px;max-width:100%;}
 .pd-form-wrap::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);}
 .pd-form-wrap .pipedriveWebForms{min-height:420px;}
-.quote-steps{display:flex;flex-direction:column;gap:1.1rem;margin-top:2rem;}
+.quote-steps{display:flex;flex-direction:column;gap:1.1rem;}
 .quote-step{display:flex;align-items:flex-start;gap:1rem;}
 .quote-step-num{width:28px;height:28px;border-radius:50%;background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.28);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--blue);flex-shrink:0;margin-top:2px;}
 .quote-step-text{display:flex;flex-direction:column;gap:.2rem;}
 .quote-step-text strong{font-size:.9rem;color:var(--white);font-weight:600;}
 .quote-step-text span{font-size:.83rem;color:var(--muted);line-height:1.55;}
-.quote-contact-row{display:flex;flex-direction:column;gap:.55rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);}
+.quote-contact-row{display:flex;flex-direction:column;gap:.55rem;margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);}
 .quote-contact-row a{font-size:.88rem;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:.65rem;transition:color .2s;}
 .quote-contact-row a:hover{color:var(--white);}
+.quote-middle{display:flex;flex-direction:column;gap:0;padding-left:1.5rem;border-left:1px solid rgba(255,255,255,.07);}
+.quote-steps-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;}
 </style>
 <script type="application/ld+json">
 {
@@ -555,6 +557,18 @@
         <div class="promise-item"><div class="promise-icon">&#127912;</div>100% custom &#8212; no stock templates</div>
         <div class="promise-item"><div class="promise-icon">&#128196;</div>All source files included</div>
         <div class="promise-item"><div class="promise-icon">&#128205;</div>Serving all of Southern California</div>
+      </div>
+      <div class="quote-contact-row">
+        <a href="tel:+19093127101">&#128222; (909) 312-7101</a>
+        <a href="mailto:contact@nuvelloweb.com">&#9993; contact@nuvelloweb.com</a>
+      </div>
+    </div>
+    <div class="quote-middle">
+      <div class="quote-steps-label">What Happens Next</div>
+      <div class="quote-steps">
+        <div class="quote-step"><div class="quote-step-num">1</div><div class="quote-step-text"><strong>Fill out the form</strong><span>Tell us about your project and goals &mdash; takes about 2 minutes.</span></div></div>
+        <div class="quote-step"><div class="quote-step-num">2</div><div class="quote-step-text"><strong>We review your needs</strong><span>We look at your current setup and put together a tailored plan.</span></div></div>
+        <div class="quote-step"><div class="quote-step-num">3</div><div class="quote-step-text"><strong>You get a clear plan</strong><span>A flat-rate quote and full project scope &mdash; no surprises, no pressure.</span></div></div>
       </div>
     </div>
     <div class="pd-form-wrap">
