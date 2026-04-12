@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Static Site (Python)",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "--directory", "/Users/benjaminkrikler/Library/CloudStorage/GoogleDrive-benjamin@nuvelloweb.com/Shared drives/Team Folder/NuWave/NuSiteClaude/NuvelloWeb-LLC/.claude/worktrees/distracted-saha", "8000"],
+      "port": 8000
+    }
+  ]
+}
