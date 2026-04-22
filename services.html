@@ -94,13 +94,20 @@ nav{position:fixed;top:36px;left:0;right:0;z-index:100;display:flex;align-items:
 .hub-stat{text-align:center;}
 .hub-stat-num{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;margin-bottom:.3rem;}
 .hub-stat-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
-.pd-form-section{padding:60px 5vw;}
-.pd-form-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start;}
+.pd-form-section{padding:80px 5vw;}
+.pd-form-inner{display:grid;grid-template-columns:2fr 3fr;gap:5rem;align-items:start;}
 .pd-form-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:1rem;}
 .pd-form-intro p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
-.pd-promises{display:flex;flex-direction:column;gap:.8rem;}
-.pd-promise{display:flex;align-items:center;gap:.8rem;font-size:.95rem;color:var(--muted);}
-.pd-check{color:var(--blue);font-weight:700;}
+.pd-steps-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;margin-top:2rem;}
+.pd-steps{display:flex;flex-direction:column;gap:.75rem;margin-top:1rem;}
+.pd-step{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.85rem 1.1rem;}
+.pd-step-num{width:28px;height:28px;border-radius:50%;background:rgba(19,140,236,.12);border:1px solid rgba(19,140,236,.28);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--blue);flex-shrink:0;margin-top:2px;}
+.pd-step-text{display:flex;flex-direction:column;gap:.2rem;}
+.pd-step-text strong{font-size:.9rem;color:var(--white);font-weight:600;}
+.pd-step-text span{font-size:.83rem;color:var(--muted);line-height:1.55;}
+.pd-contact-row{display:flex;flex-direction:column;gap:.55rem;margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);}
+.pd-contact-row a{font-size:.88rem;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:.65rem;transition:color .2s;}
+.pd-contact-row a:hover{color:var(--white);}
 .pd-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.5rem 1.8rem;position:relative;}
 .pd-form-wrap::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);}
 .pd-form-wrap .pipedriveWebForms{min-height:420px;}
@@ -258,10 +265,15 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 5vw 40px;}
       <div class="section-label">Get a Quote</div>
       <h2>Ready to Start?<br>Let&#39;s Talk.</h2>
       <p>Tell us what you need. We respond within 24 hours with a clear plan and honest flat-rate pricing &#8212; no fluff, no pressure.</p>
-      <div class="pd-promises">
-        <div class="pd-promise"><span class="pd-check">&#10003;</span> Response within 24 hours</div>
-        <div class="pd-promise"><span class="pd-check">&#10003;</span> Flat-rate pricing, no surprises</div>
-        <div class="pd-promise"><span class="pd-check">&#10003;</span> Based in Orange County, CA</div>
+      <div class="pd-steps-label">What Happens Next</div>
+      <div class="pd-steps">
+        <div class="pd-step"><div class="pd-step-num">1</div><div class="pd-step-text"><strong>Fill out the form</strong><span>Tell us about your project and goals &#8212; takes about 2 minutes.</span></div></div>
+        <div class="pd-step"><div class="pd-step-num">2</div><div class="pd-step-text"><strong>We review your needs</strong><span>We look at your current setup and put together a tailored plan.</span></div></div>
+        <div class="pd-step"><div class="pd-step-num">3</div><div class="pd-step-text"><strong>You get a clear plan</strong><span>A flat-rate quote and full project scope &#8212; no surprises, no pressure.</span></div></div>
+      </div>
+      <div class="pd-contact-row">
+        <a href="tel:+19093127101">&#128222; (909) 312-7101</a>
+        <a href="mailto:contact@nuvelloweb.com">&#9993; contact@nuvelloweb.com</a>
       </div>
     </div>
     <div class="pd-form-wrap">
